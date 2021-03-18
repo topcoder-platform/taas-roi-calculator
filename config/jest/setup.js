@@ -1,4 +1,5 @@
 const config = require('config');
+import ReactDOM from "react-dom";
 
 global.window.matchMedia = global.window.matchMedia || function matchMedia() {
   return {
@@ -7,5 +8,8 @@ global.window.matchMedia = global.window.matchMedia || function matchMedia() {
     removeListener() {},
   };
 };
-
+global.window.scrollTo = () => {};
 global.process.env = config;
+ReactDOM.createPortal = jest.fn((element, node) => {
+  return element;
+});

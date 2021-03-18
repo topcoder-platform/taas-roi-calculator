@@ -28,16 +28,7 @@ const SlideShow = ({ children }) => {
   let variableWidth = true;
   let centerMode = false;
 
-  if (windowSize.width > 2540) {
-    slidesToShow = 4;
-    slidesToScroll = 4;
-  } else if (windowSize.width > 1960) {
-    slidesToShow = 3;
-    slidesToScroll = 3;
-  } else if (windowSize.width > 1380) {
-    slidesToShow = 2;
-    slidesToScroll = 2;
-  } else if (windowSize.width > 1024) {
+  if (windowSize.width > 1024) {
     slidesToShow = 1;
     slidesToScroll = 1;
   } else {

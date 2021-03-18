@@ -40,8 +40,8 @@ function RadioButton({
                 }}
               />
               <span styleName={`checkmark ${errorMsg ? 'hasError' : ''}`} />
+              {o.label ? (<span styleName="label">{o.label}</span>) : null}
             </label>
-            {o.label ? (<span styleName="label">{o.label}</span>) : null}
           </div>
         ))}
       </div>

@@ -7,6 +7,7 @@ import App from './App';
 
 import '../node_modules/slick-carousel/slick/slick.css';
 import '../node_modules/slick-carousel/slick/slick-theme.css';
+import 'tippy.js/dist/tippy.css';
 
 if (process.env.NODE_ENV === 'production') {
   require('../node_modules/topcoder-react-ui-kit/dist/prod/style.css');

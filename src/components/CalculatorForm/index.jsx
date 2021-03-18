@@ -3,11 +3,13 @@ import PT from 'prop-types';
 import { PrimaryButton } from 'topcoder-react-ui-kit';
 import { useMediaQuery } from 'react-responsive';
 import _ from 'lodash';
+import Tippy from '@tippyjs/react';
 import Dropdown from '../Dropdown';
 import RadioButtons from '../RadioButton';
 import TextInput from '../TextInput';
 import * as utils from '../../utils';
 import * as constants from '../../constants';
+import IconHelp from '../../assets/icons/help.svg';
 
 import './styles.scss';
 
@@ -67,7 +69,7 @@ const CalculatorForm = ({
 
   return (
     <form styleName="calculator-form" noValidate autoComplete="off">
-      <div>
+      <div styleName="dropdown">
         <Dropdown
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Type of talent required"
@@ -79,7 +81,7 @@ const CalculatorForm = ({
           errorMsg={validation && validation.talentTypeError}
         />
       </div>
-      <div>
+      <div styleName="dropdown">
         <Dropdown
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Number of people required"
@@ -91,7 +93,7 @@ const CalculatorForm = ({
           errorMsg={validation && validation.employeeNumberError}
         />
       </div>
-      <div>
+      <div styleName="dropdown">
         <Dropdown
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Industry"
@@ -103,7 +105,7 @@ const CalculatorForm = ({
           errorMsg={validation && validation.employeeNumberError}
         />
       </div>
-      <div>
+      <div styleName="dropdown">
         <Dropdown
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Company size"
@@ -116,9 +118,11 @@ const CalculatorForm = ({
         />
       </div>
       <div styleName="radio-group">
-        <span styleName="label">Cost of Living</span>
-        {' '}
-        <i />
+        <span styleName="label">
+          Cost of Living
+          {' '}
+          <Tippy content="Cost of Living Increase" touch><span><IconHelp styleName="help-icon" /></span></Tippy>
+        </span>
         <RadioButtons
           size={isMobileOrTablet ? 'sm' : 'lg'}
           options={costOfLivings}
@@ -130,7 +134,7 @@ const CalculatorForm = ({
         />
       </div>
       <hr styleName="horizontal-rule" />
-      <div>
+      <div styleName="input">
         <TextInput
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="First name"
@@ -141,7 +145,7 @@ const CalculatorForm = ({
           value={formData.firstName}
         />
       </div>
-      <div>
+      <div styleName="input">
         <TextInput
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Last name"
@@ -152,7 +156,7 @@ const CalculatorForm = ({
           value={formData.lastName}
         />
       </div>
-      <div>
+      <div styleName="input">
         <TextInput
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Company"
@@ -163,7 +167,7 @@ const CalculatorForm = ({
           value={formData.company}
         />
       </div>
-      <div>
+      <div styleName="input">
         <TextInput
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Work email"
@@ -175,7 +179,7 @@ const CalculatorForm = ({
         />
       </div>
       <div styleName="footer">
-        <PrimaryButton onClick={() => { validateAndSubmit(true); }}>SEE YOUR RESULTS</PrimaryButton>
+        <PrimaryButton onClick={() => { validateAndSubmit(true); }} size={isMobileOrTablet ? 'sm' : ''}>SEE YOUR RESULTS</PrimaryButton>
       </div>
     </form>
   );

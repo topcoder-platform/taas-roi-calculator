@@ -2,41 +2,24 @@
 
 exports[`Render App 1`] = `
 Array [
-  <div
-    className="sticky-outer-wrapper"
-    style={Object {}}
+  <header
+    className="components-Header-styles___header___3H5Ffz"
   >
     <div
-      className="sticky-inner-wrapper "
-      style={
-        Object {
-          "position": "relative",
-          "top": "",
-          "transform": "translate3d(0,0px,0)",
-          "zIndex": 9999,
-        }
-      }
+      className="components-Header-styles___content-center___2t5GcU"
     >
-      <header
-        className="components-Header-styles___header___3H5Ffz"
+      <img
+        alt="logo"
+        className="components-Header-styles___logo___2tbxu8"
+        src=""
+      />
+      <h1
+        className="components-Header-styles___display-2___2-sJ2U"
       >
-        <div
-          className="components-Header-styles___content-center___2t5GcU"
-        >
-          <img
-            alt="logo"
-            className="components-Header-styles___logo___2tbxu8"
-            src=""
-          />
-          <h1
-            className="components-Header-styles___display-2___2-sJ2U"
-          >
-            TAAS ROI CALCULATOR
-          </h1>
-        </div>
-      </header>
+        TAAS ROI CALCULATOR
+      </h1>
     </div>
-  </div>,
+  </header>,
   <div
     className="containers-Landing-styles___page___1kL9Uv"
     id="landing"
@@ -87,7 +70,9 @@ Array [
           className="components-CalculatorForm-styles___calculator-form___2M9TfG"
           noValidate={true}
         >
-          <div>
+          <div
+            className="components-CalculatorForm-styles___dropdown___1t5llT"
+          >
             <div
               className="dropdownContainer components-Dropdown-styles___container___BqT3EC components-Dropdown-styles___lgSize___TuSF8Z"
               onBlurCapture={[Function]}
@@ -159,7 +144,9 @@ Array [
               </div>
             </div>
           </div>
-          <div>
+          <div
+            className="components-CalculatorForm-styles___dropdown___1t5llT"
+          >
             <div
               className="dropdownContainer components-Dropdown-styles___container___BqT3EC components-Dropdown-styles___lgSize___TuSF8Z"
               onBlurCapture={[Function]}
@@ -231,7 +218,9 @@ Array [
               </div>
             </div>
           </div>
-          <div>
+          <div
+            className="components-CalculatorForm-styles___dropdown___1t5llT"
+          >
             <div
               className="dropdownContainer components-Dropdown-styles___container___BqT3EC components-Dropdown-styles___lgSize___TuSF8Z"
               onBlurCapture={[Function]}
@@ -303,7 +292,9 @@ Array [
               </div>
             </div>
           </div>
-          <div>
+          <div
+            className="components-CalculatorForm-styles___dropdown___1t5llT"
+          >
             <div
               className="dropdownContainer components-Dropdown-styles___container___BqT3EC components-Dropdown-styles___lgSize___TuSF8Z"
               onBlurCapture={[Function]}
@@ -382,9 +373,30 @@ Array [
               className="components-CalculatorForm-styles___label___xAZSlw"
             >
               Cost of Living
+               
+              <span>
+                <svg
+                  className="components-CalculatorForm-styles___help-icon___eRyfkI"
+                  height="16"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <path
+                      d="M8 0c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8zm0 2C4.7 2 2 4.7 2 8s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm1 5v5H7V7h2zM8 4a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                      id="a"
+                    />
+                  </defs>
+                  <use
+                    fill="#AAA"
+                    fillRule="evenodd"
+                    xlinkHref="#a"
+                  />
+                </svg>
+              </span>
+              Cost of Living Increase
             </span>
-             
-            <i />
             <div
               className="radioButtonContainer components-RadioButton-styles___radioButtonContainer___zyNQ_D components-RadioButton-styles___lgSize___7HVGko"
             >
@@ -402,12 +414,12 @@ Array [
                   <span
                     className="components-RadioButton-styles___checkmark___19bpDm"
                   />
+                  <span
+                    className="components-RadioButton-styles___label___1sGbVN"
+                  >
+                    Low
+                  </span>
                 </label>
-                <span
-                  className="components-RadioButton-styles___label___1sGbVN"
-                >
-                  Low
-                </span>
               </div>
               <div
                 className="radioButton components-RadioButton-styles___radioButton___1nF-Nc"
@@ -423,12 +435,12 @@ Array [
                   <span
                     className="components-RadioButton-styles___checkmark___19bpDm"
                   />
+                  <span
+                    className="components-RadioButton-styles___label___1sGbVN"
+                  >
+                    Medium
+                  </span>
                 </label>
-                <span
-                  className="components-RadioButton-styles___label___1sGbVN"
-                >
-                  Medium
-                </span>
               </div>
               <div
                 className="radioButton components-RadioButton-styles___radioButton___1nF-Nc"
@@ -444,19 +456,21 @@ Array [
                   <span
                     className="components-RadioButton-styles___checkmark___19bpDm"
                   />
+                  <span
+                    className="components-RadioButton-styles___label___1sGbVN"
+                  >
+                    High
+                  </span>
                 </label>
-                <span
-                  className="components-RadioButton-styles___label___1sGbVN"
-                >
-                  High
-                </span>
               </div>
             </div>
           </div>
           <hr
             className="components-CalculatorForm-styles___horizontal-rule___2J-lhZ"
           />
-          <div>
+          <div
+            className="components-CalculatorForm-styles___input___3Fj5gg"
+          >
             <div
               className="textInputContainer components-TextInput-styles___container___1EE3aK components-TextInput-styles___lgSize___1sT8v6"
             >
@@ -472,7 +486,9 @@ Array [
               />
             </div>
           </div>
-          <div>
+          <div
+            className="components-CalculatorForm-styles___input___3Fj5gg"
+          >
             <div
               className="textInputContainer components-TextInput-styles___container___1EE3aK components-TextInput-styles___lgSize___1sT8v6"
             >
@@ -488,7 +504,9 @@ Array [
               />
             </div>
           </div>
-          <div>
+          <div
+            className="components-CalculatorForm-styles___input___3Fj5gg"
+          >
             <div
               className="textInputContainer components-TextInput-styles___container___1EE3aK components-TextInput-styles___lgSize___1sT8v6"
             >
@@ -504,7 +522,9 @@ Array [
               />
             </div>
           </div>
-          <div>
+          <div
+            className="components-CalculatorForm-styles___input___3Fj5gg"
+          >
             <div
               className="textInputContainer components-TextInput-styles___container___1EE3aK components-TextInput-styles___lgSize___1sT8v6"
             >
