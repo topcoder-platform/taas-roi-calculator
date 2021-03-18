@@ -1,0 +1,21 @@
+{
+  "salaries": {
+    "Back End Developer": 101619,
+    "Front End Developer": 76929,
+    "Full Stack Developer": 105813,
+    "UI/UX Designer": 85277,
+    "Data Scientists": 113309,
+    "Data Engineers": 102864,
+    "QA Testers": 55030,
+    "QA Engineers": 70827
+  },
+  "costOfLivingIncreases": {
+    "Low": -10000,
+    "Medium": 0,
+    "High": 10000
+  },
+  "bonusRate": 1.3,
+  "recruimentCosts": 4000,
+  "overheads": 3300,
+  "topcoderWeeklyCost": 2500
+}

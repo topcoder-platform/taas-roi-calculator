@@ -1,0 +1,18 @@
+:global {
+
+@each $key, $value in (
+  violet: #{$tc-purple-120},
+  darkCyan: #1E94A3,
+  red: #{$tc-red-70},
+) {
+  .text-#{$key} {
+    color: $value;
+  }
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+
+} // end :global

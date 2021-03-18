@@ -1,0 +1,101 @@
+[
+  {
+    "member": {
+      "handle": "NightWolf",
+      "homeCountryCode": "UKRAINE",
+      "photoURL": "https://topcoder-prod-media.s3.amazonaws.com/member/profile/NightWolf-1607264544164.png",
+      "maxRating": {
+        "ratingColor": "#FCD617"
+      },
+      "createdAt": 2008
+    },
+    "tags": ["Full Stack Developer"],
+    "wins": 214,
+    "skills": [
+      "Java",
+      "Angular",
+      "Bootstrap",
+      "MySQL",
+      "Node.JS"
+    ],
+    "experience": [
+      "Credit Suisse",
+      "Becton Dickenson",
+      "NASA",
+      "IBM"
+    ]
+  },
+  {
+    "member": {
+      "handle": "iamtong",
+      "homeCountryCode": "THAILAND",
+      "photoURL": "https://topcoder-prod-media.s3.amazonaws.com/member/profile/iamtong-1594780722034.png",
+      "maxRating": {
+        "ratingColor": "#616BD5"
+      },
+      "createdAt": 2009
+    },
+    "tags": ["UX/UI Designer"],
+    "wins": 596,
+    "skills": [
+      "Apple HIG",
+      "IBM Design",
+      "Responsive Web Design"
+    ],
+    "experience": [
+      "T-Mobile",
+      "IBM",
+      "USA Diving",
+      "Booz Allen Hamilton"
+    ]
+  },
+  {
+    "member": {
+      "handle": "nithyaasworld",
+      "homeCountryCode": "INDIA",
+      "photoURL": "https://topcoder-prod-media.s3.amazonaws.com/member/profile/nithyaasworld-1585862870686.png",
+      "maxRating": {
+        "ratingColor": "#69C329"
+      },
+      "createdAt": 2013
+    },
+    "tags": ["QA Engineer", "Copilot"],
+    "wins": 143,
+    "skills": [
+      "QA Management",
+      "Regression Testing",
+      "Exploratory Testing"
+    ],
+    "experience": [
+      "Zurich",
+      "HPE",
+      "Comcast",
+      "Microsoft"
+    ]
+  },
+  {
+    "member": {
+      "handle": "duxiaoyang",
+      "homeCountryCode": "CANADA",
+      "maxRating": {
+        "ratingColor": "#FCD617"
+      },
+      "createdAt": 2005
+    },
+    "tags": ["Data Scientist"],
+    "wins": 116,
+    "skills": [
+      "Java",
+      "Graph Theory",
+      "Advanced Math",
+      "Python"
+    ],
+    "experience": [
+      "ConsenSys",
+      "Comcast",
+      "Deloitte",
+      "IBM",
+      "Ferguson"
+    ]
+  }
+]

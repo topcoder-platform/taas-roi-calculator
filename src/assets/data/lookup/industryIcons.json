@@ -1,0 +1,12 @@
+{
+  "Banking": "banking.svg",
+  "Consumer goods": "consumer-goods.svg",
+  "Energy": "energy.svg",
+  "Entertainment": "entertainment.svg",
+  "Healthcare": "healthcare.svg",
+  "Pharma": "pharma.svg",
+  "Tech & technology services": "tech-services.svg",
+  "Telecoms": "telecom.svg",
+  "Public sector": "public-sector.svg",
+  "Travel & hospitality": "travel-hospitality.svg"
+}

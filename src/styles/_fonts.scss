@@ -1,0 +1,68 @@
+@mixin font-family-ttf(
+  $font-name, $font-weight, $font-style, $font-url) {
+  @font-face {
+    font-family: $font-name;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    src: url('#{$font-url}.ttf') format('truetype');
+  }
+}
+
+// FONT WEIGHTS
+// --------------------------------------------------------------------------------------------
+// Use the numerical value instead of the weight name.
+//
+//  100   Thin (Hairline)
+//  200   Extra Light (Ultra Light)
+//  300   Light
+//  400   Normal
+//  500   Medium
+//  600   Semi Bold (Demi Bold)
+//  700   Bold
+//  800   Extra Bold (Ultra Bold)
+//  900   Black (Heavy)
+
+
+// Barlow Condensed
+@include font-family-ttf('BarlowCondensed', 900, normal, '../assets/fonts/barlow-condensed/barlow-condensed-black');
+@include font-family-ttf('BarlowCondensed', 900, italic, '../assets/fonts/barlow-condensed/barlow-condensed-blackitalic');
+
+@include font-family-ttf('BarlowCondensed', 700, normal, '../assets/fonts/barlow-condensed/barlow-condensed-bold');
+@include font-family-ttf('BarlowCondensed', 700, italic, '../assets/fonts/barlow-condensed/barlow-condensed-bolditalic');
+
+@include font-family-ttf('BarlowCondensed', 600, normal, '../assets/fonts/barlow-condensed/barlow-condensed-semibold');
+@include font-family-ttf('BarlowCondensed', 600, italic, '../assets/fonts/barlow-condensed/barlow-condensed-semibolditalic');
+
+@include font-family-ttf('BarlowCondensed', 500, normal, '../assets/fonts/barlow-condensed/barlow-condensed-medium');
+@include font-family-ttf('BarlowCondensed', 500, italic, '../assets/fonts/barlow-condensed/barlow-condensed-mediumitalic');
+
+@include font-family-ttf('BarlowCondensed', 400, normal, '../assets/fonts/barlow-condensed/barlow-condensed-regular');
+@include font-family-ttf('BarlowCondensed', 400, italic, '../assets/fonts/barlow-condensed/barlow-condensed-italic');
+
+@include font-family-ttf('BarlowCondensed', 300, normal, '../assets/fonts/barlow-condensed/barlow-condensed-light');
+@include font-family-ttf('BarlowCondensed', 300, italic, '../assets/fonts/barlow-condensed/barlow-condensed-lightitalic');
+
+@include font-family-ttf('BarlowCondensed', 100, normal, '../assets/fonts/barlow-condensed/barlow-condensed-thin');
+@include font-family-ttf('BarlowCondensed', 100, italic, '../assets/fonts/barlow-condensed/barlow-condensed-thinitalic');
+
+// Barlow
+@include font-family-ttf('Barlow', 900, normal, '../assets/fonts/barlow/barlow-black');
+@include font-family-ttf('Barlow', 900, italic, '../assets/fonts/barlow/barlow-blackitalic');
+
+@include font-family-ttf('Barlow', 700, normal, '../assets/fonts/barlow/barlow-bold');
+@include font-family-ttf('Barlow', 700, italic, '../assets/fonts/barlow/barlow-bolditalic');
+
+@include font-family-ttf('Barlow', 600, normal, '../assets/fonts/barlow/barlow-semibold');
+@include font-family-ttf('Barlow', 600, italic, '../assets/fonts/barlow/barlow-semibolditalic');
+
+@include font-family-ttf('Barlow', 500, normal, '../assets/fonts/barlow/barlow-medium');
+@include font-family-ttf('Barlow', 500, italic, '../assets/fonts/barlow/barlow-mediumitalic');
+
+@include font-family-ttf('Barlow', 400, normal, '../assets/fonts/barlow/barlow-regular');
+@include font-family-ttf('Barlow', 400, italic, '../assets/fonts/barlow/barlow-italic');
+
+@include font-family-ttf('Barlow', 300, normal, '../assets/fonts/barlow/barlow-light');
+@include font-family-ttf('Barlow', 300, italic, '../assets/fonts/barlow/barlow-lightitalic');
+
+@include font-family-ttf('Barlow', 100, normal, '../assets/fonts/barlow/barlow-thin');
+@include font-family-ttf('Barlow', 100, italic, '../assets/fonts/barlow/barlow-thinitalic');

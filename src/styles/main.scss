@@ -1,0 +1,25 @@
+@import "./variables";
+@import "./mixins";
+@import "./fonts";
+@import "./reset";
+@import "utils";
+
+body {
+  @include roboto-regular;
+
+  font-size: $font-size-base;
+  color: $body-color;
+  line-height: 1;
+}
+
+:global {
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    > footer {
+      margin-top: auto;
+    }
+  }
+}

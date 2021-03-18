@@ -1,0 +1,25 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.social-share-buttons {
+  display: inline-block;
+  line-height: 20px;
+
+  .label {
+    @include barlow-semibold;
+  }
+
+  .buttons {
+    display: inline-flex;
+    vertical-align: middle;
+
+    li {
+      margin: 0 5px;
+    }
+
+    button {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

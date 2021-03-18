@@ -1,0 +1,25 @@
+@import "~topcoder-react-ui-kit/src/styles/_mixins/variables";
+
+$page-padding-x: $base-unit * 16;
+$page-padding-y: $base-unit * 16;
+$page-padding-x-xs: $base-unit * 3;
+$page-padding-y-xs: $base-unit * 3;
+$spacer-1: $base-unit * 2;
+$spacer-2: $base-unit * 4;
+$spacer-3: $base-unit * 6;
+$spacer-4: $base-unit * 8;
+$shadow: 0 1px 5px 0 rgba($tc-black, 0.2);
+$border-radius-1: 6px;
+$border-radius-2: 10px;
+
+$font-size-base: 16px;
+$body-color: $tc-gray-90;
+
+$bg-color-1: #fbfbfb;
+$bg-color-2: #f4f4f4;
+
+$card-bg: $bg-color-1;
+$card-member-bg: $bg-color-2;
+$card-member-color: #7F7F7F;
+
+$primary-button-bg: #137D60;

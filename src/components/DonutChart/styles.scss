@@ -1,0 +1,9 @@
+@import "styles/mixins";
+
+.donut {
+  display: block;
+
+  @include xs {
+    transform: translateX(-5%) scale(0.9);
+  }
+}

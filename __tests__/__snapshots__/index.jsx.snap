@@ -1,0 +1,567 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render App 1`] = `
+Array [
+  <div
+    className="sticky-outer-wrapper"
+    style={Object {}}
+  >
+    <div
+      className="sticky-inner-wrapper "
+      style={
+        Object {
+          "position": "relative",
+          "top": "",
+          "transform": "translate3d(0,0px,0)",
+          "zIndex": 9999,
+        }
+      }
+    >
+      <header
+        className="components-Header-styles___header___3H5Ffz"
+      >
+        <div
+          className="components-Header-styles___content-center___2t5GcU"
+        >
+          <img
+            alt="logo"
+            className="components-Header-styles___logo___2tbxu8"
+            src=""
+          />
+          <h1
+            className="components-Header-styles___display-2___2-sJ2U"
+          >
+            TAAS ROI CALCULATOR
+          </h1>
+        </div>
+      </header>
+    </div>
+  </div>,
+  <div
+    className="containers-Landing-styles___page___1kL9Uv"
+    id="landing"
+  >
+    <div
+      className="containers-Landing-styles___row___1bb8K3"
+    >
+      <div
+        className="containers-Landing-styles___col___jhce-L"
+      >
+        <div
+          className="sticky-outer-wrapper"
+          style={Object {}}
+        >
+          <div
+            className="sticky-inner-wrapper "
+            style={
+              Object {
+                "position": "relative",
+                "top": "",
+                "transform": "translate3d(0,0px,0)",
+                "zIndex": undefined,
+              }
+            }
+          >
+            <div
+              className="containers-Landing-styles___left-section___1Gh0WH"
+            >
+              <h3
+                className="upper-case containers-Landing-styles___heading-3___2bu8zb containers-Landing-styles___text-gradient___1GZA4v"
+              >
+                Hello. Welcome to the Talent as a Service ROI calculator
+              </h3>
+              <p
+                className="containers-Landing-styles___text___v10vWP"
+              >
+                With this handy tool you can easily compare hiring a direct FTE vs using our innovative staffing solution. Simply input some details below to see your customized report and how to rapidly increase your team’s output and productivity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="containers-Landing-styles___col___jhce-L"
+      >
+        <form
+          autoComplete="off"
+          className="components-CalculatorForm-styles___calculator-form___2M9TfG"
+          noValidate={true}
+        >
+          <div>
+            <div
+              className="dropdownContainer components-Dropdown-styles___container___BqT3EC components-Dropdown-styles___lgSize___TuSF8Z"
+              onBlurCapture={[Function]}
+              onFocusCapture={[Function]}
+            >
+              <div
+                className="components-Dropdown-styles___relative___1hoItl"
+              >
+                <div
+                  className="Select is-searchable Select--single"
+                >
+                  <div
+                    className="Select-control"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      className="Select-multi-value-wrapper"
+                      id="react-select-2--value"
+                    >
+                      <div
+                        className="Select-placeholder"
+                      >
+                        Type of talent required
+                      </div>
+                      <div
+                        className="Select-input"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                          }
+                        }
+                      >
+                        <input
+                          aria-activedescendant="react-select-2--value"
+                          aria-expanded="false"
+                          aria-haspopup="false"
+                          aria-owns=""
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={false}
+                          role="combobox"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <span
+                      className="Select-arrow-zone"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="Select-arrow"
+                        onMouseDown={[Function]}
+                      />
+                    </span>
+                  </div>
+                </div>
+                <img
+                  alt="dropdown-arraow-icon"
+                  className="components-Dropdown-styles___iconDropdown___Viw0L9"
+                  height="9"
+                  src=""
+                  width="15"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="dropdownContainer components-Dropdown-styles___container___BqT3EC components-Dropdown-styles___lgSize___TuSF8Z"
+              onBlurCapture={[Function]}
+              onFocusCapture={[Function]}
+            >
+              <div
+                className="components-Dropdown-styles___relative___1hoItl"
+              >
+                <div
+                  className="Select is-searchable Select--single"
+                >
+                  <div
+                    className="Select-control"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      className="Select-multi-value-wrapper"
+                      id="react-select-3--value"
+                    >
+                      <div
+                        className="Select-placeholder"
+                      >
+                        Number of people required
+                      </div>
+                      <div
+                        className="Select-input"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                          }
+                        }
+                      >
+                        <input
+                          aria-activedescendant="react-select-3--value"
+                          aria-expanded="false"
+                          aria-haspopup="false"
+                          aria-owns=""
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={false}
+                          role="combobox"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <span
+                      className="Select-arrow-zone"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="Select-arrow"
+                        onMouseDown={[Function]}
+                      />
+                    </span>
+                  </div>
+                </div>
+                <img
+                  alt="dropdown-arraow-icon"
+                  className="components-Dropdown-styles___iconDropdown___Viw0L9"
+                  height="9"
+                  src=""
+                  width="15"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="dropdownContainer components-Dropdown-styles___container___BqT3EC components-Dropdown-styles___lgSize___TuSF8Z"
+              onBlurCapture={[Function]}
+              onFocusCapture={[Function]}
+            >
+              <div
+                className="components-Dropdown-styles___relative___1hoItl"
+              >
+                <div
+                  className="Select is-searchable Select--single"
+                >
+                  <div
+                    className="Select-control"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      className="Select-multi-value-wrapper"
+                      id="react-select-4--value"
+                    >
+                      <div
+                        className="Select-placeholder"
+                      >
+                        Industry
+                      </div>
+                      <div
+                        className="Select-input"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                          }
+                        }
+                      >
+                        <input
+                          aria-activedescendant="react-select-4--value"
+                          aria-expanded="false"
+                          aria-haspopup="false"
+                          aria-owns=""
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={false}
+                          role="combobox"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <span
+                      className="Select-arrow-zone"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="Select-arrow"
+                        onMouseDown={[Function]}
+                      />
+                    </span>
+                  </div>
+                </div>
+                <img
+                  alt="dropdown-arraow-icon"
+                  className="components-Dropdown-styles___iconDropdown___Viw0L9"
+                  height="9"
+                  src=""
+                  width="15"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="dropdownContainer components-Dropdown-styles___container___BqT3EC components-Dropdown-styles___lgSize___TuSF8Z"
+              onBlurCapture={[Function]}
+              onFocusCapture={[Function]}
+            >
+              <div
+                className="components-Dropdown-styles___relative___1hoItl"
+              >
+                <div
+                  className="Select is-searchable Select--single"
+                >
+                  <div
+                    className="Select-control"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                  >
+                    <div
+                      className="Select-multi-value-wrapper"
+                      id="react-select-5--value"
+                    >
+                      <div
+                        className="Select-placeholder"
+                      >
+                        Company size
+                      </div>
+                      <div
+                        className="Select-input"
+                        style={
+                          Object {
+                            "display": "inline-block",
+                          }
+                        }
+                      >
+                        <input
+                          aria-activedescendant="react-select-5--value"
+                          aria-expanded="false"
+                          aria-haspopup="false"
+                          aria-owns=""
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          required={false}
+                          role="combobox"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <span
+                      className="Select-arrow-zone"
+                      onMouseDown={[Function]}
+                    >
+                      <span
+                        className="Select-arrow"
+                        onMouseDown={[Function]}
+                      />
+                    </span>
+                  </div>
+                </div>
+                <img
+                  alt="dropdown-arraow-icon"
+                  className="components-Dropdown-styles___iconDropdown___Viw0L9"
+                  height="9"
+                  src=""
+                  width="15"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="components-CalculatorForm-styles___radio-group___3Z-r3k"
+          >
+            <span
+              className="components-CalculatorForm-styles___label___xAZSlw"
+            >
+              Cost of Living
+            </span>
+             
+            <i />
+            <div
+              className="radioButtonContainer components-RadioButton-styles___radioButtonContainer___zyNQ_D components-RadioButton-styles___lgSize___7HVGko"
+            >
+              <div
+                className="radioButton components-RadioButton-styles___radioButton___1nF-Nc"
+              >
+                <label
+                  className="components-RadioButton-styles___container___2iMOc0"
+                >
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                  />
+                  <span
+                    className="components-RadioButton-styles___checkmark___19bpDm"
+                  />
+                </label>
+                <span
+                  className="components-RadioButton-styles___label___1sGbVN"
+                >
+                  Low
+                </span>
+              </div>
+              <div
+                className="radioButton components-RadioButton-styles___radioButton___1nF-Nc"
+              >
+                <label
+                  className="components-RadioButton-styles___container___2iMOc0"
+                >
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                  />
+                  <span
+                    className="components-RadioButton-styles___checkmark___19bpDm"
+                  />
+                </label>
+                <span
+                  className="components-RadioButton-styles___label___1sGbVN"
+                >
+                  Medium
+                </span>
+              </div>
+              <div
+                className="radioButton components-RadioButton-styles___radioButton___1nF-Nc"
+              >
+                <label
+                  className="components-RadioButton-styles___container___2iMOc0"
+                >
+                  <input
+                    checked={false}
+                    onChange={[Function]}
+                    type="radio"
+                  />
+                  <span
+                    className="components-RadioButton-styles___checkmark___19bpDm"
+                  />
+                </label>
+                <span
+                  className="components-RadioButton-styles___label___1sGbVN"
+                >
+                  High
+                </span>
+              </div>
+            </div>
+          </div>
+          <hr
+            className="components-CalculatorForm-styles___horizontal-rule___2J-lhZ"
+          />
+          <div>
+            <div
+              className="textInputContainer components-TextInput-styles___container___1EE3aK components-TextInput-styles___lgSize___1sT8v6"
+            >
+              <input
+                className=""
+                defaultValue=""
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="First name"
+                readOnly={false}
+                type="text"
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="textInputContainer components-TextInput-styles___container___1EE3aK components-TextInput-styles___lgSize___1sT8v6"
+            >
+              <input
+                className=""
+                defaultValue=""
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="Last name"
+                readOnly={false}
+                type="text"
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="textInputContainer components-TextInput-styles___container___1EE3aK components-TextInput-styles___lgSize___1sT8v6"
+            >
+              <input
+                className=""
+                defaultValue=""
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="Company"
+                readOnly={false}
+                type="text"
+              />
+            </div>
+          </div>
+          <div>
+            <div
+              className="textInputContainer components-TextInput-styles___container___1EE3aK components-TextInput-styles___lgSize___1sT8v6"
+            >
+              <input
+                className=""
+                defaultValue=""
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="Work email"
+                readOnly={false}
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="components-CalculatorForm-styles___footer___3bCHd_"
+          >
+            <button
+              className="src-shared-components-Button-style___button___ngAZY2 src-shared-components-buttons-themes-primary___button___1vJGbc src-shared-components-Button-style___regular___3HACs4 src-shared-components-buttons-themes-primary___regular___i6lrwz"
+              onClick={[Function]}
+              onMouseDown={null}
+              style={Object {}}
+              type="button"
+            >
+              SEE YOUR RESULTS
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>,
+  <footer
+    className="components-Footer-styles___footer___3AMYgu"
+  >
+    <p
+      className="components-Footer-styles___content-center___3CWEyh"
+    >
+      By clicking “schedule a taas call” you agree to our Terms and Privacy Policy. We are never going to sell your data or send you spam. Your information is being used for communication purposes only. Wage and salalry data:
+      <a
+        href="#"
+      >
+        glassdoor.com
+      </a>
+      . Bonus, equity, other benefits & employee overhead data: MIT study
+      <a
+        href="#"
+      >
+        How Much Does An Employee Cost?
+      </a>
+      . Recruiting & time to hire data: workable.com
+      <a
+        href="#"
+      >
+        Recruiting Costs: Budget and Cost per Hire | Recruiting Metrics FAQ
+      </a>
+    </p>
+  </footer>,
+]
+`;

@@ -1,0 +1,136 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.card {
+  width: 280px;
+  color: $card-member-color;
+  background: $card-member-bg;
+  border-radius: $border-radius-2;
+  box-shadow: $shadow;
+
+  @include xs-to-md {
+    width: 100%;
+  };
+}
+
+.card-header {
+  padding: $spacer-3 $spacer-4 $spacer-1;
+  border-top-left-radius: $border-radius-2;
+  border-top-right-radius: $border-radius-2;
+}
+
+.card-body {
+  padding: 15px $spacer-4 $spacer-2;
+  background: $tc-white;
+  border-radius: $border-radius-2;
+}
+
+.member {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 22px;
+
+  .rate {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: block;
+    z-index: 1;
+
+    @include xs-to-md {
+      left: calc(50% - 105px);
+    }
+  }
+
+  .photo {
+    width: 210px;
+    height: 210px;
+    overflow: hidden;
+    background-color: $tc-white;
+    clip-path: path('M75.5161388,198.887622 C126.286351,190.157406 179.595073,155.236544 197.364647,102.85525 C215.134222,50.4739555 138.978904,9.73294893 90.7472023,1.00273325 C42.515501,-7.72748244 -10.7932215,41.7437398 1.8993315,102.85525 C14.5918845,163.966759 24.7459269,207.617838 75.5161388,198.887622 Z');
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .handle {
+    @include barlow-condensed-medium;
+
+    margin-top: $spacer-1;
+    font-size: 34px;
+    color: $body-color;
+    line-height: 38px;
+  }
+
+  .tags {
+    margin-top: 4px;
+    margin-bottom: 15px;
+
+    .tag {
+      @include roboto-bold;
+
+      display: inline-block;
+      margin-bottom: 2px;
+      margin-right: 5px;
+      padding: 5px $spacer-1;
+      font-size: 8px;
+      color: $tc-white;
+      line-height: 10px;
+      text-transform: uppercase;
+      border-radius: $border-radius-1;
+    }
+  }
+
+  .country,
+  .win {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .win {
+    margin-left: $spacer-1;
+  }
+
+  .since {
+    font-weight: 500;
+    font-size: 11px;
+  }
+
+  .skills,
+  .experience {
+    text-align: center;
+    width: 200px;
+
+    li {
+      display: inline;
+      font-weight: 500;
+      font-size: 14px;
+
+      &:not(:first-child)::before {
+        content: ', ';
+      }
+    }
+  }
+
+  .hr {
+    margin: 15px 0;
+  }
+}
+
+.heading-4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: $body-color;
+}
+
+// ---- icons ---
+.icon {
+  display: inline-block;
+  margin-top: -2px;
+  line-height: 1;
+  vertical-align: middle;
+}

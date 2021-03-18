@@ -1,0 +1,64 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.page {
+  padding: $page-padding-y $page-padding-x;
+
+  @include xs-to-md {
+    padding: $page-padding-y-xs $page-padding-x-xs;
+  }
+}
+
+.row {
+  display: flex;
+
+  @include xs-to-md {
+    flex-wrap: wrap;
+  }
+}
+
+.col {
+  width: 1px;
+  flex: 1 0 0%;
+
+  @include xs-to-md {
+    width: 100%;
+    flex-basis: auto;
+  }
+}
+
+.left-section {
+  padding-right: 130px;
+
+  @include xs-to-md {
+    margin-bottom: $spacer-3;
+    padding-right: 0;
+  }
+}
+
+.heading-3 {
+  @include barlow-condensed-medium;
+
+  padding-right: 40px;
+  font-size: 48px;
+  line-height: 50px;
+
+  &.text-gradient {
+    background-image: linear-gradient(#febc40, #f47a8e);
+    background-image:  -ms-linear-gradient(bottom, white, white);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @include xs-to-md {
+    padding-right: 0;
+    font-size: 31px;
+    line-height: 33px;
+  }
+}
+
+.text {
+  margin-top: $spacer-2;
+  line-height: 26px;
+}

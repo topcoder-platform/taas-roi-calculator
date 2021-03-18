@@ -1,0 +1,41 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.card {
+  background: $tc-gray-neutral-light;
+  border-radius: $border-radius-2;
+  box-shadow: $shadow;
+}
+
+.card-header {
+  padding: $spacer-2 $spacer-2 $spacer-2;
+  border-top-left-radius: $border-radius-2;
+  border-top-right-radius: 10px;
+
+  @include xs-to-md {
+    padding: $spacer-1 $spacer-1 $spacer-1;
+  }
+}
+
+.card-body {
+  padding: 0 $spacer-2;
+
+  @include xs-to-md {
+    padding-left: $spacer-1;
+    padding-right: $spacer-1;
+  }
+}
+
+.card-footer {
+  border-bottom-left-radius: $border-radius-2;
+  border-bottom-right-radius: $border-radius-2;
+}
+
+.card {
+  .card-body {
+    &:last-child {
+      border-bottom-left-radius: $border-radius-2;
+      border-bottom-right-radius: $border-radius-2;
+    }
+  }
+}

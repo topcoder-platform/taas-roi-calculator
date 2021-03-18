@@ -1,0 +1,40 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.slide-show {
+  margin: -$spacer-2;
+  padding-bottom: 15px;
+
+  @include xs-to-md {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+ul.slideShow-dots {
+  bottom: -15px;
+
+  li {
+    width: 18px;
+    height: 18px;
+    button {
+      &::before {
+        content: '';
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: $tc-gray-30;
+        border-radius: 50%;
+      }
+    }
+
+    &:global(.slick-active) button:before {
+      top: -3px;
+      left: -3px;
+      width: 18px;
+      height: 18px;
+      background: $tc-white;
+      border: 2px solid #137D60;
+    }
+  }
+}
