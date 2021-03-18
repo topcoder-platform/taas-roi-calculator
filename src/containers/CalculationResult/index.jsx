@@ -67,12 +67,19 @@ const CalculationResult = ({
               <h3 styleName="heading-3 text-gradient" className="upper-case">Hello Joe,</h3>
               <p styleName="text margin-top">
                 Based on the information you’ve provided us, plus our market research,
-                here is your customized cost comparison for hiring a Full Stack Developer
+                here is your customized cost comparison for hiring a
+                {' '}
+                <span styleName="talent-type-text">{result.talentType}</span>
+                {' '}
                 to Big Tech Corp.
               </p>
               <p styleName="text">
                 Hiring a Full Stack Developer on Topcoder’s TaaS platform saves you time
-                and money. Our solution is charged at a flat rate of $2,500 per week and
+                and money. Our solution is charged at a flat rate of
+                {' '}
+                <span>{utils.formatMoneyValueI(result.topcoderWeeklyCost)}</span>
+                {' '}
+                per week and
                 freelancers are often able to start within days, not weeks. This allows you
                 to start producing results and raising team productivity quicker.
               </p>

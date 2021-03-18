@@ -49,6 +49,10 @@
   }
 }
 
+.talent-type-text {
+  text-transform: capitalize;
+}
+
 .heading-3 {
   @include barlow-condensed-medium;
 
