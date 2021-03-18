@@ -7,6 +7,18 @@
   @include xs-to-md {
     padding: $page-padding-y-xs $page-padding-x-xs;
   }
+
+  @media screen and (min-width: 1440px + 1px) {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    box-sizing: content-box;
+  }
+
+  // ie-11
+  @media screen and (min-width:0\0) {
+    padding-top: 160px;
+  }
 }
 
 .row {
@@ -18,7 +30,7 @@
 }
 
 .col {
-  width: 1px;
+  width: 640px;
   flex: 1 0 0%;
 
   @include xs-to-md {

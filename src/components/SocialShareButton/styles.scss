@@ -7,6 +7,9 @@
 
   .label {
     @include barlow-semibold;
+
+    color: $tc-gray-70;
+    vertical-align: middle;
   }
 
   .buttons {

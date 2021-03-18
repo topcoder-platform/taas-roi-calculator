@@ -124,11 +124,13 @@ const CalculationResult = ({
                 </div>
                 <div styleName="total">
                   <span styleName="annually">
-                    TOTAL ANNUALLY:&nbsp;
+                    TOTAL ANNUALLY:
+                    {' '}
                     <span styleName="value">{utils.formatMoneyValueI(result.totalAnnualCost)}</span>
                   </span>
                   <span styleName="weekly">
-                    WEEKLY COST:&nbsp;
+                    WEEKLY COST:
+                    {' '}
                     <span styleName="value">{utils.formatMoneyValueI(result.totalWeeklyCost)}</span>
                   </span>
                 </div>
@@ -136,13 +138,15 @@ const CalculationResult = ({
               <Card.Footer>
                 <div styleName="save">
                   <span>
-                    TOPCODER WEEKLY COST:&nbsp;
+                    TOPCODER WEEKLY COST:
+                    {' '}
                     {utils.formatMoneyValueI(result.topcoderWeeklyCost)}
                     {' '}
                     <small>(+TAX)</small>
                   </span>
                   <span>
-                    YOU SAVE:&nbsp;
+                    YOU SAVE:
+                    {' '}
                     {utils.formatMoneyValueI(result.youSave)}
                     / WEEK
                   </span>
@@ -234,7 +238,6 @@ const CalculationResult = ({
 
             {/* RECALCULATE */}
             <div styleName="recalculate">
-              <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
               <SecondaryButton onClick={() => { navigateTo('/'); }} size={isMobileOrTablet ? 'sm' : ''}>RECALCULATE</SecondaryButton>
             </div>
           </div>

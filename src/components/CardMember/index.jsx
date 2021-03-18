@@ -5,6 +5,7 @@ import * as rateUtil from '../../utils/rate';
 import * as constants from '../../constants';
 import IconLocation from '../../assets/icons/location.svg';
 import IconWin from '../../assets/icons/win.svg';
+import IconPhotoDefault from '../../assets/images/user.svg';
 
 import './styles.scss';
 
@@ -15,7 +16,7 @@ const CardMember = ({
     <div styleName="card-header member">
       <span styleName="rate">{rateUtil.createRateIcon(member.maxRating.ratingColor)}</span>
       <div styleName="photo">
-        <img src={member.photoURL} alt="member" />
+        <img src={member.photoURL || IconPhotoDefault} alt="member" />
       </div>
       <span styleName="handle">{member.handle}</span>
       <div styleName="tags">

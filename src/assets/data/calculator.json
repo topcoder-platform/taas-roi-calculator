@@ -10,9 +10,9 @@
     "QA Engineers": 70827
   },
   "costOfLivingIncreases": {
-    "Low": -10000,
-    "Medium": 0,
-    "High": 10000
+    "Low": 0,
+    "Medium": 8000,
+    "High": 16000
   },
   "bonusRate": 1.3,
   "recruimentCosts": 4000,
