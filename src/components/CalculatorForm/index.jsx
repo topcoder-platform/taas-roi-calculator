@@ -136,7 +136,7 @@ const CalculatorForm = ({
         <span styleName="label">
           Cost of Living
           {' '}
-          <Tippy content="Cost of Living Increase" touch><span><IconHelp styleName="help-icon" /></span></Tippy>
+          <Tippy content="Cost of Living Increases" touch><span><IconHelp styleName="help-icon" /></span></Tippy>
         </span>
         <RadioButtons
           size={isMobileOrTablet ? 'sm' : 'lg'}
