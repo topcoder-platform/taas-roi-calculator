@@ -49,7 +49,7 @@
   }
 }
 
-.talent-type-text {
+.text-capitalize {
   text-transform: capitalize;
 }
 
@@ -108,6 +108,7 @@
 
     margin: 0;
     font-size: 14px;
+    line-height: 26px;
     background: $primary-button-bg;
     border-radius: 20px;
     text-decoration: none;
@@ -377,6 +378,7 @@
   > button {
     font-weight: bold !important;
     font-size: 14px;
+    line-height: 26px !important;
     border-radius: 20px !important;
     cursor: pointer;
   }

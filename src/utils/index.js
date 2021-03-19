@@ -73,3 +73,13 @@ export function format2DigitsNumber(num) {
   n = n < 100 ? `00${n}`.slice(-2) : `${n}`;
   return n === '00' ? '0' : n;
 }
+
+export function formatPluralNoun(noun) {
+  return noun ? `${noun}s` : '';
+}
+
+export function isValidEmail(email) {
+  // eslint-disable-next-line no-useless-escape
+  const REGEX_EMAIL = /(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/i; // eslint-disable-line max-len
+  return REGEX_EMAIL.test(email);
+}

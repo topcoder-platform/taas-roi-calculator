@@ -21,13 +21,13 @@ const CalculatorForm = ({
   companySizes,
   onSubmit,
 }) => {
-  const [formData, setFormData] = useState({ ...data, prestine: true });
+  const [formData, setFormData] = useState({ ...data, pristine: true, validation: null });
   const [talentTypeOptions, setTalentTypeOptions] = useState(utils.createDropdownOptions(talentTypes, formData.talentType));
   const [employeeNumberOptions, setEmployeeNumberOptions] = useState(utils.createDropdownOptions(employeeNumbers, formData.employeeNumber));
   const [industriesOptions, setIndustriesOptions] = useState(utils.createDropdownOptions(industries, formData.industry));
   const [companySizesOptions, setCompanySizesOptions] = useState(utils.createDropdownOptions(companySizes, formData.companySize));
   const [costOfLivings, setCostOfLivings] = useState(utils.createRadioOptions(constants.COST_OF_LIVINGS, formData.costOfLiving));
-  const [validation, setValidation] = useState(null);
+  const { validation } = formData;
 
   useEffect(() => {
     setTalentTypeOptions(utils.createDropdownOptions(talentTypes, formData.talentType));
@@ -36,34 +36,33 @@ const CalculatorForm = ({
     setCompanySizesOptions(utils.createDropdownOptions(companySizes, formData.companySize));
   }, [talentTypes, employeeNumbers, industries, companySizes]);
 
-  const validateAndSubmit = (submit) => {
-    const newValidation = {
-      talentTypeError: !formData.talentType ? 'Talent type is required' : null,
-      employeeNumberError: !formData.employeeNumber ? 'Number of people is required' : null,
-      industryError: !formData.industry ? 'Industry is required' : null,
-      companySizeError: !formData.companySize ? 'Company size is required' : null,
-      costOfLivingError: !formData.costOfLiving ? 'Cost of Living is required' : null,
-      firstNameError: !formData.firstName ? 'First name is required' : null,
-      lastNameError: !formData.lastName ? 'Last name is required' : null,
-      companyError: !formData.company ? 'Company is required' : null,
-      emailError: !formData.email ? 'Work email is required' : null,
-    };
-
-    setValidation(newValidation);
-
-    if (submit) {
-      setFormData({ ...formData, prestine: false });
-
-      const valid = _.every(newValidation, (val) => val === null);
-      if (valid) setTimeout(() => onSubmit(formData), process.env.GUIKIT.DEBOUNCE_ON_CHANGE_TIME);
+  const validateWorkEmail = (email) => {
+    if (!email) {
+      return 'Work email is required';
+    } if (!utils.isValidEmail(email)) {
+      return 'Invalid work email';
     }
+
+    return null;
   };
 
-  useEffect(() => {
-    if (!formData.prestine) {
-      validateAndSubmit(false);
+  const validateForm = (form) => {
+    if (form.pristine) {
+      return null;
     }
-  }, [formData]);
+
+    return {
+      talentTypeError: !form.talentType ? 'Talent type is required' : null,
+      employeeNumberError: !form.employeeNumber ? 'Number of people is required' : null,
+      industryError: !form.industry ? 'Industry is required' : null,
+      companySizeError: !form.companySize ? 'Company size is required' : null,
+      costOfLivingError: !form.costOfLiving ? 'Cost of Living is required' : null,
+      firstNameError: !form.firstName ? 'First name is required' : null,
+      lastNameError: !form.lastName ? 'Last name is required' : null,
+      companyError: !form.company ? 'Company is required' : null,
+      emailError: validateWorkEmail(form.email),
+    };
+  };
 
   const isMobileOrTablet = useMediaQuery({ query: `(max-width: ${process.env.SCREEN.MD}px)` });
 
@@ -75,8 +74,12 @@ const CalculatorForm = ({
           placeholder="Type of talent required"
           options={talentTypeOptions}
           onChange={(options) => {
+            const newFormData = {
+              ...formData,
+              talentType: utils.getSelectedDropdownOption(options).label,
+            };
             setTalentTypeOptions(options);
-            setFormData({ ...formData, talentType: utils.getSelectedDropdownOption(options).label });
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
           errorMsg={validation && validation.talentTypeError}
         />
@@ -87,8 +90,12 @@ const CalculatorForm = ({
           placeholder="Number of people required"
           options={employeeNumberOptions}
           onChange={(options) => {
+            const newFormData = {
+              ...formData,
+              employeeNumber: +utils.getSelectedDropdownOption(options).label,
+            };
             setEmployeeNumberOptions(options);
-            setFormData({ ...formData, employeeNumber: +utils.getSelectedDropdownOption(options).label });
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
           errorMsg={validation && validation.employeeNumberError}
         />
@@ -99,10 +106,14 @@ const CalculatorForm = ({
           placeholder="Industry"
           options={industriesOptions}
           onChange={(options) => {
+            const newFormData = {
+              ...formData,
+              industry: utils.getSelectedDropdownOption(options).label,
+            };
             setIndustriesOptions(options);
-            setFormData({ ...formData, industry: utils.getSelectedDropdownOption(options).label });
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
-          errorMsg={validation && validation.employeeNumberError}
+          errorMsg={validation && validation.industryError}
         />
       </div>
       <div styleName="dropdown">
@@ -111,8 +122,12 @@ const CalculatorForm = ({
           placeholder="Company size"
           options={companySizesOptions}
           onChange={(options) => {
+            const newFormData = {
+              ...formData,
+              companySize: utils.getSelectedDropdownOption(options).label,
+            };
             setCompanySizesOptions(options);
-            setFormData({ ...formData, companySize: utils.getSelectedDropdownOption(options).label });
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
           errorMsg={validation && validation.companySizeError}
         />
@@ -127,8 +142,12 @@ const CalculatorForm = ({
           size={isMobileOrTablet ? 'sm' : 'lg'}
           options={costOfLivings}
           onChange={(options) => {
+            const newFormData = {
+              ...formData,
+              costOfLiving: utils.getSelectedRadioOption(options).label,
+            };
             setCostOfLivings(options);
-            setFormData({ ...formData, costOfLiving: utils.getSelectedRadioOption(options).label });
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
           errorMsg={validation && validation.costOfLivingError}
         />
@@ -139,7 +158,11 @@ const CalculatorForm = ({
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="First name"
           onChange={(value) => {
-            setFormData({ ...formData, firstName: value });
+            const newFormData = {
+              ...formData,
+              firstName: value,
+            };
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
           errorMsg={validation && validation.firstNameError}
           value={formData.firstName}
@@ -150,7 +173,11 @@ const CalculatorForm = ({
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Last name"
           onChange={(value) => {
-            setFormData({ ...formData, lastName: value });
+            const newFormData = {
+              ...formData,
+              lastName: value,
+            };
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
           errorMsg={validation && validation.lastNameError}
           value={formData.lastName}
@@ -161,7 +188,11 @@ const CalculatorForm = ({
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Company"
           onChange={(value) => {
-            setFormData({ ...formData, company: value });
+            const newFormData = {
+              ...formData,
+              company: value,
+            };
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
           errorMsg={validation && validation.companyError}
           value={formData.company}
@@ -172,14 +203,29 @@ const CalculatorForm = ({
           size={isMobileOrTablet ? 'sm' : 'lg'}
           placeholder="Work email"
           onChange={(value) => {
-            setFormData({ ...formData, email: value });
+            const newFormData = {
+              ...formData,
+              email: value,
+            };
+            setFormData({ ...newFormData, validation: validateForm(newFormData) });
           }}
           errorMsg={validation && validation.emailError}
           value={formData.email}
         />
       </div>
       <div styleName="footer">
-        <PrimaryButton onClick={() => { validateAndSubmit(true); }} size={isMobileOrTablet ? 'sm' : ''}>SEE YOUR RESULTS</PrimaryButton>
+        <PrimaryButton
+          onClick={() => {
+            const newFormData = { ...formData, pristine: false };
+            newFormData.validation = validateForm(newFormData);
+            setFormData(newFormData);
+            const valid = newFormData.validation && _.every(newFormData.validation, (val) => val === null);
+            if (valid) setTimeout(() => onSubmit(formData), process.env.GUIKIT.DEBOUNCE_ON_CHANGE_TIME);
+          }}
+          size={isMobileOrTablet ? 'sm' : ''}
+        >
+          SEE YOUR RESULTS
+        </PrimaryButton>
       </div>
     </form>
   );

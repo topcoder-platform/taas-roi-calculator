@@ -12,7 +12,7 @@ function calculate(formData) {
   const recruitingCosts = recruimentCosts;
 
   const annualCostPerEmployee = ((salary + costOfLivingIncrease) * bonus) + recruitingCosts + overheads;
-  const totalAnnualCost = annualCostPerEmployee * formData.employeeNumber;
+  const totalAnnualCost = annualCostPerEmployee;
   const totalWeeklyCost = totalAnnualCost / 52;
 
   return {
@@ -20,15 +20,13 @@ function calculate(formData) {
     costOfLiving: formData.costOfLiving,
     industryIcon: industryIconMap[formData.industry],
     averageSalary: salary,
-    bonusEquityBenefits: bonus * salary - salary,
+    bonusEquityBenefits: (bonus * salary - salary) * formData.employeeNumber,
     recruiment: recruimentCosts,
     overhead: overheads,
-    totalAnnualCost,
-    totalWeeklyCost,
+    totalAnnualCost: totalAnnualCost * formData.employeeNumber,
+    totalWeeklyCost: totalWeeklyCost * formData.employeeNumber,
     topcoderWeeklyCost,
-    youSave: totalWeeklyCost - topcoderWeeklyCost * formData.employeeNumber,
-    talentType: formData.talentType,
-    industry: formData.industry,
+    youSave: (totalWeeklyCost - topcoderWeeklyCost) * formData.employeeNumber,
   };
 }
 
