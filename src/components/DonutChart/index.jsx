@@ -16,10 +16,16 @@ const DonutChart = ({
     .arc()
     .innerRadius(innerRadius)
     .outerRadius(outerRadius);
-  const color = d3.scaleOrdinal().domain(data).range(['#227681', '#54B4C0', '#2984BD', '#50ADE8']);
+  const color = d3.scaleOrdinal().domain(Object.keys(data)).range(['#227681', '#54B4C0', '#2984BD', '#50ADE8']);
 
   useEffect(() => {
-    const dataReady = pie(d3.entries(data));
+    d3.select(ref.current).selectAll('*').remove();
+
+    const entries = (_data) => Object.entries(_data).map((d) => ({
+      key: d[0],
+      value: d[1],
+    }));
+    const dataReady = pie(entries(data));
     const g = d3.select(ref.current);
     g.selectAll('abc').data(dataReady)
       .enter()

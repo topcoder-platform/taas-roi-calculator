@@ -4,6 +4,7 @@
   violet: #{$tc-purple-120},
   darkCyan: #1E94A3,
   red: #{$tc-red-70},
+  green: #0AB88A,
 ) {
   .text-#{$key} {
     color: $value;
