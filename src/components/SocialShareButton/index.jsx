@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import PT from 'prop-types';
 import { GhostButton } from 'topcoder-react-ui-kit';
-import * as platformUtil from '../../utils/platform';
 import IconFacebook from '../../assets/icons/facebook.svg';
 import IconLinkedin from '../../assets/icons/linkedin.svg';
 import IconTwitter from '../../assets/icons/twitter.svg';
@@ -10,11 +8,11 @@ import IconTwitter from '../../assets/icons/twitter.svg';
 import './styles.scss';
 
 const SocialShareButton = ({ url }) => {
-  const msg = 'I used the Topcoder Talent ROI Calculator to see how much I can save on hiring freelancers. See how much you can save:';
+  const msg = 'I used the Topcoder Talent ROI Calculator to see how much I can save on hiring freelancers. See how much you can save.';
   const params = 'menubar=no,toolbar=no,status=no,width=570,height=570,top=,left=';
 
   const openFB = () => {
-    const shareUrl = `https://www.facebook.com/sharer.php?u=https://www.topcoder.com&quote=${encodeURIComponent(`${msg} ${url}`)}`;
+    const shareUrl = `https://www.facebook.com/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(msg)}`;
     window.open(shareUrl, 'NewWindow', params);
   };
 
@@ -24,13 +22,9 @@ const SocialShareButton = ({ url }) => {
   };
 
   const openTW = () => {
-    const shareUrl = `https://twitter.com/intent/tweet?url=https://www.topcoder.com&text=${encodeURIComponent(`${msg} ${url}`)}`;
+    const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(msg)}`;
     window.open(shareUrl, 'NewWindow', params);
   };
-
-  if (platformUtil.isMobileOS()) {
-    return null;
-  }
 
   return (
     <div styleName="social-share-buttons">

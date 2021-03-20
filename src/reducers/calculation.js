@@ -24,7 +24,6 @@ const defaultState = {
     totalWeeklyCost: null,
     topcoderWeeklyCost: null,
     youSave: null,
-    talentType: '',
   },
 };
 

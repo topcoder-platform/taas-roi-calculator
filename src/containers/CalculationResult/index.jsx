@@ -41,7 +41,7 @@ const CalculationResult = ({
   };
 
   const isMobileOrTablet = useMediaQuery({ query: `(max-width: ${process.env.SCREEN.MD}px)` });
-  const industry = result.industry === 'Tech & technology services' ? 'Technology Services' : result.industry;
+  const industry = form.industry === 'Tech & technology services' ? 'Technology Services' : form.industry;
   let industryIcon;
 
   switch (result.industryIcon) {
@@ -64,17 +64,33 @@ const CalculationResult = ({
         <div styleName="col">
           <Sticky top={160} enabled={!isMobileOrTablet}>
             <div styleName="left-section">
-              <h3 styleName="heading-3 text-gradient" className="upper-case">Hello Joe,</h3>
+              <h3 styleName="heading-3 text-gradient" className="upper-case">
+                Hello
+                {' '}
+                <span styleName="text-capitalize">{form.firstName}</span>
+                ,
+              </h3>
               <p styleName="text margin-top">
                 Based on the information you’ve provided us, plus our market research,
-                here is your customized cost comparison for hiring a
+                here is your customized cost comparison for hiring
                 {' '}
-                <span styleName="talent-type-text">{result.talentType}</span>
+                {utils.format2DigitsNumber(result.numberOfEmployee)}
                 {' '}
-                to Big Tech Corp.
+                <span styleName="text-capitalize">
+                  {result.numberOfEmployee > 1 ? utils.formatPluralNoun(form.talentType) : form.talentType}
+                </span>
+                {' '}
+                to
+                {' '}
+                <span styleName="text-capitalize">{form.company}</span>
+                .
               </p>
               <p styleName="text">
-                Hiring a Full Stack Developer on Topcoder’s TaaS platform saves you time
+                Hiring
+                {' '}
+                {utils.formatPluralNoun(form.talentType)}
+                {' '}
+                on Topcoder’s TaaS platform saves you time
                 and money. Our solution is charged at a flat rate of
                 {' '}
                 <span>{utils.formatMoneyValueI(result.topcoderWeeklyCost)}</span>
@@ -88,10 +104,12 @@ const CalculationResult = ({
                 If you’re ready to see how Topcoder can help turbocharge your team’s
                 results and output, schedule a demo with us today.
               </p>
-              <div styleName="buttons">
-                <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
-                <span styleName="social-share-button"><SocialShareButton url={utils.url.createShareUrl(form)} /></span>
-              </div>
+              { !utils.platform.isMobileOS() && (
+                <div styleName="buttons">
+                  <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
+                  <span styleName="social-share-button"><SocialShareButton url={utils.url.createShareUrl(form)} /></span>
+                </div>
+              )}
             </div>
           </Sticky>
         </div>
@@ -106,7 +124,7 @@ const CalculationResult = ({
                 <div styleName="box-container">
                   <div styleName="box">
                     <span styleName="value heading-3">{utils.format2DigitsNumber(result.numberOfEmployee)}</span>
-                    <span styleName="description">{result.talentType}</span>
+                    <span styleName="description">{form.talentType}</span>
                   </div>
                   <div styleName="box padding-extra">
                     <span styleName="value heading-3">{result.costOfLiving || '\u00a0'}</span>
@@ -255,7 +273,12 @@ const CalculationResult = ({
 };
 
 CalculationResult.propTypes = {
-  form: PT.shape({}).isRequired,
+  form: PT.shape({
+    talentType: PT.string,
+    industry: PT.string,
+    firstName: PT.string,
+    company: PT.string,
+  }).isRequired,
   result: PT.shape({
     numberOfEmployee: PT.number,
     costOfLiving: PT.string,
@@ -268,8 +291,6 @@ CalculationResult.propTypes = {
     totalWeeklyCost: PT.number,
     topcoderWeeklyCost: PT.number,
     youSave: PT.number,
-    talentType: PT.string,
-    industry: PT.string,
     industryIcon: PT.string,
   }).isRequired,
   talents: PT.arrayOf(PT.shape({

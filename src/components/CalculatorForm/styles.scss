@@ -23,7 +23,6 @@
 
   .radio-group {
     margin-bottom: $spacer-2;
-    padding-top: 5px;
     font-size: 16px;
     line-height: 26px;
 
@@ -43,7 +42,7 @@
 
   .footer {
     margin-top: 0;
-    padding: $spacer-2 0;
+    padding: $spacer-2 0 $spacer-1;
     text-align: right;
 
     > button:first-child {
@@ -52,6 +51,8 @@
       margin: 0;
       background: $primary-button-bg;
       border-radius: 20px;
+      cursor: pointer;
+      line-height: 26px;
 
       &:active,
       &:hover {
