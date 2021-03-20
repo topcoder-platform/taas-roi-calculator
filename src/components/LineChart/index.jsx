@@ -3,6 +3,7 @@ import PT from 'prop-types';
 import _ from 'lodash';
 import * as d3 from 'd3';
 import * as utils from '../../utils';
+import { bumpX as curveBumpX } from '../../utils/d3/bump';
 
 import './styles.scss';
 
@@ -19,7 +20,7 @@ const LineChart = ({
   const [innerWidth, setInnerWidth] = useState(width - margin.left - margin.right);
   const innerHeight = height - margin.top - margin.bottom;
   const clientWidth = containerRef.current && containerRef.current.clientWidth;
-  if (clientWidth !== variableWidth) {
+  if (clientWidth && clientWidth !== variableWidth) {
     setVariableWidth(clientWidth);
     setInnerWidth(clientWidth - margin.left - margin.right);
   }
@@ -35,6 +36,12 @@ const LineChart = ({
   const color = d3.scaleOrdinal().domain(_.uniq(data.map((d) => d.name))).range(['#7F7F7F', '#0AB88A']);
 
   useEffect(() => {
+    const initClientWidth = containerRef.current.clientWidth;
+    setVariableWidth(initClientWidth);
+    setInnerWidth(initClientWidth - margin.left - margin.right);
+  }, []);
+
+  useEffect(() => {
     const handleResize = _.throttle(() => {
       const newClientWidth = containerRef.current.clientWidth;
       setVariableWidth(newClientWidth);
@@ -48,7 +55,7 @@ const LineChart = ({
   useEffect(() => {
     d3.select(ref.current).selectAll('*').remove();
 
-    const dataReady = d3.group(data, (d) => d.name);
+    const dataReady = d3.nest().key((d) => d.name).entries(data);
     const g = d3.select(ref.current);
 
     g.append('g')
@@ -64,9 +71,9 @@ const LineChart = ({
       .data(dataReady)
       .enter()
       .append('g')
-      .attr('fill', (d) => color(d[0]))
+      .attr('fill', (d) => color(d.key))
       .selectAll()
-      .data((d) => d[1])
+      .data((d) => d.values)
       .enter()
       .append('circle')
       .attr('r', 3.5)
@@ -78,12 +85,12 @@ const LineChart = ({
       .enter()
       .append('path')
       .attr('fill', 'none')
-      .attr('stroke', (d) => color(d[0]))
+      .attr('stroke', (d) => color(d.key))
       .attr('stroke-width', '2.5')
       .attr('d', (d) => d3.line()
         .x((dd) => x(dd.month))
         .y((dd) => y(dd.productivity))
-        .curve(d3.curveBumpX)(d[1]));
+        .curve(curveBumpX)(d.values));
 
     g.select('.x-axis')
       .selectAll('.tick text')

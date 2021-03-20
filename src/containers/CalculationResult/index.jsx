@@ -63,7 +63,7 @@ const CalculationResult = ({
     <div styleName="page" id="calculationResult">
       <div styleName="row">
         <div styleName="col">
-          <Sticky top={160} enabled={!isMobileOrTablet}>
+          <Sticky top={160} enabled={!isMobileOrTablet} bottomBoundary={2560}>
             <div styleName="left-section">
               <h3 styleName="heading-3 text-gradient" className="upper-case">
                 Hello
@@ -231,7 +231,7 @@ const CalculationResult = ({
             {/* FREELANCER VS. TRADITIONAL HIRING */}
             <Card>
               <Card.Header>
-                <h6 styleName="heading-6" className="text-red">THE TALENT</h6>
+                <h6 styleName="heading-6" className="text-green">FREELANCER VS. TRADITIONAL HIRING</h6>
               </Card.Header>
               <Card.Body>
                 <p styleName="text margin-top">
