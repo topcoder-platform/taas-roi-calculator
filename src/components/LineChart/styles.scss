@@ -1,0 +1,30 @@
+@import "styles/variables";
+@import "styles/mixins";
+
+.lineChart {
+  overflow: hidden;
+
+  :global {
+    svg {
+      display: block;
+    }
+
+    .x-axis .tick line,
+    .domain {
+      opacity: 0;
+    }
+
+    .y-axis .tick line {
+      stroke: $bg-color-2;
+    }
+
+    .x-axis .tick text,
+    .y-axis .tick text {
+      @include roboto-regular;
+
+      font-size: 10px;
+      color: #A3A3A3;
+    }
+  }
+}
+

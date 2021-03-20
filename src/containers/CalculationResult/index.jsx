@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { PrimaryButton, SecondaryButton } from 'topcoder-react-ui-kit';
 import Card from '../../components/Card';
 import DonutChart from '../../components/DonutChart';
+import LineChart from '../../components/LineChart';
 import CardMember from '../../components/CardMember';
 import SlideShow from '../../components/SlideShow';
 import SocialShareButton from '../../components/SocialShareButton';
@@ -62,15 +63,15 @@ const CalculationResult = ({
     <div styleName="page" id="calculationResult">
       <div styleName="row">
         <div styleName="col">
-          <Sticky top={160} enabled={!isMobileOrTablet}>
+          <Sticky top={160} enabled={!isMobileOrTablet} bottomBoundary={2560}>
             <div styleName="left-section">
               <h3 styleName="heading-3 text-gradient" className="upper-case">
                 Hello
                 {' '}
-                <span styleName="text-capitalize">{form.firstName}</span>
+                <span className="upper-case">{form.firstName}</span>
                 ,
               </h3>
-              <p styleName="text margin-top">
+              <p styleName="text margin-top-extra">
                 Based on the information you’ve provided us, plus our market research,
                 here is your customized cost comparison for hiring
                 {' '}
@@ -185,8 +186,8 @@ const CalculationResult = ({
                 <h6 styleName="heading-6" className="text-darkCyan">VISUAL BREAKDOWN</h6>
               </Card.Header>
               <Card.Body>
-                <div styleName="chart-container">
-                  <div styleName="chart-box">
+                <div styleName="donut-chart-container">
+                  <div styleName="donut-chart-box">
                     <DonutChart data={{
                       annualSalary: result.averageSalary,
                       bonus: result.bonusEquityBenefits,
@@ -195,7 +196,7 @@ const CalculationResult = ({
                     }}
                     />
                   </div>
-                  <div styleName="legend-box">
+                  <div styleName="donut-legend-box">
                     <h4 styleName="heading-4">
                       Total Annual Cost:
                       {utils.formatMoneyValueI(result.totalAnnualCost)}
@@ -227,13 +228,53 @@ const CalculationResult = ({
               </Card.Body>
             </Card>
 
+            {/* FREELANCER VS. TRADITIONAL HIRING */}
+            <Card>
+              <Card.Header>
+                <h6 styleName="heading-6" className="text-green">FREELANCER VS. TRADITIONAL HIRING</h6>
+              </Card.Header>
+              <Card.Body>
+                <p styleName="text margin-top">
+                  By the time your traditionally hired FTE goes through recruitment, interviews,
+                  negotiations and agreeing on start dates; the talent at Topcoder has already been
+                  working for months at 100% productivity. We can go from the initial request to top-tier
+                  verified talent working for you, fast.
+                </p>
+                <div styleName="line-chart-container">
+                  <div styleName="line-chart-box">
+                    <LineChart height={isMobileOrTablet ? 230 : undefined} />
+                  </div>
+                  <div styleName="line-legend-box">
+                    <span styleName="label">
+                      <i styleName="dot dot-1" />
+                      {' '}
+                      Topcoder TaaS Process
+                    </span>
+                    <span styleName="label">
+                      <i styleName="dot dot-2" />
+                      {' '}
+                      Traditional Hiring Process
+                    </span>
+                  </div>
+                  <div styleName="message">
+                    <h6 styleName="heading-6" className="text-green">AVG. PRODUCTIVITY GAIN:</h6>
+                    <p>280 Hours In The First 3 Months</p>
+                  </div>
+                  <p styleName="footer">
+                    Calculation Based on Average Time to Hire of 30 Days (Traditional FTE Labor) and 40-hours per week usage of Topcoder
+                    TaaS Freelancer(s)
+                  </p>
+                </div>
+              </Card.Body>
+            </Card>
+
             {/* THE TALENT */}
             <Card>
               <Card.Header>
                 <h6 styleName="heading-6" className="text-red">THE TALENT</h6>
               </Card.Header>
               <Card.Body>
-                <p styleName="text">
+                <p styleName="text margin-top">
                   Joe, the talent on our platform are virtual collaboration professionals. They are
                   used to sliding seamlessly into new teams and exciting projects and are ready to
                   get to work right away. Here is a snapshot of the talent on our platform.

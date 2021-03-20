@@ -26,7 +26,7 @@ function calculate(formData) {
     totalAnnualCost: totalAnnualCost * formData.employeeNumber,
     totalWeeklyCost: totalWeeklyCost * formData.employeeNumber,
     topcoderWeeklyCost,
-    youSave: (totalWeeklyCost - topcoderWeeklyCost) * formData.employeeNumber,
+    youSave: totalWeeklyCost - topcoderWeeklyCost,
   };
 }
 
