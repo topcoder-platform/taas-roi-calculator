@@ -68,7 +68,7 @@ const CalculationResult = ({
               <h3 styleName="heading-3 text-gradient" className="upper-case">
                 Hello
                 {' '}
-                <span styleName="text-capitalize">{form.firstName}</span>
+                <span className="upper-case">{form.firstName}</span>
                 ,
               </h3>
               <p styleName="text margin-top-extra">
