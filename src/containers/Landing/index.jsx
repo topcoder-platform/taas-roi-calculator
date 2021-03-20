@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import CalculatorForm from '../../components/CalculatorForm';
 import actions from '../../actions';
+import * as utils from '../../utils';
 
 import './styles.scss';
 
@@ -56,7 +57,7 @@ const Landing = ({
             companySizes={companySizes}
             onSubmit={(formData) => {
               calculateROI(formData);
-              navigateTo('/result');
+              navigateTo(`/result?${utils.url.createUrlQueryString(formData)}`);
             }}
           />
         </div>
