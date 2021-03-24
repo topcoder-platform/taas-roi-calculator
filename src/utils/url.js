@@ -18,9 +18,8 @@ export function createCalculationFormFromParams(params) {
   };
 }
 
-export function createShareUrl(form) {
-  const url = window.location.href;
-  const queryStr = qs.stringify({
+export function createUrlQueryString(form) {
+  return qs.stringify({
     talent: form.talentType,
     peopleRequired: form.employeeNumber || undefined,
     industry: form.industry,
@@ -31,6 +30,11 @@ export function createShareUrl(form) {
     company: form.company,
     email: form.email,
   });
+}
+
+export function createShareUrl(form) {
+  const url = window.location.href;
+  const queryStr = createUrlQueryString(form);
 
   return url + (queryStr ? `?${queryStr}` : '');
 }
