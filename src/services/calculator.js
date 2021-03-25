@@ -11,7 +11,7 @@ function calculate(formData) {
   const bonus = bonusRate;
   const recruitingCosts = recruimentCosts;
 
-  const annualCostPerEmployee = ((salary + costOfLivingIncrease) * bonus) + recruitingCosts + overheads;
+  const annualCostPerEmployee = ((salary + (costOfLivingIncrease * salary)) * bonus) + recruitingCosts + overheads;
   const totalAnnualCost = annualCostPerEmployee;
   const totalWeeklyCost = totalAnnualCost / 52;
 
