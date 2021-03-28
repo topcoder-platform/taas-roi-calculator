@@ -1,8 +1,8 @@
 import { createActions } from 'redux-actions';
 import service from '../services/talent';
 
-function getTalents() {
-  return service.getTalents();
+function getTalents(members) {
+  return service.getTalents(members);
 }
 
 export default createActions({

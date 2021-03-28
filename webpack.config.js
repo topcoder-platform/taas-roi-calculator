@@ -139,6 +139,9 @@ module.exports = {
     historyApiFallback: true,
     disableHostCheck: true,
     port: 3000,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    proxy: {
+      '/sheets-api': 'http://localhost:3100'
+    }
   }
 };

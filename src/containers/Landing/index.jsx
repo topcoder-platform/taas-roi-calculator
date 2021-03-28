@@ -8,6 +8,7 @@ import { useMediaQuery } from 'react-responsive';
 import CalculatorForm from '../../components/CalculatorForm';
 import actions from '../../actions';
 import * as utils from '../../utils';
+import { addRow } from '../../services/googlesheets';
 
 import './styles.scss';
 
@@ -56,7 +57,27 @@ const Landing = ({
             industries={industries}
             companySizes={companySizes}
             onSubmit={(formData) => {
-              calculateROI(formData);
+              const calculateRes = calculateROI(formData);
+              const form = calculateRes.payload.form;
+              const result = calculateRes.payload.result;
+              addRow({
+                'type_of_talent': form.talentType,
+                'number_of_people_required': form.employeeNumber,
+                'industry': form.industry,
+                'company_size': form.companySize,
+                'cost_of_living': form.costOfLiving,
+                'first_name': form.firstName,
+                'last_name': form.lastName,
+                'company': form.company,
+                'work_email': form.email,
+                'average_salary': result.averageSalary,
+                'bonuses_and_benefits': result.bonusEquityBenefits,
+                'recruitment_and_overhead': result.overhead,
+                'total_annually': result.totalAnnualCost,
+                'weekly_cost': result.totalWeeklyCost,
+                'topcoder_weekly_cost': result.topcoderWeeklyCost,
+                'you_save': result.youSave,
+              });
               navigateTo(`/result?${utils.url.createUrlQueryString(formData)}`);
             }}
           />
