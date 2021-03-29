@@ -16,7 +16,7 @@ function getTalents(members) {
     for (let i = 0; i < members.length; ++i) {
       const member = members[i];
       const memberData = results[i * 3].data;
-      const statsData = results[i * 3 + 1].data;
+      const statsData = results[i * 3 + 1].data[0];
       const skillsData = results[i * 3 + 2].data;
       transformedResults.push({
         member: {
@@ -29,7 +29,7 @@ function getTalents(members) {
           createdAt: memberData.createdAt,
         },
         tags: member.tags,
-        wins: statsData.wins,
+        wins: statsData?.wins,
         skills: Object.values(skillsData.skills || {}).map(skill => skill.tagName),
         experience: process.env.TALENT.DUMMY_EXPERIENCES,
       });
