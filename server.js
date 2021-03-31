@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const googlesheets = require('./googlesheets');
 
 const app = express();
 
@@ -16,18 +17,20 @@ const forceSSL = function () {
 
 const logger = function () {
   return function (req, res, next) {
-    console.log(req.url)
+    console.log(req.url);
     next();
   };
 };
 
 app.use(forceSSL());
 app.use(logger());
+app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'build')));
-app.get('*', function(req, res) {
+app.use('/sheets-api', googlesheets);
+app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build/index.html'));
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  console.log('App listening on port', process.env.PORT || 3000)
+  console.log('App listening on port', process.env.PORT || 3000);
 });

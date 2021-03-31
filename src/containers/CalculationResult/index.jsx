@@ -33,8 +33,12 @@ const CalculationResult = ({
   getTalents,
 }) => {
   useEffect(() => {
-    getTalents();
-  }, []);
+    if (form.talentType) {
+      const allTalentsOfType = process.env.TALENT.TALENTS;
+      // only get the first ${process.env.TALENT.TOTAL_SLIDES} members
+      getTalents([...allTalentsOfType].splice(0, process.env.TALENT.TOTAL_SLIDES));
+    }
+  }, [form]);
 
   const history = useHistory();
   const navigateTo = (path) => {
