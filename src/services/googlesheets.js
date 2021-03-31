@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { detect } from 'detect-browser';
+
 const browser = detect();
 
 const axiosInstance = axios.create();
@@ -10,6 +11,11 @@ const axiosInstance = axios.create();
  * @returns axios request Promise
  */
 export function addRow(row) {
-    row.browser = `${browser.os} ${browser.name} ${browser.version}`;
-    return axiosInstance.post('/sheets-api/add-row', row);
+  const newRow = {
+    ...row,
+    browser: `${browser.os} ${browser.name} ${browser.version}`,
+  };
+  return axiosInstance.post('/sheets-api/add-row', newRow);
 }
+
+export default addRow;

@@ -45,7 +45,7 @@ Install heroku-cli first, then:
    5. Click **Credentials** on the left side menu, then click **+ CREATE CREDENTIALS** on the main panel, select **Service Account**
    6. Enter the account name and optionally enter the description for this account, then click **Done**
    7. In the service account page, select **KEYS** tab, click **Add Key**, select **Create new key**, select **Key type** as **JSON** and click **Create**, keep the auto-downloaded JSON file for later use.
-   8. Remember the email address your just created for later use ![](./readme%20files/service%20account%20address.png)
+   8. Remember the email address of the service account your just created for later use ![](./readme%20files/service%20account%20address.png)
    9. In order to edit the spreadsheet we created in step 1 with this service account, we need to grant access to the email address we get from step 2.8
       1. In the spreadsheet, click **Share**
       2. Paste the email address and select it, then click **Done** to share the spreadsheet with it
@@ -54,6 +54,7 @@ Install heroku-cli first, then:
    2. At the developer console page, Credentials tab of your project, click **OAuth client** in the **OAuth 2.0 Client IDs** ![](./readme%20files/oauth%20credentials.png)
       1. Add Authorized JavaScript origins, `http://localhost:3000`, `http://localhost:3100`, these 2 origins are for local deployment. If you plan to deploy the app with other origin, you need to add URI here. After adding all origins, click **Save**
       2. Find the JSON file downloaded in step 2.7, change file name to `googlesheets-credential.json` and move the downloaded JSON file to the root directory of the React project
+   > As we use `server.js` to provide functionality of the Google sheets API, when we run `npm run dev` to serve the app with *webpack-dev-server*, we still need `server.js` running. Check *package.json* to see the PORT we use to run `server.js`. Also check `webpack.config.js` `module.exports = { ..., devServer: { ..., proxy: ... } }` to see the port for which *webpack-dev-server* runs proxy.
 
 ### Mailchimp Integration
 1. Login to the dashboard page of Mailchimp, we need to create some audience fields, ![](readme%20files/mailchimp%20contacts.png)
@@ -64,7 +65,7 @@ Install heroku-cli first, then:
       2. Enter the label for this field, and Optionally enter the tag name for this field in your content
       3. Click **Save Changes**, and Repeat the 3 steps we have just done until all necessary fields are added.
       4. After all fields are added, it should look like this ![](readme%20files/audience%20fields.png)
-2. Create automation to send Email when a event is triggered
+2. Create automation to send Email when an event is triggered
    1. Click Automation icon on the left side
    2. Click **Create** and click **Classic Automations** ![](readme%20files/mailchimp%20automation.png)
    3. Click **Automated** tab, **API** tab, and click **Event API** entry
@@ -72,7 +73,7 @@ Install heroku-cli first, then:
    5. Click **Edit** on the trigger row, ![](readme%20files/mailchimp%20edit%20trigger.png)
    6. Set delay to **Immediately**, and **Event Name** to `SendCalcResults`, click **Update Trigger**
    7. Click **Design Email**
-   8. Enter the email informations you want and click **Next**
+   8. Enter the email information you want and click **Next**
    9. Select a template, I will select **Basic** - **1 Column** for simplicity here.
    10. Click the blocks to edit the template, here we will use the tags we added in step 1
    11. Here is how my email template looks ![](readme%20files/mailchimp%20email%20template.png)
