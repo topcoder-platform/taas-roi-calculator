@@ -105,16 +105,8 @@
   .experience {
     text-align: center;
     width: 200px;
-
-    li {
-      display: inline;
-      font-weight: 500;
-      font-size: 14px;
-
-      &:not(:first-child)::before {
-        content: ', ';
-      }
-    }
+    font-weight: 500;
+    font-size: 14px;
   }
 
   .hr {
