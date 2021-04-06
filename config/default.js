@@ -8,7 +8,7 @@ module.exports = {
     MD: 1024,
     LG: 1280,
   },
-  CALENDLY_URL: 'https://calendly.com/charles-seiberling-topcoder',
+  CALENDLY_URL: 'https://calendly.com/charles-seiberling-topcoder/45min-taas-demo',
   GOOGLE_SPREADSHEET_ID: '1TrM3H_yPgO7TKgZ7FaMbQanSHbPWL8FjDq-iD2emZBE',
   TALENT: {
     DUMMY_EXPERIENCES: ['Credit Suisse', 'Becton Dickenson', 'NASA', 'IBM'],
