@@ -51,16 +51,9 @@ const CardMember = ({
         </Clampy>
       </div>
 
-      <IconHR styleName="hr" />
+      
 
-      <h4 styleName="heading-4">EXPERIENCE</h4>
-      <div styleName="experience">
-        <Clampy clampSize="2">
-          {
-            experience.join(', ')
-          }
-        </Clampy>
-      </div>
+      
     </div>
   </div>
 );
