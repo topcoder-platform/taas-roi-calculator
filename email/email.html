@@ -60,6 +60,8 @@ body {
 .outer,
 .webkit {
    max-width: 600px;
+   background: #ffffff;
+   background-color: #ffffff;
 }
 
 .view-browser-link a,
@@ -126,7 +128,7 @@ td .view-browser-link {
 }
 .top-table,
 .middle-table {
-   padding: 0px 20px;
+   padding: 0px 0px;
 }
 table .row-table {
    margin-top: 0px;
@@ -233,7 +235,7 @@ p {
 }
 
 a {
-   color: #ff027d;
+   color: #37ac70;
 }
 
 .one-column p.h1 {
@@ -413,7 +415,7 @@ a.btn.btn-square-rounded {
 }
 .middle-content p a {
    color: #0ab88a;
-   font-family: Roboto;
+   font-family: "Arial";
    font-size: 16px;
    line-height: 19px;
    text-align: left;
@@ -636,8 +638,8 @@ td.one-column .confirmation-link a {
    margin-bottom: 5px;
 }
 
-a.btn {
-   color: #ffffff !important;
+.middle-content a.btn {
+   color: #ffffff!important;
    padding: 13px 25px;
    font-family: "Arial";
    letter-spacing: 0.92px;
@@ -675,6 +677,7 @@ a.btn {
    -moz-background-clip: padding;
    background-clip: padding-box;
    background-color: #8231a9;
+   background: #8231a9;
    border-radius: 10px;
 }
 
@@ -684,11 +687,15 @@ a.btn {
    float: none;
    background-color: #f9f9f9;
    padding-bottom: 30px;
+   background-color: transparent;
+   background: transparent;
 }
 
 .header-logo a img {
    width: 340px;
-   margin-top: 40px;
+   margin-top: 0px;
+   background-color: transparent;
+   background: transparent;
 }
 
 .content-wraper {
@@ -703,6 +710,13 @@ a.btn {
    background-color: #f4f4f4;
    background: #f4f4f4;
    margin-bottom: 20px;
+   -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
 }
 
 h1.title-header,
@@ -720,7 +734,7 @@ h2.title-header {
    text-align: center;
 }
 h1.title-header {
-   color: #ffffff;
+   color: #ffffff!important;
 
    font-size: 20px;
    line-height: 24px;
@@ -733,7 +747,7 @@ h2.title-header {
    font-size: 60px;
    line-height: 72px;
 
-   padding: 10px 0px;
+   padding: 15px 0px;
    font-weight: 700;
 }
 
@@ -863,7 +877,7 @@ a.btn-yellow:focus {
     }
     h1.title-header,h3.title-header{
       font-size: 20px; 
-      line-height: 26px; 
+      line-height: 26px!important; 
     }
 }
 
@@ -880,6 +894,13 @@ a.btn-yellow:focus {
       padding: 10px 10px 30px;
       width: 80%;
    }
+   .middle-content a.btn{
+    font-size: 12px!important;
+   }
+   .middle-content p a {
+  font-weight: 500;
+   font-family: "Arial"!important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -887,24 +908,27 @@ a.btn-yellow:focus {
    .middle-table {
       padding: 0px 0px;
    }
+   .inner.contents {
+    padding: 0px 0px !important;
+    }
    .content-wraper {
       padding: 30px 0px 30px !important;
    }
    h1.title-header {
-      font-size: 14px;
-      margin: 10px 0px;
+      font-size: 13px!important;
+      margin: 0px 0px;
       line-height: normal;
    }
    h2.title-header {
-      padding: 0px 0px !important;
+      padding: 20px 0px !important;
       line-height: 35px !important;
       font-size: 30px !important;
    }
    h3.title-header {
-      font-size: 14px;
+      font-size: 13px!important;
 
       line-height: normal;
-      margin: 20px 20px 0px;
+      margin: 0px 20px 0px;
       float: left;
    }
    table .row-table.bottom-table .confirmation-link:nth-of-type(1),
@@ -940,8 +964,9 @@ a.btn-yellow:focus {
       padding: 12px 10px !important;
       width: auto;
       margin: auto 40px;
-      font-size: 12px;
+      font-size: 12px!important;
       margin: auto 40px;
+      color: #ffffff;
    }
 
    .middle-content p {
@@ -949,9 +974,18 @@ a.btn-yellow:focus {
    }
    .middle-content img {
       padding: 10px 30px 30px;
-      width: 80%;
+      width: 75%!important;
    }
+   .header-logo a img {
+    width: 80%;
+    }
+    .middle-content img {
+    padding: 10px 0px 30px!important;
+    }
 }
+
+
+
 
       </style>
    </head>
@@ -987,7 +1021,7 @@ a.btn-yellow:focus {
                      <tr>
                         <td colspan="2" class="inner contents head-image">
                            <span class="header-logo">
-                              <a href="#"> <img src="logo.png" alt="images" /></a>
+                              <a href="#"> <img src="https://drive.google.com/uc?export=view&id=1Uuqv7LzQubAbdj9NayNAqzdXHb_ptCpu" alt="images" /></a>
                            </span>
                         </td>
                      </tr>
@@ -995,12 +1029,15 @@ a.btn-yellow:focus {
                         <table class="inner contents">
                            <tr>
                               <td class="header-content content-wraper">
-
-                                 <h1 class="title-header">You can Save</h1>
-                                 <h2 class="title-header">
+<table class="inner ">
+                           <tr><td> <h1 class="title-header">You can Save</h1></td></tr></table>
+                                
+                                 <table class="inner ">
+                           <tr><td> <h2 class="title-header">
                                     $2,487/ week
-                                 </h2>
-                                 <h3 class="title-header">by hiring 01 full-stack developers on Topcoder’s TaaS Platform</h3>
+                                 </h2></td></tr></table>
+                                 <table class="inner ">
+                           <tr><td> <h1 class="title-header">by hiring 01 full-stack developers on Topcoder’s TaaS Platform</h1></td></tr></table>
                               </td>
                            </tr>
                         </table>
@@ -1013,7 +1050,7 @@ a.btn-yellow:focus {
                            <tr>
                               <td class="content-wraper middle-content">
                                  <p class="desc">
-                                    Hello {name}, Thank you for sharing your information via our TaaS ROI calculator. Verified freelancers from Topcoder can help you and your team get a whole lot more done. You told us were interested in
+                                    Hello {name},<br/> Thank you for sharing your information via our TaaS ROI calculator. Verified freelancers from Topcoder can help you and your team get a whole lot more done. You told us were interested in
                                     {Type of Talent} and we've got exceptional talent ready to work. With Talent-as-a-Service your freelancers can save you an estimated {insert # from form} per week!
                                  </p>
                                  <p class="desc">
@@ -1026,12 +1063,15 @@ a.btn-yellow:focus {
                                  <p class="desc">
                                     <a href="#">Freelancer vs. Traditional Hiring</a>
                                  </p>
-                                 <a href="#"><img src="graph.png" alt="images" /></a>
+                                 <a href="#"><img src="https://drive.google.com/uc?export=view&id=1_-43ratzIPondmYUgUH3s8INumvcyO34" alt="images" /></a>
                                  <br />
                                  <br />
-                                 <a href="#" class="btn btn-green btn-rounded">
+                                 
+                                 <table class="inner ">
+                           <tr><td> 
+                            <a href="#" class="btn btn-green btn-rounded">
                                     Schedule your taas demo
-                                 </a>
+                                 </a></td></tr></table>
                               </td>
                            </tr>
                         </table>
