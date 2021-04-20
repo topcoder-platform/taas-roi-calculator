@@ -112,7 +112,7 @@ const CalculationResult = ({
               { !utils.platform.isMobileOS() && (
                 <div styleName="buttons">
                   <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
-                  <span styleName="social-share-button"><SocialShareButton url={utils.url.createShareUrl(form)} /></span>
+                  <SecondaryButton>DOWNLOAD RESULTS</SecondaryButton>
                 </div>
               )}
             </div>
