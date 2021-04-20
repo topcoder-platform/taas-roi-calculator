@@ -308,7 +308,7 @@ const CalculationResult = ({
 
             {/* RECALCULATE */}
             <div styleName="recalculate">
-              <SecondaryButton onClick={() => { navigateTo('/'); }} size={isMobileOrTablet ? 'sm' : ''}>RECALCULATE</SecondaryButton>
+          
             </div>
           </div>
         </div>
