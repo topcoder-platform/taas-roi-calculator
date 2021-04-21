@@ -24,6 +24,8 @@ import IconTelecoms from '../../assets/icons/telecom.svg';
 import IconPublicSector from '../../assets/icons/public-sector.svg';
 import IconTravelHospitality from '../../assets/icons/travel-hospitality.svg';
 
+import { render } from 'react-dom';
+import { renderToString } from 'react-dom/server';
 import jsPDF from "jspdf";
 
 import './styles.scss';
@@ -279,8 +281,7 @@ const Prints = () => (
               </p>
               { !utils.platform.isMobileOS() && (
                 <div styleName="buttons">
-                  <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
-                   <SecondaryButton onClick={() => { navigateTo(`/result?${utils.url.createUrlQueryString()}`); }} >DOWNLOAD RESULTS</SecondaryButton>
+                  
                 </div>
                
 
@@ -391,7 +392,7 @@ const CalculationResult = ({
               { !utils.platform.isMobileOS() && (
                 <div styleName="buttons">
                   <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
-                 <SecondaryButton onClick={print} >DOWNLOAD RESULT S</SecondaryButton>
+                 <SecondaryButton onClick={print}>DOWNLOAD RESULT S</SecondaryButton>
                 </div>
               )}
             </div>
