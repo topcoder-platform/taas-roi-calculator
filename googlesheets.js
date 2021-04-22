@@ -4,7 +4,7 @@ const { google } = require('googleapis');
 const config = require('config');
 const joi = require('joi');
 const validator = require('express-joi-validation').createValidator({});
-const sheetApiKey = require('./googlesheets-credential.json');
+const sheetApiKey = process.env.GOOGLESHEETSCREDENTIAL;
 
 const GOOGLE_SHEET_COLUMNS = [
   'type_of_talent',
