@@ -108,8 +108,16 @@
   }
 }
 
+
+
+
+
 .buttons {
   margin-top: $spacer-2;
+
+  > button{
+  	border-radius: 20px !important;
+  }
 
   > a:first-child {
     @include roboto-bold;
@@ -152,6 +160,12 @@
       margin-top: 15px;
     }
   }
+}
+
+.heading-card{
+	
+	width:50%;
+	
 }
 
 .heading-6 {
@@ -451,6 +465,29 @@
       margin-right: auto;
     }
   }
+}
+
+.result-recalculate {
+ 
+  > button{
+   float: right;
+  margin-top: -26px!important;
+  background: transparent!important;
+  color: #aaaaaa!important;
+  padding:0px!important;
+  	> img{
+  	width:auto;
+  	height:20px!important;
+
+
+  	}
+  }
+  > button:active{
+  	background-color: none!important;
+    box-shadow: none!important;
+    -mox-box-shadow: none!important;
+  	}
+  	
 }
 
 .recalculate {
