@@ -23,6 +23,7 @@ import IconTechnologyServices from '../../assets/icons/tech-services.svg';
 import IconTelecoms from '../../assets/icons/telecom.svg';
 import IconPublicSector from '../../assets/icons/public-sector.svg';
 import IconTravelHospitality from '../../assets/icons/travel-hospitality.svg';
+import IconRecalculate from '../../assets/icons/recalculate.png';
 
 import { render } from 'react-dom';
 import { renderToString } from 'react-dom/server';
@@ -392,18 +393,29 @@ const CalculationResult = ({
               { !utils.platform.isMobileOS() && (
                 <div styleName="buttons">
                   <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
-                 <SecondaryButton onClick={print}>DOWNLOAD RESULT S</SecondaryButton>
+                 <SecondaryButton onClick={print} >DOWNLOAD RESULTS</SecondaryButton>
                 </div>
               )}
             </div>
           </Sticky>
         </div>
-        <div styleName="col">
+        <div styleName="col"> 
           <div styleName="card-container">
             {/* YOUR RESULTS */}
             <Card>
               <Card.Header>
+                <div styleName="heading-card">
+
                 <h6 styleName="heading-6" className="text-violet">YOUR RESULT</h6>
+                
+                </div> 
+
+                <div styleName="result-recalculate">
+               <SecondaryButton onClick={() => { navigateTo('/'); }} size={isMobileOrTablet ? 'sm' : ''}>RECALCULATE &nbsp;
+               <img src={IconRecalculate}  alt="recalculated" />
+               </SecondaryButton>
+                </div>
+
               </Card.Header>
               <Card.Body>
                 <div styleName="box-container">
