@@ -489,7 +489,6 @@
     > img{
     animation: rotation 2s infinite linear;
     }
-    
     @keyframes rotation {
       from {
       transform: rotate(0deg);
@@ -506,7 +505,7 @@
     -mox-box-shadow: none!important;
   	}
   	
-
+}
 
 .recalculate {
   display: flex;
