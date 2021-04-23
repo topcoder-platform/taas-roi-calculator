@@ -26,8 +26,9 @@ import IconTravelHospitality from '../../assets/icons/travel-hospitality.svg';
 import IconRecalculate from '../../assets/icons/recalculate.png';
 
 import { render } from 'react-dom';
-import { renderToString } from 'react-dom/server';
+import { renderToString } from 'react-dom';
 import jsPDF from "jspdf";
+
 
 import './styles.scss';
 
@@ -302,7 +303,7 @@ const print = () => {
   const string = renderToString(<Prints />);
   const pdf = new jsPDF();
   pdf.fromHTML(string);
-  pdf.save('pdf')
+  pdf.save('pdf');
 }
 
 
@@ -411,7 +412,7 @@ const CalculationResult = ({
                 </div> 
 
                 <div styleName="result-recalculate">
-               <SecondaryButton onClick={() => { navigateTo('/'); }} size={isMobileOrTablet ? 'sm' : ''}>RECALCULATE &nbsp;
+               <SecondaryButton onClick={() => { navigateTo('/') & window.location.reload(false); }} size={isMobileOrTablet ? 'sm' : ''}>RECALCULATE &nbsp;
                <img src={IconRecalculate}  alt="recalculated" />
                </SecondaryButton>
                 </div>
