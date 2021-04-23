@@ -478,9 +478,18 @@
   	> img{
   	width:auto;
   	height:20px!important;
+    animation: rotation 2s infinite linear;
 
 
   	}
+    @keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
   }
   > button:active{
   	background-color: none!important;
