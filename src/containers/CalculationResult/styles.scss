@@ -117,6 +117,7 @@
 
   > button{
   	border-radius: 20px !important;
+    cursor:pointer;
   }
 
   > a:first-child {
@@ -475,13 +476,24 @@
   background: transparent!important;
   color: #aaaaaa!important;
   padding:0px!important;
+  cursor:pointer;
+
   	> img{
   	width:auto;
   	height:20px!important;
-
-
-  	}
+    animation: rotation 2s infinite linear;
+    }
+    
+    @keyframes rotation {
+      from {
+      transform: rotate(0deg);
+      }
+      to {
+      transform: rotate(359deg);
+      }
+    }
   }
+
   > button:active{
   	background-color: none!important;
     box-shadow: none!important;
