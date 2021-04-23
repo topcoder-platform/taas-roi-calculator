@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall" : "node gcpSetup.js",
     "start": "node server.js",
     "dev": "PORT=3100 node server.js & cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack --mode=production",
@@ -85,6 +86,7 @@
     "express-joi-validation": "^5.0.0",
     "googleapis": "^39.2.0",
     "joi": "^17.4.0",
+    "jspdf": "^2.3.1",
     "lodash": "^4.17.21",
     "prop-types": "^15.7.2",
     "query-string": "^5.1.1",

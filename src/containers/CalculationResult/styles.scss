@@ -479,18 +479,17 @@
   	width:auto;
   	height:20px!important;
     animation: rotation 2s infinite linear;
-
-
-  	}
+    }
     @keyframes rotation {
-  from {
+    from {
     transform: rotate(0deg);
-  }
-  to {
+    }
+    to {
     transform: rotate(359deg);
-  }
+    }
+    }
+    }
 }
-  }
   > button:active{
   	background-color: none!important;
     box-shadow: none!important;
