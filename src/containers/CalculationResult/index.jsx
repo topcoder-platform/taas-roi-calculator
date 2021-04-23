@@ -36,7 +36,7 @@ const Prints = () => (
 	<div styleName="page" id="calculationResult">
       <div styleName="row">
         <div styleName="col">
-        
+
             <div styleName="left-section">
               <h3 styleName="heading-3 text-gradient" className="upper-case">
                 Hello
@@ -73,19 +73,19 @@ const Prints = () => (
                 freelancers are often able to start within days, not weeks. This allows you
                 to start producing results and raising team productivity quicker.
               </p>
-              <br/><br/><br/>  
-              
+              <br/><br/><br/>
+
             </div>
-      
+
         </div>
-        
+
       </div>
 
       <div styleName="row">
       <div styleName="col">
           <div styleName="card-container">
           	<div styleName="row">
-			 <div styleName="col">          
+			 <div styleName="col">
             {/* YOUR RESULT S */}
             <Card>
               <Card.Header>
@@ -150,7 +150,7 @@ const Prints = () => (
               </Card.Footer>
             </Card>
             </div>
-			 <div styleName="col">    
+			 <div styleName="col">
             {/* VISUAL BREAKDOWN */}
             <Card>
               <Card.Header>
@@ -201,7 +201,7 @@ const Prints = () => (
             </div>
              </div>
              <div styleName="row">
-			 <div styleName="col">    
+			 <div styleName="col">
             {/* FREELANCER VS. TRADITIONAL HIRING */}
             <Card>
               <Card.Header>
@@ -242,7 +242,7 @@ const Prints = () => (
               </Card.Body>
             </Card>
             </div>
-			 <div styleName="col">    
+			 <div styleName="col">
             {/* THE TALENT */}
             <Card>
               <Card.Header>
@@ -250,7 +250,7 @@ const Prints = () => (
               </Card.Header>
               <Card.Body>
                 <p styleName="text margin-top">
-                  Joe, the talent on our platform are virtual collaboration professionals. They are
+                  The talent on our platform are virtual collaboration professionals. They are
                   used to sliding seamlessly into new teams and exciting projects and are ready to
                   get to work right away. Here is a snapshot of the talent on our platform.
                 </p>
@@ -283,15 +283,15 @@ const Prints = () => (
               </p>
               { !utils.platform.isMobileOS() && (
                 <div styleName="buttons">
-                  
+
                 </div>
-               
+
 
               )}
-            </div> 
+            </div>
 
             </div>
-           
+
           </div>
         </div>
         </div>
@@ -400,7 +400,7 @@ const CalculationResult = ({
             </div>
           </Sticky>
         </div>
-        <div styleName="col"> 
+        <div styleName="col">
           <div styleName="card-container">
             {/* YOUR RESULTS */}
             <Card>
@@ -408,8 +408,8 @@ const CalculationResult = ({
                 <div styleName="heading-card">
 
                 <h6 styleName="heading-6" className="text-violet">YOUR RESULT</h6>
-                
-                </div> 
+
+                </div>
 
                 <div styleName="result-recalculate">
                <SecondaryButton onClick={() => { navigateTo('/') & window.location.reload(false); }} size={isMobileOrTablet ? 'sm' : ''}>RECALCULATE &nbsp;
@@ -600,7 +600,7 @@ const CalculationResult = ({
             </Card>
 
             {/* RECALCULATE */}
-           
+
           </div>
         </div>
       </div>
