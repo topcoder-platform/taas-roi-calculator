@@ -481,6 +481,12 @@
   	> img{
   	width:auto;
   	height:20px!important;
+    }
+  }
+
+  > button:hover{
+    
+    > img{
     animation: rotation 2s infinite linear;
     }
     
@@ -491,8 +497,8 @@
       to {
       transform: rotate(359deg);
       }
+      }
     }
-  }
 
   > button:active{
   	background-color: none!important;
@@ -500,7 +506,7 @@
     -mox-box-shadow: none!important;
   	}
   	
-}
+
 
 .recalculate {
   display: flex;
