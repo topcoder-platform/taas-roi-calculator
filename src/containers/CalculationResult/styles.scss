@@ -40,6 +40,19 @@
   }
 }
 
+.print-screen {
+  .left-section {
+    margin-bottom: $spacer-4;
+  }
+  .result-container {
+    margin-right: $spacer-2;
+  }
+}
+
+.margin-card-bottom {
+  margin-bottom: $spacer-2;
+}
+
 .left-section {
   padding-right: 130px;
 

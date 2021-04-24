@@ -10,7 +10,6 @@ import DonutChart from '../../components/DonutChart';
 import LineChart from '../../components/LineChart';
 import CardMember from '../../components/CardMember';
 import SlideShow from '../../components/SlideShow';
-import SocialShareButton from '../../components/SocialShareButton';
 import actions from '../../actions';
 import * as utils from '../../utils';
 import IconBanking from '../../assets/icons/banking.svg';
@@ -25,7 +24,6 @@ import IconPublicSector from '../../assets/icons/public-sector.svg';
 import IconTravelHospitality from '../../assets/icons/travel-hospitality.svg';
 import IconRecalculate from '../../assets/icons/recalculate.png';
 
-import { render } from 'react-dom';
 import { renderToString } from 'react-dom';
 import jsPDF from "jspdf";
 
@@ -69,10 +67,9 @@ const Prints = ({
   }
 
   return (
-      <div styleName="page" id="calculationResult">
+      <div styleName="page print-screen">
         <div styleName="row">
           <div styleName="col">
-
             <div styleName="left-section">
               <h3 styleName="heading-3 text-gradient" className="upper-case">
                 Hello
@@ -109,66 +106,63 @@ const Prints = ({
                 freelancers are often able to start within days, not weeks. This allows you
                 to start producing results and raising team productivity quicker.
               </p>
-              <br/><br/><br/>
-
             </div>
-
           </div>
-
         </div>
 
         <div styleName="row">
           <div styleName="col">
             <div styleName="card-container">
               <div styleName="row">
-                <div styleName="col">
+                <div styleName="col result-container">
                   {/* YOUR RESULT S */}
-                  <Card>
-                    <Card.Header>
-                      <h6 styleName="heading-6" className="text-violet">YOUR RESULT</h6>
-                    </Card.Header>
-                    <Card.Body>
-                      <div styleName="box-container">
-                        <div styleName="box">
-                          <span styleName="value heading-3">{utils.format2DigitsNumber(result.numberOfEmployee)}</span>
-                          <span styleName="description">{form.talentType}</span>
+                  <div styleName='margin-card-bottom'>
+                    <Card>
+                      <Card.Header>
+                        <h6 styleName="heading-6" className="text-violet">YOUR RESULT</h6>
+                      </Card.Header>
+                      <Card.Body>
+                        <div styleName="box-container">
+                          <div styleName="box">
+                            <span styleName="value heading-3">{utils.format2DigitsNumber(result.numberOfEmployee)}</span>
+                            <span styleName="description">{form.talentType}</span>
+                          </div>
+                          <div styleName="box padding-extra">
+                            <span styleName="value heading-3">{result.costOfLiving || '\u00a0'}</span>
+                            <span styleName="description">COST OF LIVING</span>
+                          </div>
+                          <div styleName="box">
+                            <span styleName="value heading-3">{industryIcon}</span>
+                            <span styleName="description">{industry}</span>
+                          </div>
+                          <div styleName="box">
+                            <span styleName="value heading-3">{utils.formatMoneyValueK(result.averageSalary)}</span>
+                            <span styleName="description">AVERAGE SALARY</span>
+                          </div>
+                          <div styleName="box">
+                            <span styleName="value heading-3">{utils.formatMoneyValueK(result.bonusEquityBenefits)}</span>
+                            <span styleName="description">{!isMobileOrTablet ? 'BONUS, EQUITY, BENEFITS' : 'BONUSES & BENEFITS'}</span>
+                          </div>
+                          <div styleName="box">
+                            <span styleName="value heading-3">{utils.formatMoneyValueK(result.recruiment + result.overhead)}</span>
+                            <span styleName="description">RECRUITMENT &amp; OVERHEAD</span>
+                          </div>
                         </div>
-                        <div styleName="box padding-extra">
-                          <span styleName="value heading-3">{result.costOfLiving || '\u00a0'}</span>
-                          <span styleName="description">COST OF LIVING</span>
-                        </div>
-                        <div styleName="box">
-                          <span styleName="value heading-3">{industryIcon}</span>
-                          <span styleName="description">{industry}</span>
-                        </div>
-                        <div styleName="box">
-                          <span styleName="value heading-3">{utils.formatMoneyValueK(result.averageSalary)}</span>
-                          <span styleName="description">AVERAGE SALARY</span>
-                        </div>
-                        <div styleName="box">
-                          <span styleName="value heading-3">{utils.formatMoneyValueK(result.bonusEquityBenefits)}</span>
-                          <span styleName="description">{!isMobileOrTablet ? 'BONUS, EQUITY, BENEFITS' : 'BONUSES & BENEFITS'}</span>
-                        </div>
-                        <div styleName="box">
-                          <span styleName="value heading-3">{utils.formatMoneyValueK(result.recruiment + result.overhead)}</span>
-                          <span styleName="description">RECRUITMENT &amp; OVERHEAD</span>
-                        </div>
-                      </div>
-                      <div styleName="total">
+                        <div styleName="total">
                   <span styleName="annually">
                     TOTAL ANNUALLY:
                     {' '}
                     <span styleName="value">{utils.formatMoneyValueI(result.totalAnnualCost)}</span>
                   </span>
-                        <span styleName="weekly">
+                          <span styleName="weekly">
                     WEEKLY COST:
-                          {' '}
-                          <span styleName="value">{utils.formatMoneyValueI(result.totalWeeklyCost)}</span>
+                            {' '}
+                            <span styleName="value">{utils.formatMoneyValueI(result.totalWeeklyCost)}</span>
                   </span>
-                      </div>
-                    </Card.Body>
-                    <Card.Footer>
-                      <div styleName="save">
+                        </div>
+                      </Card.Body>
+                      <Card.Footer>
+                        <div styleName="save">
                   <span>
                     TOPCODER WEEKLY COST:
                     {' '}
@@ -176,68 +170,16 @@ const Prints = ({
                     {' '}
                     <small>(+TAX)</small>
                   </span>
-                        <span>
+                          <span>
                     YOU SAVE:
-                          {' '}
-                          {utils.formatMoneyValueI(result.youSave)}
-                          / WEEK
+                            {' '}
+                            {utils.formatMoneyValueI(result.youSave)}
+                            / WEEK
                   </span>
-                      </div>
-                    </Card.Footer>
-                  </Card>
-                </div>
-                <div styleName="col">
-                  {/* VISUAL BREAKDOWN */}
-                  <Card>
-                    <Card.Header>
-                      <h6 styleName="heading-6" className="text-darkCyan">VISUAL BREAKDOWN</h6>
-                    </Card.Header>
-                    <Card.Body>
-                      <div styleName="donut-chart-container">
-                        <div styleName="donut-chart-box">
-                          <DonutChart data={{
-                            annualSalary: result.averageSalary,
-                            bonus: result.bonusEquityBenefits,
-                            recruiment: result.recruiment,
-                            overhead: result.overhead,
-                          }}
-                          />
                         </div>
-                        <div styleName="donut-legend-box">
-                          <h4 styleName="heading-4">
-                            Total Annual Cost:
-                            {utils.formatMoneyValueI(result.totalAnnualCost)}
-                          </h4>
-                          <div>
-                      <span styleName="label">
-                        <i styleName="dot dot-1" />
-                        {' '}
-                        Annual Salary
-                      </span>
-                            <span styleName="label">
-                        <i styleName="dot dot-2" />
-                              {' '}
-                              Bonus, Equity &amp; Benefits
-                      </span>
-                            <span styleName="label">
-                        <i styleName="dot dot-3" />
-                              {' '}
-                              Recruiment Costs
-                      </span>
-                            <span styleName="label">
-                        <i styleName="dot dot-4" />
-                              {' '}
-                              Employee Overheads
-                      </span>
-                          </div>
-                        </div>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </div>
-              </div>
-              <div styleName="row">
-                <div styleName="col">
+                      </Card.Footer>
+                    </Card>
+                  </div>
                   {/* FREELANCER VS. TRADITIONAL HIRING */}
                   <Card>
                     <Card.Header>
@@ -279,6 +221,55 @@ const Prints = ({
                   </Card>
                 </div>
                 <div styleName="col">
+                  {/* VISUAL BREAKDOWN */}
+                  <div styleName='margin-card-bottom'>
+                    <Card>
+                      <Card.Header>
+                        <h6 styleName="heading-6" className="text-darkCyan">VISUAL BREAKDOWN</h6>
+                      </Card.Header>
+                      <Card.Body>
+                        <div styleName="donut-chart-container">
+                          <div styleName="donut-chart-box">
+                            <DonutChart data={{
+                              annualSalary: result.averageSalary,
+                              bonus: result.bonusEquityBenefits,
+                              recruiment: result.recruiment,
+                              overhead: result.overhead,
+                            }}
+                            />
+                          </div>
+                          <div styleName="donut-legend-box">
+                            <h4 styleName="heading-4">
+                              Total Annual Cost:
+                              {utils.formatMoneyValueI(result.totalAnnualCost)}
+                            </h4>
+                            <div>
+                      <span styleName="label">
+                        <i styleName="dot dot-1" />
+                        {' '}
+                        Annual Salary
+                      </span>
+                              <span styleName="label">
+                        <i styleName="dot dot-2" />
+                                {' '}
+                                Bonus, Equity &amp; Benefits
+                      </span>
+                              <span styleName="label">
+                        <i styleName="dot dot-3" />
+                                {' '}
+                                Recruiment Costs
+                      </span>
+                              <span styleName="label">
+                        <i styleName="dot dot-4" />
+                                {' '}
+                                Employee Overheads
+                      </span>
+                            </div>
+                          </div>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </div>
                   {/* THE TALENT */}
                   <Card>
                     <Card.Header>
@@ -291,29 +282,29 @@ const Prints = ({
                         get to work right away. Here is a snapshot of the talent on our platform.
                       </p>
                       <div styleName="talents">
-                          {
-                            talents.map((talent, index) => {
-                              // check if talent if equsl to form selected talen
-                              const showTalent = talent.tags.some(tag => {
-                                return tag.label === form.talentType;
-                              })
-                              if(!showTalent) return null;
-
-                              return(
-                                  <div
-                                      key={talent.member.handle}
-                                  >
-                                    <PrintMember
-                                        member={talent.member}
-                                        tags={talent.tags}
-                                        wins={talent.wins}
-                                        skills={talent.skills}
-                                        experience={talent.experience}
-                                    />
-                                  </div>
-                              )
+                        {
+                          talents.map((talent, index) => {
+                            // check if talent if equsl to form selected talen
+                            const showTalent = talent.tags.some(tag => {
+                              return tag.label === form.talentType;
                             })
-                            }
+                            if(!showTalent) return null;
+
+                            return(
+                                <div
+                                    key={talent.member.handle}
+                                >
+                                  <PrintMember
+                                      member={talent.member}
+                                      tags={talent.tags}
+                                      wins={talent.wins}
+                                      skills={talent.skills}
+                                      experience={talent.experience}
+                                  />
+                                </div>
+                            )
+                          })
+                        }
 
                       </div>
                     </Card.Body>
@@ -325,15 +316,10 @@ const Prints = ({
                   </p>
                   { !utils.platform.isMobileOS() && (
                       <div styleName="buttons">
-
                       </div>
-
-
                   )}
                 </div>
-
               </div>
-
             </div>
           </div>
         </div>
