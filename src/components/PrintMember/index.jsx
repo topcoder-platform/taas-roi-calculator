@@ -21,7 +21,7 @@ const PrintMember = ({
                 </div>
             </div>
             <div styleName='member-info'>
-                <span styleName='handle'>{member.handle}</span>
+                <div styleName='handle'>{member.handle}</div>
                 <div styleName='tags'>
                     <span styleName='tag' style={{ background: tags[0].color }} key={tags[0].label}>{tags[0].label}</span>
                 </div>

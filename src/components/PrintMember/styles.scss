@@ -12,6 +12,12 @@
   @include xs-to-md {
     width: 100%;
   };
+  @media print {
+    flex-direction: column;
+    background: white;
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:opacity(1);
+  }
 }
 
 .card-header {
@@ -19,6 +25,7 @@
   padding: $spacer-2 $spacer-1 $spacer-2 $spacer-2;
   border-top-left-radius: $border-radius-2;
   border-top-right-radius: $border-radius-2;
+  background: #f4f4f4;
 }
 
 .member-skills {
@@ -27,7 +34,9 @@
   border-radius: $border-radius-2;
   padding: $spacer-2;
   text-align: center;
-
+  @media print {
+    width: 100%;
+  }
   .skills,
   .experience {
     margin-top: $base-unit;
@@ -61,6 +70,10 @@
       @include xs-to-md {
         left: calc(50% - 105px);
       }
+
+      @media print {
+        left: 2px;
+      }
     }
 
     .photo {
@@ -80,7 +93,9 @@
 
   .handle {
     @include barlow-condensed-medium;
-
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
     margin-top: $spacer-1;
     font-size: 34px;
     color: $body-color;
@@ -116,6 +131,9 @@
     .win {
       font-weight: bold;
       font-size: 14px;
+      @media print {
+        font-size: 11px;
+      }
     }
 
     .win {

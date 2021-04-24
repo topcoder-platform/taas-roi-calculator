@@ -38,6 +38,9 @@
     width: 100%;
     flex-basis: auto;
   }
+  @media print {
+    width: 1px;
+  }
 }
 .margin-card-bottom {
   margin-bottom: $spacer-2;
@@ -52,6 +55,11 @@
   font-size: 21px;
   a {
     font-size: 24px;
+  }
+
+  @media print {
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:opacity(1);
   }
 }
 
@@ -543,5 +551,12 @@
   }
   .footer {
     margin-top: $spacer-3;
+  }
+}
+
+@media print {
+  .card {
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:opacity(1);
   }
 }

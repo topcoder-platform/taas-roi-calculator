@@ -66,6 +66,15 @@ const Prints = ({
     default: industryIcon = null;
   }
 
+  useEffect(()=>{
+    setTimeout(()=>{
+
+    // window.print();
+
+    },4000);
+
+  },[]);
+
   return (
       <div styleName="page print-screen">
         <div styleName="row">
@@ -162,7 +171,7 @@ const Prints = ({
                         </div>
                       </Card.Body>
                       <Card.Footer>
-                        <div styleName="save">
+                       <div styleName="save">
                   <span>
                     TOPCODER WEEKLY COST:
                     {' '}
@@ -284,11 +293,6 @@ const Prints = ({
                       <div styleName="talents">
                         {
                           talents.map((talent, index) => {
-                            // check if talent if equal to form selected talent
-                            const showTalent = talent.tags.some(tag => {
-                              return tag.label === form.talentType;
-                            })
-                            if(!showTalent) return null;
 
                             return(
                                 <div
@@ -325,7 +329,6 @@ const Prints = ({
             </div>
           </div>
         </div>
-
       </div>
   )
 }
