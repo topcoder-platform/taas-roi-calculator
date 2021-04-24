@@ -197,20 +197,19 @@ const Prints = ({
                           <LineChart height={isMobileOrTablet ? 230 : undefined} />
                         </div>
                         <div styleName="line-legend-box">
-                    <span styleName="label">
-                      <i styleName="dot dot-1" />
-                      {' '}
-                      Topcoder TaaS Process
-                    </span>
-                          <span styleName="label">
-                      <i styleName="dot dot-2" />
-                            {' '}
-                            Traditional Hiring Process
-                    </span>
+                        <span styleName="label">
+                          <i styleName="dot dot-1" />
+                          {' '}
+                          Topcoder TaaS Process
+                        </span>
+                        <span styleName="label">
+                        <i styleName="dot dot-2" />
+                           {' '}
+                          Traditional Hiring Process
+                        </span>
                         </div>
                         <div styleName="message">
-                          <h6 styleName="heading-6" className="text-green">AVG. PRODUCTIVITY GAIN:</h6>
-                          <p>280 Hours In The First 3 Months</p>
+                          <span className="text-green">AVG. PRODUCTIVITY GAIN:</span> <span>280 Hours In The First 3 Months</span>
                         </div>
                         <p styleName="footer">
                           Calculation Based on Average Time to Hire of 30 Days (Traditional FTE Labor) and 40-hours per week usage of Topcoder
@@ -285,7 +284,7 @@ const Prints = ({
                       <div styleName="talents">
                         {
                           talents.map((talent, index) => {
-                            // check if talent if equsl to form selected talen
+                            // check if talent if equal to form selected talent
                             const showTalent = talent.tags.some(tag => {
                               return tag.label === form.talentType;
                             })

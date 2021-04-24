@@ -39,16 +39,6 @@
     flex-basis: auto;
   }
 }
-
-.print-screen {
-  .left-section {
-    margin-bottom: $spacer-4;
-  }
-  .result-container {
-    margin-right: $spacer-2;
-  }
-}
-
 .margin-card-bottom {
   margin-bottom: $spacer-2;
 }
@@ -436,24 +426,13 @@
   }
 
   .message {
-    position: absolute;
-    right: 30px;
-    bottom: 60%;
-
-    padding: 8px 10px;
+    margin-top: $spacer-2;
+    padding: 24px 10px;
     background: $tc-white;
     border-radius: $border-radius-1;
     box-shadow: $shadow;
+    text-align: center;
 
-    h6 {
-      font-size: 10px;
-      letter-spacing: 0.83px;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 19px;
-    }
   }
 
   @include xs-to-md {
@@ -553,5 +532,16 @@
     > button {
       font-size: 12px;
     }
+  }
+}
+.print-screen {
+  .left-section {
+    margin-bottom: $spacer-4;
+  }
+  .result-container {
+    margin-right: $spacer-2;
+  }
+  .footer {
+    margin-top: $spacer-3;
   }
 }
