@@ -216,6 +216,11 @@
   @include xs-to-md {
     margin-right: -$spacer-1;
   }
+  @media print {
+    .box {
+      flex-basis: 28%
+    }
+  }
 }
 
 .box {

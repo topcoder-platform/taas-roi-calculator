@@ -24,9 +24,6 @@ import IconPublicSector from '../../assets/icons/public-sector.svg';
 import IconTravelHospitality from '../../assets/icons/travel-hospitality.svg';
 import IconRecalculate from '../../assets/icons/recalculate.png';
 
-import { renderToString } from 'react-dom';
-import jsPDF from "jspdf";
-
 
 import './styles.scss';
 import PrintMember from '../../components/PrintMember';
@@ -293,7 +290,11 @@ const Prints = ({
                       <div styleName="talents">
                         {
                           talents.map((talent, index) => {
-
+                            // check if talent if equal to form selected talent
+                            const showTalent = talent.tags.some(tag => {
+                              return tag.label === form.talentType;
+                            })
+                            if(!showTalent) return null;
                             return(
                                 <div
                                     key={talent.member.handle}
@@ -333,14 +334,6 @@ const Prints = ({
   )
 }
 
-
-const print = () => {
-  const string = renderToString(<Prints />);
-  const pdf = new jsPDF();
-  pdf.fromHTML(string);
-  pdf.save('pdf');
-
-}
 
 
 
