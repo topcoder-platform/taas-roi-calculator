@@ -164,9 +164,9 @@
 }
 
 .heading-card{
-	
+
 	width:50%;
-	
+
 }
 
 .heading-6 {
@@ -442,7 +442,7 @@
 }
 
 .talents {
-  padding: $spacer-2 0 50px;
+  padding: $spacer-2 0 $spacer-1;
 
   @include xs-to-md {
     padding-bottom: 40px;
@@ -469,7 +469,7 @@
 }
 
 .result-recalculate {
- 
+
   > button{
    float: right;
   margin-top: -26px!important;
@@ -483,7 +483,7 @@
   	height:20px!important;
     animation: rotation 2s infinite linear;
     }
-    
+
     @keyframes rotation {
       from {
       transform: rotate(0deg);
@@ -499,7 +499,7 @@
     box-shadow: none!important;
     -mox-box-shadow: none!important;
   	}
-  	
+
 }
 
 .recalculate {

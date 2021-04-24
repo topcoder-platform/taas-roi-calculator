@@ -291,7 +291,6 @@ const Prints = ({
                         get to work right away. Here is a snapshot of the talent on our platform.
                       </p>
                       <div styleName="talents">
-
                           {
                             talents.map((talent, index) => {
                               // check if talent if equsl to form selected talen
