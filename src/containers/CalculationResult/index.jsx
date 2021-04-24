@@ -302,7 +302,6 @@ const Prints = ({
 
                               return(
                                   <div
-                                      styleName={`talent ${index === 0 ? ' first' : ''}`}
                                       key={talent.member.handle}
                                   >
                                     <PrintMember
