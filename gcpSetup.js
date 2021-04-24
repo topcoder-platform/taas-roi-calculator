@@ -1,2 +1,3 @@
 var fs = require('fs');
-fs.writeFile(process.env.GCP_KEY_FILE, process.env.GOOGLESHEETSCREDENTIAL, (err) => {});
+var sheetApiKey = require('./googlesheets-credential.json');
+fs.writeFile(process.env.GCP_KEY_FILE, sheetApiKey, (err) => {});
