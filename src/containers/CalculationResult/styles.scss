@@ -53,6 +53,18 @@
   margin-bottom: $spacer-2;
 }
 
+.freelance-demo {
+  color: white;
+  background: #2a2a2a;
+  border-radius: $border-radius-2;
+  box-shadow: $shadow;
+  padding: $spacer-2;
+  font-size: 21px;
+  a {
+    font-size: 24px;
+  }
+}
+
 .left-section {
   padding-right: 130px;
 
@@ -85,6 +97,13 @@
     font-size: 31px;
     line-height: 33px;
   }
+}
+.text-gradient {
+  background-image: linear-gradient(#febc40, #f47a8e);
+  background-image:  -ms-linear-gradient(bottom, white, white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text {

@@ -271,7 +271,8 @@ const Prints = ({
                     </Card>
                   </div>
                   {/* THE TALENT */}
-                  <Card>
+                  <div styleName='margin-card-bottom'>
+                    <Card>
                     <Card.Header>
                       <h6 styleName="heading-6" className="text-red">THE TALENT</h6>
                     </Card.Header>
@@ -309,15 +310,17 @@ const Prints = ({
                       </div>
                     </Card.Body>
                   </Card>
-                  <br/>
-                  <p styleName="text bolder">
-                    If you’re ready to see how Topcoder can help turbocharge your team’s
-                    results and output, schedule a demo with us today.
-                  </p>
-                  { !utils.platform.isMobileOS() && (
-                      <div styleName="buttons">
-                      </div>
-                  )}
+                  </div>
+                  <div styleName="freelance-demo text bolder">
+
+                      If you’re ready to see how Topcoder can help turbocharge your team’s
+                      results and output, schedule a demo with us today.
+                      <br/><br/>
+                    <a href='https://go.topcoder.com/freelance-demo/' styleName='text-gradient'>
+                      go.topcoder.com/freelance-demo
+                    </a>
+                  </div>
+
                 </div>
               </div>
             </div>
