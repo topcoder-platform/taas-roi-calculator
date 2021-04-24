@@ -14,16 +14,16 @@ const PrintMember = ({
                      }) => (
     <div styleName='card'>
         <div styleName='card-header member'>
-            <div>
+            <div styleName='member-photo'>
                 <span styleName='rate'>{rateUtil.createRateIcon(member.maxRating.ratingColor, '20px')}</span>
                 <div styleName='photo'>
                     <img src={member.photoURL || IconPhotoDefault} alt='member' />
                 </div>
             </div>
-            <div styleName='member-skills'>
+            <div styleName='member-info'>
                 <span styleName='handle'>{member.handle}</span>
                 <div styleName='tags'>
-                    {tags.map((tag) => <span styleName='tag' style={{ background: tag.color }} key={tag.label}>{tag.label}</span>)}
+                    <span styleName='tag' style={{ background: tags[0].color }} key={tags[0].label}>{tags[0].label}</span>
                 </div>
                 <div styleName='stats'>
                     <div styleName='since'>
@@ -45,16 +45,16 @@ const PrintMember = ({
                 </div>
             </div>
         </div>
-        {/* <div styleName='card-body member'>
+         <div styleName='member-skills'>
             <h4 styleName='heading-4'>SKILLS</h4>
             <div styleName='skills'>
-                <Clampy clampSize='2'>
+                <Clampy clampSize='3'>
                     {
                         skills.join(', ')
                     }
                 </Clampy>
             </div>
-        </div>*/}
+        </div>
     </div>
 );
 
