@@ -45,7 +45,7 @@ const PrintMember = ({
             </div>
 
         </div>
-       {/* <div styleName='card-body member'>
+        {/* <div styleName='card-body member'>
             <h4 styleName='heading-4'>SKILLS</h4>
             <div styleName='skills'>
                 <Clampy clampSize='2'>
