@@ -25,6 +25,10 @@
   border-radius: $border-radius-2;
 }
 
+.member-skills {
+  padding-left: $spacer-2;
+}
+
 .member {
   position: relative;
   display: flex;
@@ -34,7 +38,7 @@
 
   .rate {
     position: absolute;
-    top: 25px;
+    top: 20px;
     left: 20px;
     display: block;
     z-index: 1;
@@ -45,8 +49,8 @@
   }
 
   .photo {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     overflow: hidden;
     background-color: $tc-white;
     clip-path: path('M33.2271011,87.5105537 C55.5659943,83.6692588 79.0218322,68.3040792 86.8404448,45.2563098 C94.6590575,22.2085404 61.1507176,4.28249753 39.928769,0.441202628 C18.7068205,-3.40009227 -4.74901745,18.3672455 0.83570586,45.2563098 C6.42042917,72.1453741 10.8882078,91.3518486 33.2271011,87.5105537 Z');
@@ -86,27 +90,34 @@
     }
   }
 
-  .country,
-  .win {
-    font-weight: bold;
-    font-size: 14px;
-  }
+  .stats {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .country,
+    .win {
+      font-weight: bold;
+      font-size: 14px;
+    }
 
-  .win {
-    margin-left: $spacer-1;
-  }
+    .win {
+      margin-left: $spacer-1;
+    }
 
-  .since {
-    font-weight: 500;
-    font-size: 11px;
-  }
+    .since {
+      width: 59px;
+      font-weight: 500;
+      font-size: 11px;
+    }
 
-  .skills,
-  .experience {
-    text-align: center;
-    width: 200px;
-    font-weight: 500;
-    font-size: 14px;
+    .skills,
+    .experience {
+      text-align: center;
+      width: 200px;
+      font-weight: 500;
+      font-size: 14px;
+    }
   }
 
   .hr {

@@ -20,30 +20,30 @@ const PrintMember = ({
                     <img src={member.photoURL || IconPhotoDefault} alt='member' />
                 </div>
             </div>
-            <div>
+            <div styleName='member-skills'>
                 <span styleName='handle'>{member.handle}</span>
                 <div styleName='tags'>
                     {tags.map((tag) => <span styleName='tag' style={{ background: tag.color }} key={tag.label}>{tag.label}</span>)}
                 </div>
-                <span styleName='since'>
-                MEMBER SINCE&nbsp;
-                    <span>{new Date(member.createdAt).getFullYear()}</span>
-            </span>
-
-                <span styleName='country'>
-          <IconLocation styleName='icon' />
-                    {' '}
-                    {member.homeCountryCode}
-        </span>
-                <span styleName='win'>
-          <IconWin styleName='icon' />
-                    {' '}
-                    {wins}
-                    {' '}
-                    WINS
-        </span>
+                <div styleName='stats'>
+                    <div styleName='since'>
+                       MEMBER SINCE&nbsp;
+                        <span>{new Date(member.createdAt).getFullYear()}</span>
+                    </div>
+                    <span styleName='country'>
+                            <IconLocation styleName='icon' />
+                        {' '}
+                        {member.homeCountryCode}
+                        </span>
+                    <span styleName='win'>
+                            <IconWin styleName='icon' />
+                        {' '}
+                        {wins}
+                        {' '}
+                        WINS
+                    </span>
+                </div>
             </div>
-
         </div>
         {/* <div styleName='card-body member'>
             <h4 styleName='heading-4'>SKILLS</h4>
