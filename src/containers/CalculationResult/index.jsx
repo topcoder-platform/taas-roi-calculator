@@ -605,7 +605,7 @@ const CalculationResult = ({
               </Card.Header>
               <Card.Body>
                 <p styleName="text margin-top">
-                  Joe, the talent on our platform are virtual collaboration professionals. They are
+                  The talent on our platform are virtual collaboration professionals. They are
                   used to sliding seamlessly into new teams and exciting projects and are ready to
                   get to work right away. Here is a snapshot of the talent on our platform.
                 </p>
