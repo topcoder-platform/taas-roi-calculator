@@ -2,7 +2,7 @@
 @import "styles/mixins";
 
 .header {
-  position: fixed;
+
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -26,6 +26,9 @@
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
+  }
+  @media print {
+    position: relative;
   }
 }
 
