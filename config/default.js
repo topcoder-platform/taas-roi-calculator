@@ -52,7 +52,7 @@ module.exports = {
             label: 'Full Stack Developer',
             color: '#4CC94C',
           },{
-            label: 'Front End Developer',
+            label: 'Data Scientist',
             color: '#4CC94C',
           },{
             label: 'Back End Developer',
@@ -82,11 +82,15 @@ module.exports = {
             label: 'Full Stack Developer',
             color: '#4CC94C',
           },{
-            label: 'Front End Developer',
+            label: 'Data Scientist',
             color: '#4CC94C',
           },{
             label: 'Back End Developer',
             color: '#4CC94C',
+          },
+          {
+            label: 'QA Engineer',
+            color: '#FD7D01',
           },
         ],
       },
@@ -103,13 +107,21 @@ module.exports = {
             label: 'Back End Developer',
             color: '#4CC94C',
           },
+          {
+            label: 'QA Engineer',
+            color: '#FD7D01',
+          },
         ],
       },
       {
         username: 'lunarkid',
         tags: [
           {
-            label: 'Full Stack Developer',
+            label: 'Data Engineers',
+            color: '#2C95D7',
+          },
+          {
+            label: 'Data Scientist',
             color: '#4CC94C',
           },{
             label: 'Front End Developer',
@@ -118,14 +130,42 @@ module.exports = {
             label: 'Back End Developer',
             color: '#4CC94C',
           },
+          {
+            label: 'Data Scientist',
+            color: '#EF476F',
+          },
+          {
+            label: 'Copilot',
+            color: '#9D41C9',
+          },
+          {
+            label: 'QA Engineer',
+            color: '#FD7D01',
+          },
+          {
+            label: 'UI/UX Designer',
+            color: '#2C95D7',
+          }
         ],
       },
       {
         username: 'iamtong',
         tags: [
           {
+            label: 'Data Engineers',
+            color: '#2C95D7',
+          },
+          {
             label: 'UI/UX Designer',
             color: '#2C95D7',
+          },
+          {
+            label: 'Data Scientist',
+            color: '#EF476F',
+          },
+          {
+            label: 'Copilot',
+            color: '#9D41C9',
           },
         ],
       },
@@ -140,6 +180,14 @@ module.exports = {
             label: 'Copilot',
             color: '#9D41C9',
           },
+          {
+            label: 'Data Scientist',
+            color: '#EF476F',
+          },
+          {
+            label: 'UI/UX Designer',
+            color: '#2C95D7',
+          }
         ],
       },
       {
@@ -149,6 +197,22 @@ module.exports = {
             label: 'Data Scientist',
             color: '#EF476F',
           },
+          {
+            label: 'Copilot',
+            color: '#9D41C9',
+          },
+          {
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          },
+          {
+            label: 'UI/UX Designer',
+            color: '#2C95D7',
+          },
+          {
+            label: 'Data Engineers',
+            color: '#2C95D7',
+          }
         ],
       },
     ],

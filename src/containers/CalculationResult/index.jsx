@@ -37,11 +37,12 @@ const Prints = ({
                   getTalents,
                 }) =>
 {
+
   useEffect(() => {
     if (form.talentType) {
       const allTalentsOfType = process.env.TALENT.TALENTS;
       // only get the first ${process.env.TALENT.TOTAL_SLIDES} members
-      getTalents([...allTalentsOfType].splice(0, process.env.TALENT.TOTAL_SLIDES));
+      getTalents([...allTalentsOfType]);
     }
   }, [form]);
   const isMobileOrTablet = useMediaQuery({ query: `(max-width: ${process.env.SCREEN.MD}px)` });
@@ -335,9 +336,6 @@ const Prints = ({
   )
 }
 
-
-
-
 const CalculationResult = ({
   form,
   result,
@@ -349,7 +347,7 @@ const CalculationResult = ({
     if (form.talentType) {
       const allTalentsOfType = process.env.TALENT.TALENTS;
       // only get the first ${process.env.TALENT.TOTAL_SLIDES} members
-      getTalents([...allTalentsOfType].splice(0, process.env.TALENT.TOTAL_SLIDES));
+      getTalents([...allTalentsOfType]);
     }
   }, [form]);
 
@@ -615,11 +613,11 @@ const CalculationResult = ({
                   <SlideShow>
                     {
                       talents.map((talent, index) => {
-                        // check if talent if equal to form selected talen
+                        // check if talent if equal to form selected talent
                         const showTalent = talent.tags.some(tag => {
                          return tag.label === form.talentType;
                         })
-                        if(!showTalent) return null;
+                        if(!showTalent || index >=5) return null;
                         return (
                             <div
                                 styleName={`talent ${index === 0 ? ' first' : ''}`}
