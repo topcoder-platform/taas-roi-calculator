@@ -10,7 +10,7 @@ import DonutChart from '../../components/DonutChart';
 import LineChart from '../../components/LineChart';
 import CardMember from '../../components/CardMember';
 import SlideShow from '../../components/SlideShow';
-import SocialShareButton from '../../components/SocialShareButton';
+
 import actions from '../../actions';
 import * as utils from '../../utils';
 import IconBanking from '../../assets/icons/banking.svg';
