@@ -343,7 +343,7 @@ const CalculationResult = ({
   talents,
   getTalents,
 }) => {
-  const [showPrintScreen, setShowPrintScreen] = useState(true);
+  const [showPrintScreen, setShowPrintScreen] = useState(false);
   useEffect(() => {
     if (form.talentType) {
       const allTalentsOfType = process.env.TALENT.TALENTS;
