@@ -21,6 +21,12 @@ module.exports = {
           {
             label: 'Full Stack Developer',
             color: '#4CC94C',
+          },{
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Back End Developer',
+            color: '#4CC94C',
           },
         ],
       },
@@ -28,7 +34,7 @@ module.exports = {
         username: 'iamtong',
         tags: [
           {
-            label: 'UX/UI Designer',
+            label: 'UI/UX Designer',
             color: '#2C95D7',
           },
         ],

@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall" : "node gcpSetup.js",
     "start": "node server.js",
     "dev": "PORT=3100 node server.js & cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack --mode=production",

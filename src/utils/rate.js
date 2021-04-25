@@ -2,9 +2,9 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-export function createRateIcon(color) {
+export function createRateIcon(color, size='44px') {
   return (
-    <svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1">
+    <svg width={size} height={size} viewBox="0 0 44 44" version="1.1">
       <defs>
         <filter x="-23.5%" y="-20.6%" width="147.1%" height="147.1%" filterUnits="objectBoundingBox" id="filter-2">
           <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1" />

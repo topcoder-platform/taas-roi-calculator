@@ -34,7 +34,7 @@
   flex: 1 0 0%;
 
   @include xs-to-md {
-    width: 100%;
+
     flex-basis: auto;
   }
 }

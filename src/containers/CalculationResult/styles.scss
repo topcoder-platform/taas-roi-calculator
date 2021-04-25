@@ -38,6 +38,29 @@
     width: 100%;
     flex-basis: auto;
   }
+  @media print {
+    width: 1px;
+  }
+}
+.margin-card-bottom {
+  margin-bottom: $spacer-2;
+}
+
+.freelance-demo {
+  color: white;
+  background: #2a2a2a;
+  border-radius: $border-radius-2;
+  box-shadow: $shadow;
+  padding: $spacer-2;
+  font-size: 21px;
+  a {
+    font-size: 24px;
+  }
+
+  @media print {
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:opacity(1);
+  }
 }
 
 .left-section {
@@ -72,6 +95,13 @@
     font-size: 31px;
     line-height: 33px;
   }
+}
+.text-gradient {
+  background-image: linear-gradient(#febc40, #f47a8e);
+  background-image:  -ms-linear-gradient(bottom, white, white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text {
@@ -164,9 +194,9 @@
 }
 
 .heading-card{
-	
+
 	width:50%;
-	
+
 }
 
 .heading-6 {
@@ -185,6 +215,11 @@
 
   @include xs-to-md {
     margin-right: -$spacer-1;
+  }
+  @media print {
+    .box {
+      flex-basis: 28%
+    }
   }
 }
 
@@ -404,24 +439,13 @@
   }
 
   .message {
-    position: absolute;
-    right: 30px;
-    bottom: 60%;
-
-    padding: 8px 10px;
+    margin-top: $spacer-2;
+    padding: 24px 10px;
     background: $tc-white;
     border-radius: $border-radius-1;
     box-shadow: $shadow;
+    text-align: center;
 
-    h6 {
-      font-size: 10px;
-      letter-spacing: 0.83px;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 19px;
-    }
   }
 
   @include xs-to-md {
@@ -442,7 +466,7 @@
 }
 
 .talents {
-  padding: $spacer-2 0 50px;
+  padding: $spacer-2 0 $spacer-1;
 
   @include xs-to-md {
     padding-bottom: 40px;
@@ -469,7 +493,7 @@
 }
 
 .result-recalculate {
- 
+
   > button{
    float: right;
   margin-top: -26px!important;
@@ -485,7 +509,7 @@
   }
 
   > button:hover{
-    
+
     > img{
     animation: rotation 0.85s linear;
     }
@@ -504,7 +528,7 @@
     box-shadow: none!important;
     -mox-box-shadow: none!important;
   	}
-  	
+
 }
 
 .recalculate {
@@ -526,5 +550,23 @@
     > button {
       font-size: 12px;
     }
+  }
+}
+.print-screen {
+  .left-section {
+    margin-bottom: $spacer-4;
+  }
+  .result-container {
+    margin-right: $spacer-2;
+  }
+  .footer {
+    margin-top: $spacer-3;
+  }
+}
+
+@media print {
+  .card {
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:opacity(1);
   }
 }
