@@ -13,7 +13,7 @@
     width: 100%;
   };
   @media print {
-    flex-direction: column;
+
     background: white;
     -webkit-print-color-adjust:exact;
     -webkit-filter:opacity(1);
@@ -21,7 +21,7 @@
 }
 
 .card-header {
-  flex: 1;
+  flex: 2;
   padding: $spacer-2 $spacer-1 $spacer-2 $spacer-2;
   border-top-left-radius: $border-radius-2;
   border-top-right-radius: $border-radius-2;
@@ -29,7 +29,9 @@
 }
 
 .member-skills {
-  width: 200px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   background: $tc-white;
   border-radius: $border-radius-2;
   padding: $spacer-2;
