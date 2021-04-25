@@ -64,14 +64,13 @@ const Prints = ({
     default: industryIcon = null;
   }
 
-  useEffect(()=>{
-    setTimeout(()=>{
+  useEffect(() => {
+    window.scrollTo(0,0);
+    setTimeout(() => {
+      window.print();
+    }, 2000);
 
-    // window.print();
-
-    },4000);
-
-  },[]);
+  }, []);
 
   return (
       <div styleName="page print-screen">
@@ -295,7 +294,7 @@ const Prints = ({
                             const showTalent = talent.tags.some(tag => {
                               return tag.label === form.talentType;
                             })
-                            if(!showTalent) return null;
+                            if(!showTalent || index >= 4) return null;
                             return(
                                 <div
                                     key={talent.member.handle}

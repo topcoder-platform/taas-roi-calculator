@@ -31,6 +31,96 @@ module.exports = {
         ],
       },
       {
+        username: 'NightWolf',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Back End Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
+        username: 'phead',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Back End Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
+        username: 'soso0574',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Back End Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
+        username: 'moulyg',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Back End Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
+        username: 'hi4sandy',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Back End Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
+        username: 'lunarkid',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          },{
+            label: 'Back End Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
         username: 'iamtong',
         tags: [
           {
