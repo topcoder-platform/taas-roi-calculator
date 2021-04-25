@@ -305,6 +305,7 @@ const Prints = ({
                                       wins={talent.wins}
                                       skills={talent.skills}
                                       experience={talent.experience}
+                                      formType={form.talentType}
                                   />
                                 </div>
                             )
@@ -630,6 +631,7 @@ const CalculationResult = ({
                                   wins={talent.wins}
                                   skills={talent.skills}
                                   experience={talent.experience}
+                                  formType={form.talentType}
                               />
                             </div>
                         );
