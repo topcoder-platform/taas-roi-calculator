@@ -10,7 +10,7 @@ import IconPhotoDefault from '../../assets/images/user.svg';
 import './styles.scss';
 
 const CardMember = ({
-  member, tags, wins, skills, experience,
+  member, tags, wins, skills, formType,
 }) => (
   <div styleName="card">
     <div styleName="card-header member">
@@ -20,7 +20,12 @@ const CardMember = ({
       </div>
       <span styleName="handle">{member.handle}</span>
       <div styleName="tags">
-        {tags.map((tag) => <span styleName="tag" style={{ background: tag.color }} key={tag.label}>{tag.label}</span>)}
+        {tags.map((tag) => {
+              if (tag.label === formType) {
+                return <span styleName='tag' style={{ background: tag.color }} key={tag.label}>{tag.label}</span>
+              }
+            }
+        )}
       </div>
       <div>
         <span styleName="country">
@@ -51,9 +56,9 @@ const CardMember = ({
         </Clampy>
       </div>
 
-      
 
-      
+
+
     </div>
   </div>
 );

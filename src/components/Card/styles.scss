@@ -5,6 +5,10 @@
   background: $tc-gray-neutral-light;
   border-radius: $border-radius-2;
   box-shadow: $shadow;
+  @media print {
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:opacity(1);
+  }
 }
 
 .card-header {
