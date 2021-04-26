@@ -50,6 +50,7 @@ const Prints = ({
   const industry = form.industry === 'Tech & technology services' ? 'Technology Services' : form.industry;
 
   let industryIcon;
+  let members = 0;
 
   switch (result.industryIcon) {
     case 'banking.svg': industryIcon = <IconBanking />; break;
@@ -290,12 +291,14 @@ const Prints = ({
                       </p>
                       <div styleName="talents">
                         {
+
                           talents.map((talent, index) => {
                             // check if talent if equal to form selected talent
                             const showTalent = talent.tags.some(tag => {
                               return tag.label === form.talentType;
                             })
-                            if(!showTalent || index >= 4) return null;
+                            if(!showTalent || members >= 4) return null;
+                            members++;
                             return(
                                 <div
                                     key={talent.member.handle}
@@ -359,6 +362,7 @@ const CalculationResult = ({
   const isMobileOrTablet = useMediaQuery({ query: `(max-width: ${process.env.SCREEN.MD}px)` });
   const industry = form.industry === 'Tech & technology services' ? 'Technology Services' : form.industry;
   let industryIcon;
+  let members = 0;
 
   switch (result.industryIcon) {
     case 'banking.svg': industryIcon = <IconBanking />; break;
@@ -617,7 +621,9 @@ const CalculationResult = ({
                         const showTalent = talent.tags.some(tag => {
                          return tag.label === form.talentType;
                         })
-                        if(!showTalent || index >=5) return null;
+
+                        if(!showTalent || members >=5) return null;
+                        members++;
                         return (
                             <div
                                 styleName={`talent ${index === 0 ? ' first' : ''}`}

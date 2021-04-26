@@ -52,7 +52,7 @@ module.exports = {
             label: 'Full Stack Developer',
             color: '#4CC94C',
           },{
-            label: 'Data Scientist',
+            label: 'Data Scientists',
             color: '#4CC94C',
           },{
             label: 'Back End Developer',
@@ -82,7 +82,7 @@ module.exports = {
             label: 'Full Stack Developer',
             color: '#4CC94C',
           },{
-            label: 'Data Scientist',
+            label: 'Data Scientists',
             color: '#4CC94C',
           },{
             label: 'Back End Developer',
@@ -121,7 +121,7 @@ module.exports = {
             color: '#2C95D7',
           },
           {
-            label: 'Data Scientist',
+            label: 'Data Scientists',
             color: '#4CC94C',
           },{
             label: 'Front End Developer',
@@ -131,7 +131,7 @@ module.exports = {
             color: '#4CC94C',
           },
           {
-            label: 'Data Scientist',
+            label: 'Data Scientists',
             color: '#EF476F',
           },
           {
@@ -160,7 +160,7 @@ module.exports = {
             color: '#2C95D7',
           },
           {
-            label: 'Data Scientist',
+            label: 'Data Scientists',
             color: '#EF476F',
           },
           {
@@ -181,11 +181,15 @@ module.exports = {
             color: '#9D41C9',
           },
           {
-            label: 'Data Scientist',
+            label: 'Data Scientists',
             color: '#EF476F',
           },
           {
             label: 'UI/UX Designer',
+            color: '#2C95D7',
+          },
+          {
+            label: 'Data Engineers',
             color: '#2C95D7',
           }
         ],
@@ -194,7 +198,7 @@ module.exports = {
         username: 'duxiaoyang',
         tags: [
           {
-            label: 'Data Scientist',
+            label: 'Data Scientists',
             color: '#EF476F',
           },
           {
