@@ -3,7 +3,7 @@ const router = express.Router();
 const { google } = require('googleapis');
 const config = require('config');
 const joi = require('joi');
-const sheetApiKey = require(process.env.GCP_KEY_FILE);
+const sheetApiKey = process.env.GCP_KEY_FILE;
 
 
 const GOOGLE_SHEET_COLUMNS = [
