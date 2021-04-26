@@ -53,7 +53,7 @@ module.exports = {
             color: '#4CC94C',
           },{
             label: 'Data Scientists',
-            color: '#4CC94C',
+            color: '#EF476F',
           },{
             label: 'Back End Developer',
             color: '#4CC94C',
@@ -83,7 +83,7 @@ module.exports = {
             color: '#4CC94C',
           },{
             label: 'Data Scientists',
-            color: '#4CC94C',
+            color: '#EF476F',
           },{
             label: 'Back End Developer',
             color: '#4CC94C',
@@ -121,12 +121,10 @@ module.exports = {
             color: '#2C95D7',
           },
           {
-            label: 'Data Scientists',
-            color: '#4CC94C',
-          },{
             label: 'Front End Developer',
             color: '#4CC94C',
-          },{
+          },
+          {
             label: 'Back End Developer',
             color: '#4CC94C',
           },
