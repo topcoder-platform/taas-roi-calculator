@@ -24,11 +24,11 @@ import IconTelecoms from '../../assets/icons/telecom.svg';
 import IconPublicSector from '../../assets/icons/public-sector.svg';
 import IconTravelHospitality from '../../assets/icons/travel-hospitality.svg';
 import IconRecalculate from '../../assets/icons/recalculate.png';
-
-
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import './styles.scss';
 import PrintMember from '../../components/PrintMember';
-
+const ref = React.createRef();
 
 const Prints = ({
                   form,
@@ -69,14 +69,22 @@ const Prints = ({
   useEffect(() => {
     window.scrollTo(0,0);
     setTimeout(() => {
-      window.print();
-    }, 2000);
+      // window.print();
+      html2canvas(document.querySelector("#capture-result")).then(canvas => {
+        document.body.appendChild(canvas);  // if you want see your screenshot in body.
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        pdf.addImage(imgData, "JPEG", 15, 40, 180, 180);
+        pdf.save("download.pdf");
+      });
+
+    }, 5000);
 
   }, []);
 
   return (
-      <div styleName="page print-screen">
-        <div styleName="row">
+      <div styleName="page print-screen" id={'capture-result'}>
+        <div ref={ref} styleName="row">
           <div styleName="col">
             <div styleName="left-section">
               <h3 styleName="heading-3 text-gradient" className="upper-case">
@@ -345,7 +353,8 @@ const CalculationResult = ({
   talents,
   getTalents,
 }) => {
-  const [showPrintScreen, setShowPrintScreen] = useState(false);
+
+  const [showPrintScreen, setShowPrintScreen] = useState(true);
   useEffect(() => {
     if (form.talentType) {
       const allTalentsOfType = process.env.TALENT.TALENTS;
