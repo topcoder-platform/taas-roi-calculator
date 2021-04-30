@@ -70,15 +70,15 @@ const Prints = ({
     window.scrollTo(0,0);
     setTimeout(() => {
       // window.print();
-      html2canvas(document.querySelector("#capture-result")).then(canvas => {
+      html2canvas(document.querySelector("#root")).then(canvas => {
         document.body.appendChild(canvas);  // if you want see your screenshot in body.
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF();
-        pdf.addImage(imgData, "JPEG", 15, 40, 180, 180);
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        let width = pdf.internal.pageSize.getWidth();
+        let height = pdf.internal.pageSize.getHeight();
+        pdf.addImage(canvas, "PNG", 0, 0, width,height, 'PDF');
         pdf.save("download.pdf");
       });
-
-    }, 5000);
+    }, 2000);
 
   }, []);
 
