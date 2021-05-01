@@ -69,16 +69,28 @@ const Prints = ({
   useEffect(() => {
     window.scrollTo(0,0);
     setTimeout(() => {
-      // window.print();
-      html2canvas(document.querySelector("#root")).then(canvas => {
+      html2canvas(document.querySelector("body")).then(canvas => {
         document.body.appendChild(canvas);  // if you want see your screenshot in body.
-        const pdf = new jsPDF('p', 'mm', 'a4');
-        let width = pdf.internal.pageSize.getWidth();
-        let height = pdf.internal.pageSize.getHeight();
-        pdf.addImage(canvas, "PNG", 0, 0, width,height, 'PDF');
+        const pdf = new jsPDF('p', 'mm', [210, 237]);
+        // let width = pdf.internal.pageSize.getWidth();
+        // let height = pdf.internal.pageSize.getHeight();
+
+        const imgData = canvas.toDataURL("image/jpeg");
+        const imgProps = pdf.getImageProperties(imgData);
+        const margin = 0;
+        const pdfWidth = pdf.internal.pageSize.width * (1 - margin);
+        const pdfHeight = pdf.internal.pageSize.height * (1 - margin);
+        const x = pdf.internal.pageSize.width * (margin / 2);
+        const y = pdf.internal.pageSize.height * (margin / 2);
+        const widthRatio = pdfWidth / imgProps.width;
+        const heightRatio = pdfHeight / imgProps.height;
+        const ratio = Math.min(widthRatio, heightRatio);
+        const w = imgProps.width * ratio;
+        const h = imgProps.height * ratio;
+        pdf.addImage(canvas, "PNG", 0, 0, w,h, 'PDF', 'FAST');
         pdf.save("download.pdf");
       });
-    }, 2000);
+    }, 5000);
 
   }, []);
 
@@ -87,10 +99,10 @@ const Prints = ({
         <div ref={ref} styleName="row">
           <div styleName="col">
             <div styleName="left-section">
-              <h3 styleName="heading-3 text-gradient" className="upper-case">
+              <h3 styleName="heading-3" className="upper-case" style={{color: 'orange'}}>
                 Hello
                 {' '}
-                <span className="upper-case">{form.firstName}</span>
+                {form.firstName}
                 ,
               </h3>
               <p styleName="text margin-top-extra">
@@ -333,7 +345,7 @@ const Prints = ({
                       If you’re ready to see how Topcoder can help turbocharge your team’s
                       results and output, schedule a demo with us today.
                       <br/><br/>
-                    <a href='https://go.topcoder.com/freelance-demo/' styleName='text-gradient'>
+                    <a href='https://go.topcoder.com/freelance-demo/' style={{color: 'orange', textDecoration: 'none'}}>
                       go.topcoder.com/freelance-demo
                     </a>
                   </div>
