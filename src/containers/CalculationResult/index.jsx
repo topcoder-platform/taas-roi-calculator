@@ -40,36 +40,8 @@ const Prints = ({
                 }) =>
 {
   let members = 0;
-  useEffect(() => {
-    window.scrollTo(0,0);
-    setTimeout(() => {
-      html2canvas(document.querySelector("body")).then(canvas => {
-        document.body.appendChild(canvas);  // if you want see your screenshot in body.
-        const pdf = new jsPDF('p', 'mm', [210, 237]);
-        // let width = pdf.internal.pageSize.getWidth();
-        // let height = pdf.internal.pageSize.getHeight();
-
-        const imgData = canvas.toDataURL("image/jpeg");
-        const imgProps = pdf.getImageProperties(imgData);
-        const margin = 0;
-        const pdfWidth = pdf.internal.pageSize.width * (1 - margin);
-        const pdfHeight = pdf.internal.pageSize.height * (1 - margin);
-        const x = pdf.internal.pageSize.width * (margin / 2);
-        const y = pdf.internal.pageSize.height * (margin / 2);
-        const widthRatio = pdfWidth / imgProps.width;
-        const heightRatio = pdfHeight / imgProps.height;
-        const ratio = Math.min(widthRatio, heightRatio);
-        const w = imgProps.width * ratio;
-        const h = imgProps.height * ratio;
-        pdf.addImage(canvas, "PNG", 0, 0, w,h, 'PDF', 'FAST');
-        // pdf.save("download.pdf");
-      });
-    }, 5000);
-
-  }, []);
-
   return (
-      <div styleName="page print-screen" id={'capture-result'}>
+      <div styleName="page print-screen" id={'capture-result'} style={{position: 'absolute', width: '100%', top: '-6234px'}}>
         <div ref={ref} styleName="row">
           <div styleName="col">
             <div styleName="left-section">
@@ -111,7 +83,6 @@ const Prints = ({
             </div>
           </div>
         </div>
-
         <div styleName="row">
           <div styleName="col">
             <div styleName="card-container">
@@ -293,6 +264,7 @@ const Prints = ({
                             })
                             if(!showTalent || members >= 4) return null;
                             members++;
+
                             return(
                                 <div
                                     key={talent.member.handle}
@@ -340,7 +312,7 @@ const CalculationResult = ({
   getTalents,
 }) => {
 
-  const [showPrintScreen, setShowPrintScreen] = useState(true);
+  const [showPrintScreen, setShowPrintScreen] = useState(false);
   useEffect(() => {
     if (form.talentType) {
       const allTalentsOfType = process.env.TALENT.TALENTS;
@@ -376,7 +348,30 @@ const CalculationResult = ({
     return <Prints form={form} result={result} talents={talents} getTalents={getTalents} industryIcon={industryIcon} industry={industry} />
   }
 
+  const downloadResults = () => {
+    window.scrollTo(0,0)
+    setTimeout(() => {
+      html2canvas(document.getElementById('capture-result')).then(canvas => {
+        document.body.appendChild(canvas);
+        /*const pdf = new jsPDF('p', 'mm', [210, 237]);
+        const imgData = canvas.toDataURL("image/jpeg");
+        const imgProps = pdf.getImageProperties(imgData);
+        const margin = 0;
+        const pdfWidth = pdf.internal.pageSize.width * (1 - margin);
+        const pdfHeight = pdf.internal.pageSize.height * (1 - margin);
+        const x = pdf.internal.pageSize.width * (margin / 2);
+        const y = pdf.internal.pageSize.height * (margin / 2);
+        const widthRatio = pdfWidth / imgProps.width;
+        const heightRatio = pdfHeight / imgProps.height;
+        const ratio = Math.min(widthRatio, heightRatio);
+        const w = imgProps.width * ratio;
+        const h = imgProps.height * ratio;
+        pdf.addImage(canvas, "PNG", 0, 0, w,h, 'PDF', 'FAST');*/
+        // pdf.save("download.pdf");
+      });
+    },[500]);
 
+  }
   return (
     <div styleName="page" id="calculationResult">
       <div styleName="row">
@@ -426,7 +421,7 @@ const CalculationResult = ({
               { !utils.platform.isMobileOS() && (
                 <div styleName="buttons">
                   <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
-                 <SecondaryButton onClick={()=>{setShowPrintScreen(true)}} >DOWNLOAD RESULTS</SecondaryButton>
+                 <SecondaryButton onClick={downloadResults} >DOWNLOAD RESULTS</SecondaryButton>
                 </div>
               )}
             </div>
@@ -646,6 +641,9 @@ const CalculationResult = ({
           </div>
         </div>
       </div>
+      {
+        <Prints form={form} result={result} talents={talents} getTalents={getTalents} industryIcon={industryIcon} industry={industry} />
+      }
     </div>
   );
 };
