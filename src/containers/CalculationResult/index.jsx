@@ -35,37 +35,11 @@ const Prints = ({
                   result,
                   talents,
                   getTalents,
+                  industryIcon,
+                  industry
                 }) =>
 {
-
-  useEffect(() => {
-    if (form.talentType) {
-      const allTalentsOfType = process.env.TALENT.TALENTS;
-      // only get the first ${process.env.TALENT.TOTAL_SLIDES} members
-      getTalents([...allTalentsOfType]);
-    }
-  }, [form]);
-  const isMobileOrTablet = useMediaQuery({ query: `(max-width: ${process.env.SCREEN.MD}px)` });
-
-  const industry = form.industry === 'Tech & technology services' ? 'Technology Services' : form.industry;
-
-  let industryIcon;
   let members = 0;
-
-  switch (result.industryIcon) {
-    case 'banking.svg': industryIcon = <IconBanking />; break;
-    case 'consumer-goods.svg': industryIcon = <IconConsumerGoods />; break;
-    case 'energy.svg': industryIcon = <IconEnergy />; break;
-    case 'entertainment.svg': industryIcon = <IconEntertainment />; break;
-    case 'healthcare.svg': industryIcon = <IconHealthcare />; break;
-    case 'pharma.svg': industryIcon = <IconPharma />; break;
-    case 'tech-services.svg': industryIcon = <IconTechnologyServices />; break;
-    case 'telecom.svg': industryIcon = <IconTelecoms />; break;
-    case 'public-sector.svg': industryIcon = <IconPublicSector />; break;
-    case 'travel-hospitality.svg': industryIcon = <IconTravelHospitality />; break;
-    default: industryIcon = null;
-  }
-
   useEffect(() => {
     window.scrollTo(0,0);
     setTimeout(() => {
@@ -88,7 +62,7 @@ const Prints = ({
         const w = imgProps.width * ratio;
         const h = imgProps.height * ratio;
         pdf.addImage(canvas, "PNG", 0, 0, w,h, 'PDF', 'FAST');
-        pdf.save("download.pdf");
+        // pdf.save("download.pdf");
       });
     }, 5000);
 
@@ -169,7 +143,7 @@ const Prints = ({
                           </div>
                           <div styleName="box">
                             <span styleName="value heading-3">{utils.formatMoneyValueK(result.bonusEquityBenefits)}</span>
-                            <span styleName="description">{!isMobileOrTablet ? 'BONUS, EQUITY, BENEFITS' : 'BONUSES & BENEFITS'}</span>
+                            <span styleName="description">{'BONUSES & BENEFITS'}</span>
                           </div>
                           <div styleName="box">
                             <span styleName="value heading-3">{utils.formatMoneyValueK(result.recruiment + result.overhead)}</span>
@@ -222,7 +196,7 @@ const Prints = ({
                       </p>
                       <div styleName="line-chart-container">
                         <div styleName="line-chart-box">
-                          <LineChart height={isMobileOrTablet ? 230 : undefined} />
+                          <LineChart height={ undefined} />
                         </div>
                         <div styleName="line-legend-box">
                         <span styleName="label">
@@ -399,7 +373,7 @@ const CalculationResult = ({
     default: industryIcon = null;
   }
   if(showPrintScreen) {
-    return <Prints form={form} result={result} talents={talents} getTalents={getTalents} />
+    return <Prints form={form} result={result} talents={talents} getTalents={getTalents} industryIcon={industryIcon} industry={industry} />
   }
 
 
