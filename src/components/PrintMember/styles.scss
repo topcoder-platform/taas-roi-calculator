@@ -127,17 +127,16 @@
   .stats {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     justify-content: space-between;
     .country,
     .win {
       font-weight: bold;
-      font-size: 14px;
+      font-size: 11px;
+      white-space: nowrap;
       @media print {
         font-size: 11px;
       }
     }
-
     .win {
       margin-left: $spacer-1;
     }
