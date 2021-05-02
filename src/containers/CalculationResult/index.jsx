@@ -374,8 +374,8 @@ const CalculationResult = ({
           const pdf = new jsPDF('p', 'px', [612,792]);
           let width = pdf.internal.pageSize.getWidth();
           let height = pdf.internal.pageSize.getHeight();
-          pdf.addImage(canvas, 'PNG', 0, 0, width, height);
-          pdf.save('download.pdf');
+          pdf.addImage(canvas, 'PNG', 0, 0, width, height,'PDF','FAST');
+          pdf.save('topcoder-taas-roi-calculator.pdf');
         setIsLoadingPdf(false);
       });
 
@@ -429,12 +429,12 @@ const CalculationResult = ({
               { !utils.platform.isMobileOS() && (
                 <div styleName="buttons">
                   <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
-                  {
-                    !isLoadingPdf && <SecondaryButton onClick={downloadResults}>DOWNLOAD RESULTS</SecondaryButton>
-                  }
-                  {
-                    isLoadingPdf && <div styleName='loader'></div>
-                  }
+                    <SecondaryButton onClick={downloadResults}>
+                      DOWNLOAD RESULTS
+                      {
+                        isLoadingPdf && <div styleName='loader'></div>
+                      }
+                    </SecondaryButton>
                 </div>
               )}
             </div>
