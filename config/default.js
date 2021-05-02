@@ -16,130 +16,188 @@ module.exports = {
     TOTAL_SLIDES: 5,
     TALENTS: [
       {
+        username: 'birdofpreyru',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          }
+        ],
+      },
+      {
+        username: 'chubbchubbs',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          }
+        ],
+      },
+      {
         username: 'NightWolf',
         tags: [
           {
             label: 'Full Stack Developer',
             color: '#4CC94C',
-          },{
-            label: 'Front End Developer',
-            color: '#4CC94C',
-          },{
-            label: 'Back End Developer',
-            color: '#4CC94C',
-          },
+          }
         ],
       },
       {
-        username: 'Sky_',
+        username: 'fxk',
         tags: [
           {
             label: 'Full Stack Developer',
             color: '#4CC94C',
-          },{
-            label: 'Front End Developer',
-            color: '#4CC94C',
-          },{
-            label: 'Back End Developer',
-            color: '#4CC94C',
-          },
+          }
         ],
       },
       {
-        username: 'phead',
+        username: 'superastrom',
         tags: [
           {
             label: 'Full Stack Developer',
             color: '#4CC94C',
-          },{
-            label: 'Data Scientists',
-            color: '#EF476F',
-          },{
-            label: 'Back End Developer',
+          }
+        ],
+      },
+      {
+        username: 'ChanKamWo',
+        tags: [
+          {
+            label: 'Front End Developer',
             color: '#4CC94C',
-          },
+          }
+        ],
+      },
+      {
+        username: 'diazz',
+        tags: [
+          {
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          }
+        ],
+      },
+      {
+        username: 'nqv2018',
+        tags: [
+          {
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          }
+        ],
+      },
+      {
+        username: 'dan1104',
+        tags: [
+          {
+            label: 'Front End Developer',
+            color: '#4CC94C',
+          }
         ],
       },
       {
         username: 'soso0574',
         tags: [
           {
-            label: 'Full Stack Developer',
-            color: '#4CC94C',
-          },{
             label: 'Front End Developer',
             color: '#4CC94C',
-          },{
+          }
+        ],
+      },
+      {
+        username: 'cagdas001',
+        tags: [
+          {
             label: 'Back End Developer',
             color: '#4CC94C',
           },
         ],
       },
       {
-        username: 'moulyg',
+        username: 'onsky',
         tags: [
           {
-            label: 'Full Stack Developer',
-            color: '#4CC94C',
-          },{
-            label: 'Data Scientists',
-            color: '#EF476F',
-          },{
             label: 'Back End Developer',
             color: '#4CC94C',
-          },
-          {
-            label: 'QA Engineer',
-            color: '#FD7D01',
           },
         ],
       },
       {
-        username: 'hi4sandy',
+        username: 'edtrist',
         tags: [
           {
-            label: 'Full Stack Developer',
-            color: '#4CC94C',
-          },{
-            label: 'Front End Developer',
-            color: '#4CC94C',
-          },{
             label: 'Back End Developer',
             color: '#4CC94C',
-          },
-          {
-            label: 'QA Engineer',
-            color: '#FD7D01',
           },
         ],
       },
       {
-        username: 'lunarkid',
+        username: 'eisbilir',
         tags: [
-          {
-            label: 'Data Engineers',
-            color: '#2C95D7',
-          },
-          {
-            label: 'Front End Developer',
-            color: '#4CC94C',
-          },
           {
             label: 'Back End Developer',
             color: '#4CC94C',
           },
+        ],
+      },
+      {
+        username: 'suneetk92',
+        tags: [
           {
-            label: 'Data Scientists',
-            color: '#EF476F',
+            label: 'Back End Developer',
+            color: '#4CC94C',
           },
+        ],
+      },
+      {
+        username: 'birdofpreyru',
+        tags: [
           {
-            label: 'Copilot',
-            color: '#9D41C9',
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
           },
+        ],
+      },
+      {
+        username: 'chubbchubbs',
+        tags: [
           {
-            label: 'QA Engineer',
-            color: '#FD7D01',
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
           },
+        ],
+      },
+      {
+        username: 'NightWolf',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
+        username: 'jiangliwu',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
+        username: 'superastrom',
+        tags: [
+          {
+            label: 'Full Stack Developer',
+            color: '#4CC94C',
+          },
+        ],
+      },
+      {
+        username: 'ToxicPixel',
+        tags: [
           {
             label: 'UI/UX Designer',
             color: '#2C95D7',
@@ -150,42 +208,86 @@ module.exports = {
         username: 'iamtong',
         tags: [
           {
-            label: 'Data Engineers',
+            label: 'UI/UX Designer',
             color: '#2C95D7',
-          },
+          }
+        ],
+      },
+      {
+        username: 'iaminfinite',
+        tags: [
           {
             label: 'UI/UX Designer',
             color: '#2C95D7',
-          },
+          }
+        ],
+      },
+      {
+        username: 'universo',
+        tags: [
+          {
+            label: 'UI/UX Designer',
+            color: '#2C95D7',
+          }
+        ],
+      },
+      {
+        username: 'yoki',
+        tags: [
+          {
+            label: 'UI/UX Designer',
+            color: '#2C95D7',
+          }
+        ],
+      },
+      {
+        username: 'tourist',
+        tags: [
           {
             label: 'Data Scientists',
             color: '#EF476F',
-          },
-          {
-            label: 'Copilot',
-            color: '#9D41C9',
           },
         ],
       },
       {
-        username: 'nithyaasworld',
+        username: '_aid',
         tags: [
-          {
-            label: 'QA Engineer',
-            color: '#FD7D01',
-          },
-          {
-            label: 'Copilot',
-            color: '#9D41C9',
-          },
           {
             label: 'Data Scientists',
             color: '#EF476F',
           },
+        ],
+      },
+      {
+        username: 'maroon_kuri',
+        tags: [
           {
-            label: 'UI/UX Designer',
-            color: '#2C95D7',
+            label: 'Data Scientists',
+            color: '#EF476F',
           },
+        ],
+      },
+      {
+        username: 'Petr',
+        tags: [
+          {
+            label: 'Data Scientists',
+            color: '#EF476F',
+          },
+        ],
+      },
+      {
+        username: 'Egor',
+        tags: [
+          {
+            label: 'Data Scientists',
+            color: '#EF476F',
+          },
+        ],
+      },
+      {
+        username: 'SATKAN',
+        tags: [
           {
             label: 'Data Engineers',
             color: '#2C95D7',
@@ -193,24 +295,35 @@ module.exports = {
         ],
       },
       {
-        username: 'duxiaoyang',
+        username: 'kmurti',
         tags: [
           {
-            label: 'Data Scientists',
-            color: '#EF476F',
-          },
-          {
-            label: 'Copilot',
-            color: '#9D41C9',
-          },
-          {
-            label: 'Front End Developer',
-            color: '#4CC94C',
-          },
-          {
-            label: 'UI/UX Designer',
+            label: 'Data Engineers',
             color: '#2C95D7',
-          },
+          }
+        ],
+      },
+      {
+        username: 'creeya',
+        tags: [
+          {
+            label: 'Data Engineers',
+            color: '#2C95D7',
+          }
+        ],
+      },
+      {
+        username: 'uber',
+        tags: [
+          {
+            label: 'Data Engineers',
+            color: '#2C95D7',
+          }
+        ],
+      },
+      {
+        username: 'codejam',
+        tags: [
           {
             label: 'Data Engineers',
             color: '#2C95D7',
