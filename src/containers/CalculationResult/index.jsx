@@ -368,7 +368,6 @@ const CalculationResult = ({
         onclone: function (clonedDoc) {
           clonedDoc.getElementById('result-container').remove();
           clonedDoc.getElementById('capture-result').style.position = 'inherit';
-          console.log(clonedDoc);
         }
         }).then(canvas => {
           const pdf = new jsPDF('p', 'px', [612,792]);
