@@ -9,59 +9,87 @@ import IconPhotoDefault from '../../assets/images/user.svg';
 
 import './styles.scss';
 
+const membersPics = [
+    '/src/assets/images/hi4sandy.png',
+    '/src/assets/images/NightWolf.png',
+    '/src/assets/images/Sky_.jpeg',
+    '/src/assets/images/codejam.png',
+    '/src/assets/images/iamtong.png',
+    '/src/assets/images/kmurti.png',
+    '/src/assets/images/nqv2018.png',
+    '/src/assets/images/Petr.png',
+    '/src/assets/images/suneetk92.png',
+    '/src/assets/images/ToxicPixel.png',
+    '/src/assets/images/universo.png',
+    '/src/assets/images/yoki.png'
+];
+
+
 const PrintMember = ({
                          member, tags, wins, skills, formType
-                     }) => (
-    <div styleName='card'>
-        <div styleName='card-header member'>
-            <div styleName='member-photo'>
-                <span styleName='rate'>{rateUtil.createRateIcon(member.maxRating.ratingColor, '20px')}</span>
-                <div styleName='photo'>
-                    <img src={member.photoURL || IconPhotoDefault} alt='member' />
-                </div>
-            </div>
-            <div styleName='member-info'>
-                <div styleName='handle'>{member.handle}</div>
-                <div styleName='tags'>
-                    {tags.map((tag) => {
-                            if (tag.label === formType) {
-                                return <span styleName='tag' style={{ background: tag.color }} key={tag.label}>{tag.label}</span>
-                            }
-                        }
-                    )}
-                </div>
-                <div styleName='stats'>
-                    <div styleName='since'>
-                       MEMBER SINCE&nbsp;
-                        <span>{new Date(member.createdAt).getFullYear()}</span>
+                     }) => {
+    let imageLink;
+    if(member.photoURL) {
+        membersPics.map(pic => {
+            if(pic.includes(member.handle)) {
+                imageLink = pic;
+            }
+        })
+    }
+
+    return (
+        <div styleName='card'>
+            <div styleName='card-header member'>
+                <div styleName='member-photo'>
+                    <span styleName='rate'>{rateUtil.createRateIcon(member.maxRating.ratingColor, '20px')}</span>
+                    <div styleName='photo'>
+                        <img src={imageLink || IconPhotoDefault} alt='member' />
                     </div>
-                    <span styleName='country'>
+                </div>
+                <div styleName='member-info'>
+                    <div styleName='handle'>{member.handle}</div>
+                    <div styleName='tags'>
+                        {tags.map((tag) => {
+                                if (tag.label === formType) {
+                                    return <span styleName='tag' style={{ background: tag.color }} key={tag.label}>{tag.label}</span>;
+                                }
+                            }
+                        )}
+                    </div>
+                    <div styleName='stats'>
+                        <div styleName='since'>
+                            MEMBER SINCE&nbsp;
+                            <span>{new Date(member.createdAt).getFullYear()}</span>
+                        </div>
+                        <span styleName='country'>
                             <IconLocation styleName='icon' />
-                        {' '}
-                        {member.homeCountryCode}
+                            {' '}
+                            {member.homeCountryCode}
                         </span>
-                    <span styleName='win'>
+                        <span styleName='win'>
                             <IconWin styleName='icon' />
-                        {' '}
-                        {wins}
-                        {' '}
-                        WINS
+                            {' '}
+                            {wins}
+                            {' '}
+                            WINS
                     </span>
+                    </div>
+                </div>
+            </div>
+            <div styleName='member-skills'>
+                <h4 styleName='heading-4'>SKILLS</h4>
+                <div styleName='skills'>
+                    <Clampy clampSize='3'>
+                        {
+                            skills.join(', ')
+                        }
+                    </Clampy>
                 </div>
             </div>
         </div>
-         <div styleName='member-skills'>
-            <h4 styleName='heading-4'>SKILLS</h4>
-            <div styleName='skills'>
-                <Clampy clampSize='3'>
-                    {
-                        skills.join(', ')
-                    }
-                </Clampy>
-            </div>
-        </div>
-    </div>
-);
+    );
+};
+
 
 PrintMember.defaultProps = {
     tags: [],
