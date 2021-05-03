@@ -32,6 +32,10 @@
 .col {
   width: 640px;
   flex: 1 0 0%;
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+
 
   @include xs-to-md {
 
