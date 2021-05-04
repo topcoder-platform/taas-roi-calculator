@@ -50,8 +50,7 @@ const Prints = ({
                 <h3 styleName="heading-3" className="upper-case" style={{color: 'orange'}}>
                   Hello
                   {' '}
-                  {form.firstName}
-                  ,
+                  {form.firstName},
                 </h3>
                 <p styleName="text margin-top-extra">
                   Based on the information you’ve provided us, plus our market research,
