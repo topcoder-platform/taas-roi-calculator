@@ -10,7 +10,6 @@ import DonutChart from '../../components/DonutChart';
 import LineChart from '../../components/LineChart';
 import CardMember from '../../components/CardMember';
 import SlideShow from '../../components/SlideShow';
-
 import actions from '../../actions';
 import * as utils from '../../utils';
 import IconBanking from '../../assets/icons/banking.svg';
@@ -48,8 +47,8 @@ const Prints = ({
           <img src={logo} styleName="logo" alt="logo" />
           <h1 styleName="display-2">TAAS ROI CALCULATOR</h1>
         </div>
-        <div style={{paddingTop: 'unset', paddingBottom: 'unset', paddingLeft:'80px', paddingRight: '30px', marginLeft: 'unset', marginRight: 'unset'}}>
-          <div styleName="page print-screen" style={{ paddingLeft: 'unset', paddingRight: 'unset',marginLeft: 'unset', marginRight: 'unset'}}>
+        <div style={{paddingTop: 'unset', paddingBottom: 'unset', paddingLeft:'80px', paddingRight: '30px', marginLeft: 'unset', marginRight: 'unset', width: '100%'}}>
+          <div styleName="page print-screen" style={{ paddingLeft: 'unset', paddingRight: 'unset',marginLeft: 'unset', marginRight: 'unset', width: '100%'}}>
             <div ref={ref} styleName="row">
               <div styleName="col">
                 <div styleName="left-section">
@@ -365,12 +364,21 @@ const CalculationResult = ({
 
   const downloadResults = () => {
       setIsLoadingPdf(true);
+      document.getElementById('capture-result').style.position = 'inherit';
       html2canvas(document.getElementById('capture-result'),{
         scrollX: -window.scrollX,
         scrollY: -window.scrollY,
         removeContainer: true,
+        /*onclone: function (clonedDoc) {
+          console.log(clonedDoc);
+          // clonedDoc.getElementsByTagName('header')[0].remove();
+          clonedDoc.getElementById('result-container').remove();
+          clonedDoc.getElementById('capture-result').style.position = 'inherit';
+        }*/
         }).then(canvas => {
-          const pdf = new jsPDF('p', 'px');
+        document.getElementById('capture-result').style.position = 'absolute';
+          // document.body.appendChild(canvas);
+          const pdf = new jsPDF('p', 'px', [612, 792]);
           let width = pdf.internal.pageSize.getWidth();
           let height = pdf.internal.pageSize.getHeight();
           pdf.addImage(canvas, 'PNG', 0, 0, width, height,'PDF','FAST');
@@ -428,12 +436,12 @@ const CalculationResult = ({
               { !utils.platform.isMobileOS() && (
                 <div styleName="buttons">
                   <PrimaryButton to={process.env.CALENDLY_URL} size={isMobileOrTablet ? 'sm' : ''}>SCHEDULE A TAAS DEMO</PrimaryButton>
-                    <SecondaryButton onClick={downloadResults}>
-                      DOWNLOAD RESULTS
-                      {
-                        isLoadingPdf && <div styleName='loader'></div>
-                      }
-                    </SecondaryButton>
+                  <SecondaryButton onClick={downloadResults} size={isMobileOrTablet ? 'sm' : ''}>
+                    DOWNLOAD RESULTS
+                    {
+                      isLoadingPdf && <div styleName='loader'></div>
+                    }
+                  </SecondaryButton>
                 </div>
               )}
             </div>
