@@ -334,9 +334,9 @@ const CalculationResult = ({
   }, [form]);
 
   useEffect(() => {
-    // document.getElementById('capture-result').style.position = 'absolute';
-    // document.getElementById('capture-result').style.top = '-65432px';
-    // document.getElementById('capture-result').style.width = '100%';
+    document.getElementById('capture-result').style.position = 'absolute';
+    document.getElementById('capture-result').style.top = '-65432px';
+    document.getElementById('capture-result').style.width = '100%';
   }, []);
 
   const history = useHistory();
@@ -370,15 +370,12 @@ const CalculationResult = ({
         scrollY: -window.scrollY,
         removeContainer: true,
         }).then(canvas => {
-          document.body.appendChild(canvas);
           const pdf = new jsPDF('p', 'px');
           let width = pdf.internal.pageSize.getWidth();
           let height = pdf.internal.pageSize.getHeight();
-          console.log('Width: ', width);
-          console.log('Height: ', height);
           pdf.addImage(canvas, 'PNG', 0, 0, width, height,'PDF','FAST');
           pdf.save('topcoder-taas-roi-calculator.pdf');
-        setIsLoadingPdf(false);
+          setIsLoadingPdf(false);
       });
 
   }
