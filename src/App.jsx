@@ -19,7 +19,7 @@ const App = () => {
         <Header />
         <Routes />
         <Footer />
-        {process.env.NODE_ENV === 'development' && <DevTools />}
+        {/*{process.env.NODE_ENV === 'development' && <DevTools />}*/}
       </BrowserRouter>
     </Provider>
   );

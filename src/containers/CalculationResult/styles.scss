@@ -20,6 +20,72 @@
   @media screen and (min-width:0\0) {
     padding-top: 160px;
   }
+  .content-center {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: #f4f4f4;
+    height: 80px;
+    padding-left: 80px;
+
+    .header {
+
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 80px;
+      padding: 0 $page-padding-x;
+      white-space: nowrap;
+      background: $bg-color-2;
+
+      @include xs-to-md {
+        height: 40px;
+        padding: 0 $page-padding-x-xs;
+      }
+
+      .content-center {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+      @media print {
+        position: relative;
+      }
+    }
+
+    .logo {
+      display: block;
+
+      @include xs-to-md {
+        width: 44px;
+        height: 15px;
+      }
+    }
+
+    .display-2 {
+      @include barlow-condensed-regular;
+
+      margin-left: $spacer-1;
+      font-weight: 500;
+      font-size: 32px;
+
+      @include xs-to-md {
+        margin-left: 5px;
+        font-size: 16px;
+      }
+    }
+  }
+
+
 }
 
 .row {
