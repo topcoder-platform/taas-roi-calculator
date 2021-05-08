@@ -1,7 +1,6 @@
 import React from 'react';
 import PT from 'prop-types';
 import Clampy from '@clampy-js/react-clampy';
-import IconHR from 'assets/icons/hr.svg';
 import * as rateUtil from '../../utils/rate';
 import IconLocation from '../../assets/icons/location.svg';
 import IconWin from '../../assets/icons/win.svg';
