@@ -23,8 +23,7 @@
 .card-header {
   flex: 2;
   padding: $spacer-2 $spacer-1 $spacer-2 $spacer-2;
-  border-top-left-radius: $border-radius-2;
-  border-top-right-radius: $border-radius-2;
+  border-radius: $border-radius-2; 
   background: #f4f4f4;
 }
 

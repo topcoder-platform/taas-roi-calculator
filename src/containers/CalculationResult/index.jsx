@@ -377,6 +377,8 @@ const CalculationResult = ({
         }*/
         }).then(canvas => {
         document.getElementById('capture-result').style.position = 'absolute';
+        document.getElementById('capture-result').style.visibility = 'hidden';
+        document.getElementById('capture-result').style.height = 0;
           // document.body.appendChild(canvas);
           const pdf = new jsPDF('p', 'px', [612, 792]);
           let width = pdf.internal.pageSize.getWidth();
