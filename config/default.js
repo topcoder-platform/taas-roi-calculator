@@ -151,51 +151,6 @@ module.exports = {
         ],
       },
       {
-        username: 'birdofpreyru',
-        tags: [
-          {
-            label: 'Full Stack Developer',
-            color: '#4CC94C',
-          },
-        ],
-      },
-      {
-        username: 'chubbchubbs',
-        tags: [
-          {
-            label: 'Full Stack Developer',
-            color: '#4CC94C',
-          },
-        ],
-      },
-      {
-        username: 'NightWolf',
-        tags: [
-          {
-            label: 'Full Stack Developer',
-            color: '#4CC94C',
-          },
-        ],
-      },
-      {
-        username: 'jiangliwu',
-        tags: [
-          {
-            label: 'Full Stack Developer',
-            color: '#4CC94C',
-          },
-        ],
-      },
-      {
-        username: 'superastrom',
-        tags: [
-          {
-            label: 'Full Stack Developer',
-            color: '#4CC94C',
-          },
-        ],
-      },
-      {
         username: 'ToxicPixel',
         tags: [
           {

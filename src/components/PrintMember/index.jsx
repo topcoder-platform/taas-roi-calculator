@@ -9,6 +9,8 @@ import IconPhotoDefault from '../../assets/images/user.svg';
 import './styles.scss';
 
 const membersPics = [
+    '/src/assets/images/birdofpreyru.png',
+    '/src/assets/images/onsky.png',
     '/src/assets/images/hi4sandy.png',
     '/src/assets/images/NightWolf.png',
     '/src/assets/images/Sky_.jpeg',
