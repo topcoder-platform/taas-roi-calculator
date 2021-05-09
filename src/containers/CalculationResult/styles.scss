@@ -211,18 +211,24 @@
 
   > button{
   	border-radius: 20px !important;
-    cursor:pointer;
-    margin-top: unset !important;
-    margin-bottom: unset !important;
-
+    cursor:pointer !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 26px !important;
+    height: 40px;
+    background: $primary-button-bg;
+    text-decoration: none;
+    margin: 0;
   }
 
   > a:first-child {
     @include roboto-bold;
 
     margin: 0;
+    margin-right: 10px;
     font-size: 14px;
     line-height: 26px;
+    height: 40px;
     background: $primary-button-bg;
     border-radius: 20px;
     text-decoration: none;
@@ -277,7 +283,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-right: -$spacer-3;
+  // margin-right: $spacer-3;
   padding-top: $spacer-1;
 
   @include xs-to-md {
@@ -299,10 +305,10 @@
 }
 
 .box {
-  width: 176px;
+  width: 165px;
   height: 130px;
-  margin-right: $spacer-3;
-  margin-bottom: $spacer-3;
+  margin-right: 20px;
+  margin-bottom: 20px;
   padding: $spacer-1 $spacer-1 16px;
   text-align: center;
   border: 1px solid $tc-gray-neutral-dark;
@@ -541,6 +547,7 @@
 }
 
 .talents {
+  margin-left: 20px;
   padding: $spacer-2 0 $spacer-4;
 
   @include xs-to-md {
@@ -645,11 +652,13 @@
 }
 
 .loader {
-  margin-left: 10px;
+  margin-left: 5px;
   border: 3px solid #f3f3f3; /* Light grey */
   border-top: 3px solid #3498db; /* Blue */
   border-radius: 50%;
   animation: spin 2s linear infinite;
+  height: 15px;
+  width: 15px;
 }
 
 @keyframes spin {
@@ -657,3 +666,6 @@
   100% { transform: rotate(360deg); }
 }
 
+.hide{
+  display: none!important;
+}
