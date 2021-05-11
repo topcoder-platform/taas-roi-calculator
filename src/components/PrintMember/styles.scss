@@ -22,8 +22,8 @@
 
 .card-header {
   flex: 2;
-  padding: $spacer-2 $spacer-1 $spacer-2 $spacer-2;
-  border-radius: $border-radius-2; 
+  padding: $spacer-1 $spacer-1 $spacer-2 $spacer-2;
+  border-radius: $border-radius-2;
   background: #f4f4f4;
 }
 
@@ -106,7 +106,7 @@
 
   .tags {
     margin-top: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 
     .tag {
       @include roboto-bold;
@@ -142,7 +142,7 @@
 
     .since {
       line-height: initial;
-      width: 59px;
+      width: 63px;
       font-weight: 500;
       font-size: 11px;
     }

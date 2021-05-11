@@ -27,7 +27,7 @@
     width: 100%;
     background: #f4f4f4;
     height: 80px;
-    padding-left: 80px;
+    padding-left: 20px;
     .header {
 
       position: sticky;
@@ -214,7 +214,7 @@
     cursor:pointer !important;
     margin: 0 !important;
     font-size: 14px !important;
-    line-height: 26px !important;
+    line-height: 14px !important;
     height: 40px;
     background: $primary-button-bg;
     text-decoration: none;
@@ -227,7 +227,7 @@
     margin: 0;
     margin-right: 10px;
     font-size: 14px;
-    line-height: 26px;
+    line-height: 14px;
     height: 40px;
     background: $primary-button-bg;
     border-radius: 20px;
@@ -297,6 +297,7 @@
   justify-content: center;
   margin-right: -$spacer-3;
   padding-top: $spacer-1;
+  box-shadow: none!important;
 
   @include xs-to-md {
     margin-right: -$spacer-1;
@@ -643,6 +644,7 @@
   }
   .footer {
     margin-top: $spacer-3;
+    padding: 20px 40px!important;
   }
 }
 
@@ -668,4 +670,112 @@
 
 .hide{
   display: none!important;
+}
+
+.card-download {
+  background: #fafafa;
+  border-radius: $border-radius-2;
+  border-color: 1px solid grey;
+  box-shadow: none!important;
+  @media print {
+    -webkit-print-color-adjust:exact;
+    -webkit-filter:opacity(1);
+  }
+}
+
+.card-header-download {
+  padding: $spacer-2 $spacer-2 $spacer-2;
+  border-top-left-radius: $border-radius-2;
+  border-top-right-radius: 10px;
+
+  @include xs-to-md {
+    padding: $spacer-1 $spacer-1 $spacer-1;
+  }
+}
+
+.card-body-download {
+  padding: 0 $spacer-2;
+
+  @include xs-to-md {
+    padding-left: $spacer-1;
+    padding-right: $spacer-1;
+  }
+  .talents{
+    margin-left: 0!important;
+  }
+}
+
+.card-body-download .message{
+  box-shadow: none!important;
+  border: 1px solid #e4e1e1!important;
+}
+
+.card-footer-download {
+  border-bottom-left-radius: $border-radius-2;
+  border-bottom-right-radius: $border-radius-2;
+  padding: 0!important;
+}
+
+.card {
+  .card-body {
+    &:last-child {
+      border-bottom-left-radius: $border-radius-2;
+      border-bottom-right-radius: $border-radius-2;
+    }
+  }
+}
+
+.header-download{
+  position: relative;
+  margin-top: 0px!important;
+  top: 0!important;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #f4f4f4;
+  height: 80px;
+  padding-left: 20px;
+
+  img,
+  h1{
+    float: left;
+    top: 20px;
+    font-family: "BarlowCondensed", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 32px;
+    margin-top: 20px;
+  }
+}
+
+.body-download{
+  margin: 0;
+  width: 100%;
+  display: block;
+  padding: 10px 20px;
+}
+
+.page-download{
+  padding: 40px 20px;
+}
+
+.footer-download{
+  margin-top: 20px;
+  min-height: 78px;
+  padding: 20px 20px;
+  font-size: 11px;
+  line-height: 19px;
+  background: $bg-color-2;
+  margin-bottom: 0;
+
+  .content-center {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  @include xs-to-md {
+    padding: $spacer-1 $page-padding-x-xs;
+  }
 }

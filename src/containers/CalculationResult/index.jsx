@@ -43,12 +43,13 @@ const Prints = ({
   let members = 0;
   return (
       <div id={'capture-result'}>
+        <div style={{ display: 'block', width: '100%', height: '170px' }} ></div>
         <div styleName="content-center">
           <img src={logo} styleName="logo" alt="logo" />
           <h1 styleName="display-2">TAAS ROI CALCULATOR</h1>
         </div>
-        <div style={{paddingTop: 'unset', paddingBottom: 'unset', paddingLeft:'80px', paddingRight: '30px', marginLeft: 'unset', marginRight: 'unset', width: '100%'}}>
-          <div styleName="page print-screen" style={{ paddingLeft: 'unset', paddingRight: 'unset',marginLeft: 'unset', marginRight: 'unset', width: '100%'}}>
+        <div style={{paddingTop: 'unset', paddingBottom: 'unset', paddingLeft:'20px', paddingRight: '30px', marginLeft: 'unset', marginRight: 'unset', width: '100%'}}>
+          <div styleName="page-download print-screen" style={{ paddingLeft: 'unset', paddingRight: 'unset',marginLeft: 'unset', marginRight: 'unset', width: '100%'}}>
             <div ref={ref} styleName="row">
               <div styleName="col">
                 <div styleName="left-section">
@@ -96,11 +97,11 @@ const Prints = ({
                     <div styleName="col result-container">
                       {/*YOUR RESULT S*/}
                       <div styleName='margin-card-bottom card-border'>
-                        <Card>
-                          <Card.Header>
+                        <div styleName='card-download'>
+                          <div styleName='card-header-download'>
                             <h6 styleName="heading-6" className="text-violet">YOUR RESULT</h6>
-                          </Card.Header>
-                          <Card.Body>
+                          </div>
+                          <div styleName='card-body-download'>
                             <div styleName='print-container'>
                               <div styleName='box'>
                                 <span styleName='value heading-3'>{utils.format2DigitsNumber(result.numberOfEmployee)}</span>
@@ -141,8 +142,8 @@ const Prints = ({
                                 <span styleName="value">{utils.formatMoneyValueI(result.totalWeeklyCost)}</span>
                             </span>
                             </div>
-                          </Card.Body>
-                          <Card.Footer>
+                          </div>
+                          <div styleName='card-footer-download'>
                             <div styleName="save">
                             <span>
                               TOPCODER WEEKLY COST:
@@ -158,16 +159,16 @@ const Prints = ({
                                 / WEEK
                             </span>
                             </div>
-                          </Card.Footer>
-                        </Card>
+                          </div>
+                        </div>
                       </div>
                       {/*FREELANCER VS. TRADITIONAL HIRING*/}
-                      <div styleName={'card-border'}>
-                        <Card>
-                          <Card.Header>
+                      <div styleName='margin-card-bottom card-border'>
+                        <div styleName='card-download'>
+                          <div styleName='card-header-download'>
                             <h6 styleName="heading-6" className="text-green">FREELANCER VS. TRADITIONAL HIRING</h6>
-                          </Card.Header>
-                          <Card.Body>
+                          </div>
+                          <div styleName='card-body-download'>
                             <p styleName="text margin-top">
                               By the time your traditionally hired FTE goes through recruitment, interviews,
                               negotiations and agreeing on start dates; the talent at Topcoder has already been
@@ -198,18 +199,18 @@ const Prints = ({
                                 TaaS Freelancer(s)
                               </p>
                             </div>
-                          </Card.Body>
-                        </Card>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div styleName="col">
                       {/*VISUAL BREAKDOWN*/}
                       <div styleName='margin-card-bottom card-border'>
-                        <Card>
-                          <Card.Header>
+                        <div styleName='card-download'>
+                          <div styleName='card-header-download'>
                             <h6 styleName="heading-6" className="text-darkCyan">VISUAL BREAKDOWN</h6>
-                          </Card.Header>
-                          <Card.Body>
+                          </div>
+                          <div styleName='card-body-download'>
                             <div styleName="donut-chart-container">
                               <div styleName="donut-chart-box">
                                 <DonutChart data={{
@@ -249,16 +250,16 @@ const Prints = ({
                                 </div>
                               </div>
                             </div>
-                          </Card.Body>
-                        </Card>
+                          </div>
+                        </div>
                       </div>
                       {/*THE TALENT*/}
                       <div styleName='margin-card-bottom card-border'>
-                        <Card>
-                          <Card.Header>
+                        <div styleName='card-download'>
+                          <div styleName='card-header-download'>
                             <h6 styleName="heading-6" className="text-red">THE TALENT</h6>
-                          </Card.Header>
-                          <Card.Body>
+                          </div>
+                          <div styleName='card-body-download'>
                             <p styleName="text margin-top">
                               The talent on our platform are virtual collaboration professionals. They are
                               used to sliding seamlessly into new teams and exciting projects and are ready to
@@ -292,8 +293,8 @@ const Prints = ({
                               }
 
                             </div>
-                          </Card.Body>
-                        </Card>
+                          </div>
+                        </div>
                       </div>
                       <div styleName="freelance-demo text bolder">
 
@@ -311,7 +312,19 @@ const Prints = ({
             </div>
           </div>
         </div>
-        <Footer />
+        <div styleName="footer-download">
+          <p>
+            By clicking “schedule a taas call” you agree to our Terms and Privacy Policy. We are never going to sell your data or send you spam. Your information is being used for communication purposes only. Wage and salalry data:
+            {' '}
+            <a href="https://www.glassdoor.com/">glassdoor.com</a>
+            . Bonus, equity, other benefits & employee overhead data: MIT study
+            {' '}
+            <a href="https://web.mit.edu/e-club/hadzima/pdf/how-much-does-an-employee-cost.pdf">How Much Does An Employee Cost?</a>
+            . Recruiting & time to hire data: workable.com
+            {' '}
+            <a href="https://resources.workable.com/tutorial/faq-recruitment-budget-metrics">Recruiting Costs: Budget and Cost per Hire | Recruiting Metrics FAQ</a>
+          </p>
+        </div>
       </div>
   )
 }
@@ -364,7 +377,7 @@ const CalculationResult = ({
 
   const downloadResults = () => {
       setIsLoadingPdf(true);
-      document.getElementById('capture-result').style.position = 'inherit';
+      document.getElementById('capture-result').style.position = 'relative';
       html2canvas(document.getElementById('capture-result'),{
         scrollX: -window.scrollX,
         scrollY: -window.scrollY,
@@ -380,10 +393,13 @@ const CalculationResult = ({
         document.getElementById('capture-result').style.visibility = 'hidden';
         document.getElementById('capture-result').style.height = 0;
           // document.body.appendChild(canvas);
-          const pdf = new jsPDF('p', 'px', [612, 792]);
+          const pdf = new jsPDF('p', 'mm', [297, 210]);
           let width = pdf.internal.pageSize.getWidth();
           let height = pdf.internal.pageSize.getHeight();
-          pdf.addImage(canvas, 'PNG', 0, 0, width, height,'PDF','FAST');
+          let newHeight = height + 35;
+          // console.log(`width :` + width);
+          // console.log(`height :` + height);
+          pdf.addImage(canvas, 'PNG', 0, 0, width, newHeight,'PDF','FAST');
           pdf.save('topcoder-taas-roi-calculator.pdf');
           setIsLoadingPdf(false);
       });

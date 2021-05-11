@@ -59,7 +59,7 @@ const PrintMember = ({
                     </div>
                     <div styleName='stats'>
                         <div styleName='since'>
-                            MEMBER SINCE&nbsp;
+                            SINCE&nbsp;
                             <span>{new Date(member.createdAt).getFullYear()}</span>
                         </div>
                         <span styleName='country'>
