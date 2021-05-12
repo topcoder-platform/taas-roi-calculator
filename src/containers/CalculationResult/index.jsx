@@ -27,7 +27,6 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import './styles.scss';
 import PrintMember from '../../components/PrintMember';
-import Footer from '../../components/Footer';
 const ref = React.createRef();
 import logo from 'assets/images/logo.svg';
 
@@ -43,7 +42,6 @@ const Prints = ({
   let members = 0;
   return (
       <div id={'capture-result'}>
-        <div style={{ display: 'block', width: '100%', height: '170px' }} ></div>
         <div styleName="content-center">
           <img src={logo} styleName="logo" alt="logo" />
           <h1 styleName="display-2">TAAS ROI CALCULATOR</h1>
@@ -381,13 +379,7 @@ const CalculationResult = ({
       html2canvas(document.getElementById('capture-result'),{
         scrollX: -window.scrollX,
         scrollY: -window.scrollY,
-        removeContainer: true,
-        /*onclone: function (clonedDoc) {
-          console.log(clonedDoc);
-          // clonedDoc.getElementsByTagName('header')[0].remove();
-          clonedDoc.getElementById('result-container').remove();
-          clonedDoc.getElementById('capture-result').style.position = 'inherit';
-        }*/
+        removeContainer: true
         }).then(canvas => {
         document.getElementById('capture-result').style.position = 'absolute';
         document.getElementById('capture-result').style.visibility = 'hidden';
@@ -396,10 +388,7 @@ const CalculationResult = ({
           const pdf = new jsPDF('p', 'mm', [297, 210]);
           let width = pdf.internal.pageSize.getWidth();
           let height = pdf.internal.pageSize.getHeight();
-          let newHeight = height + 35;
-          // console.log(`width :` + width);
-          // console.log(`height :` + height);
-          pdf.addImage(canvas, 'PNG', 0, 0, width, newHeight,'PDF','FAST');
+          pdf.addImage(canvas, 'PNG', 0, 0, width, height,'PDF','FAST');
           pdf.save('topcoder-taas-roi-calculator.pdf');
           setIsLoadingPdf(false);
       });
