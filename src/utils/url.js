@@ -7,7 +7,7 @@ export function getParamsfromQueryString(queryStr) {
 export function createCalculationFormFromParams(params) {
   return {
     talentType: params.talent,
-    employeeNumber: +(params.peopleRequired || 0),
+    employeeNumber: (params.peopleRequired || 0),
     industry: params.industry,
     companySize: params.companySize,
     costOfLiving: params.livingCost,

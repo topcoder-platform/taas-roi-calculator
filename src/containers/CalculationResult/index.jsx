@@ -63,7 +63,7 @@ const Prints = ({
                     {utils.format2DigitsNumber(result.numberOfEmployee)}
                     {' '}
                     <span styleName="text-capitalize">
-                      {result.numberOfEmployee > 1 ? utils.formatPluralNoun(form.talentType) : form.talentType}
+                      {result.numberOfEmployee !== '1' ? utils.formatPluralNoun(form.talentType) : form.talentType}
                     </span>
                     {' '}
                     to
@@ -102,8 +102,8 @@ const Prints = ({
                           <div styleName='card-body-download'>
                             <div styleName='print-container'>
                               <div styleName='box'>
-                                <span styleName='value heading-3'>{utils.format2DigitsNumber(result.numberOfEmployee)}</span>
-                                <span styleName='description'>{result.numberOfEmployee > 1 ? utils.formatPluralNoun(form.talentType) : form.talentType}</span>
+                                <span styleName='value heading-3'>{result.numberOfEmployee === "10 or more" ? "> 10" : utils.format2DigitsNumber(result.numberOfEmployee)}</span>
+                                <span styleName='description'>{result.numberOfEmployee !== '1' ? utils.formatPluralNoun(form.talentType) : form.talentType}</span>
                               </div>
                               <div styleName='box padding-extra'>
                                 <span styleName='value heading-3'>{result.costOfLiving || '\u00a0'}</span>
@@ -413,7 +413,7 @@ const CalculationResult = ({
                 {utils.format2DigitsNumber(result.numberOfEmployee)}
                 {' '}
                 <span styleName="text-capitalize">
-                  {result.numberOfEmployee > 1 ? utils.formatPluralNoun(form.talentType) : form.talentType}
+                  {result.numberOfEmployee !== '1' ? utils.formatPluralNoun(form.talentType) : form.talentType}
                 </span>
                 {' '}
                 to
@@ -471,8 +471,8 @@ const CalculationResult = ({
               <Card.Body>
                 <div styleName="box-container">
                   <div styleName="box">
-                    <span styleName="value heading-3">{utils.format2DigitsNumber(result.numberOfEmployee)}</span>
-                    <span styleName="description">{result.numberOfEmployee > 1 ? utils.formatPluralNoun(form.talentType) : form.talentType}</span>
+                    <span styleName="value heading-3">{result.numberOfEmployee === "10 or more" ? "> 10" : utils.format2DigitsNumber(result.numberOfEmployee)}</span>
+                    <span styleName="description">{result.numberOfEmployee !== '1' ? utils.formatPluralNoun(form.talentType) : form.talentType}</span>
                   </div>
                   <div styleName="box padding-extra">
                     <span styleName="value heading-3">{result.costOfLiving || '\u00a0'}</span>
@@ -679,7 +679,7 @@ CalculationResult.propTypes = {
     company: PT.string,
   }).isRequired,
   result: PT.shape({
-    numberOfEmployee: PT.number,
+    numberOfEmployee: PT.string,
     costOfLiving: PT.string,
     technologyService: PT.string,
     averageSalary: PT.number,

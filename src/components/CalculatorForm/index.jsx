@@ -92,7 +92,7 @@ const CalculatorForm = ({
           onChange={(options) => {
             const newFormData = {
               ...formData,
-              employeeNumber: +utils.getSelectedDropdownOption(options).label,
+              employeeNumber: utils.getSelectedDropdownOption(options).label,
             };
             setEmployeeNumberOptions(options);
             setFormData({ ...newFormData, validation: validateForm(newFormData) });
@@ -234,7 +234,7 @@ const CalculatorForm = ({
 CalculatorForm.propTypes = {
   data: PT.shape({
     talentType: PT.string,
-    employeeNumber: PT.number,
+    employeeNumber: PT.string,
     industry: PT.string,
     companySize: PT.string,
     livingCost: PT.string,
@@ -244,7 +244,7 @@ CalculatorForm.propTypes = {
     email: PT.string,
   }).isRequired,
   talentTypes: PT.arrayOf(PT.string).isRequired,
-  employeeNumbers: PT.arrayOf(PT.number).isRequired,
+  employeeNumbers: PT.arrayOf(PT.string).isRequired,
   industries: PT.arrayOf(PT.string).isRequired,
   companySizes: PT.arrayOf(PT.string).isRequired,
   onSubmit: PT.func.isRequired,

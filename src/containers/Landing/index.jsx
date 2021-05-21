@@ -91,7 +91,7 @@ const Landing = ({
 Landing.propTypes = {
   calculationForm: PT.shape({
     talentType: PT.string,
-    employeeNumber: PT.number,
+    employeeNumber: PT.string,
     industry: PT.string,
     companySize: PT.string,
     livingCost: PT.string,
@@ -101,7 +101,7 @@ Landing.propTypes = {
     email: PT.string,
   }).isRequired,
   talentTypes: PT.arrayOf(PT.string).isRequired,
-  employeeNumbers: PT.arrayOf(PT.number).isRequired,
+  employeeNumbers: PT.arrayOf(PT.string).isRequired,
   industries: PT.arrayOf(PT.string).isRequired,
   companySizes: PT.arrayOf(PT.string).isRequired,
   getTalentTypes: PT.func.isRequired,
