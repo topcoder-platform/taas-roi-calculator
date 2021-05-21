@@ -114,7 +114,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
-      inject: 'body'
+      inject: 'body',
+      favicon: "./favicon.ico"
     }),
     new MiniCssExtractPlugin({
       chunkFilename: `[name].css`,
