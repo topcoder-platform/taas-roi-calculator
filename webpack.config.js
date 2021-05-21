@@ -115,7 +115,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
       inject: 'body',
-      favicon: "./favicon.ico"
+      favicon: './favicon.ico'
     }),
     new MiniCssExtractPlugin({
       chunkFilename: `[name].css`,
