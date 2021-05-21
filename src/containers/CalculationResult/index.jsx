@@ -103,7 +103,7 @@ const Prints = ({
                             <div styleName='print-container'>
                               <div styleName='box'>
                                 <span styleName='value heading-3'>{utils.format2DigitsNumber(result.numberOfEmployee)}</span>
-                                <span styleName='description'>{form.talentType}</span>
+                                <span styleName='description'>{result.numberOfEmployee > 1 ? utils.formatPluralNoun(form.talentType) : form.talentType}</span>
                               </div>
                               <div styleName='box padding-extra'>
                                 <span styleName='value heading-3'>{result.costOfLiving || '\u00a0'}</span>
@@ -472,7 +472,7 @@ const CalculationResult = ({
                 <div styleName="box-container">
                   <div styleName="box">
                     <span styleName="value heading-3">{utils.format2DigitsNumber(result.numberOfEmployee)}</span>
-                    <span styleName="description">{form.talentType}</span>
+                    <span styleName="description">{result.numberOfEmployee > 1 ? utils.formatPluralNoun(form.talentType) : form.talentType}</span>
                   </div>
                   <div styleName="box padding-extra">
                     <span styleName="value heading-3">{result.costOfLiving || '\u00a0'}</span>
