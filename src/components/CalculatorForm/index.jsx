@@ -90,9 +90,10 @@ const CalculatorForm = ({
           placeholder="Number of people required"
           options={employeeNumberOptions}
           onChange={(options) => {
+              const employeeNumber = utils.getSelectedDropdownOption(options).label === "10 or more" ? "10" : utils.getSelectedDropdownOption(options).label;
             const newFormData = {
               ...formData,
-              employeeNumber: utils.getSelectedDropdownOption(options).label,
+              employeeNumber: +employeeNumber,
             };
             setEmployeeNumberOptions(options);
             setFormData({ ...newFormData, validation: validateForm(newFormData) });
