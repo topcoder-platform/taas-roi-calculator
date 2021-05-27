@@ -199,7 +199,7 @@ module.exports = {
         username: 'tourist',
         tags: [
           {
-            label: 'Data Scientists',
+            label: 'Data Scientist',
             color: '#EF476F',
           },
         ],
@@ -208,7 +208,7 @@ module.exports = {
         username: '_aid',
         tags: [
           {
-            label: 'Data Scientists',
+            label: 'Data Scientist',
             color: '#EF476F',
           },
         ],
@@ -217,7 +217,7 @@ module.exports = {
         username: 'maroon_kuri',
         tags: [
           {
-            label: 'Data Scientists',
+            label: 'Data Scientist',
             color: '#EF476F',
           },
         ],
@@ -226,7 +226,7 @@ module.exports = {
         username: 'Petr',
         tags: [
           {
-            label: 'Data Scientists',
+            label: 'Data Scientist',
             color: '#EF476F',
           },
         ],
@@ -235,7 +235,7 @@ module.exports = {
         username: 'Egor',
         tags: [
           {
-            label: 'Data Scientists',
+            label: 'Data Scientist',
             color: '#EF476F',
           },
         ],
@@ -244,7 +244,7 @@ module.exports = {
         username: 'SATKAN',
         tags: [
           {
-            label: 'Data Engineers',
+            label: 'Data Engineer',
             color: '#2C95D7',
           }
         ],
@@ -253,7 +253,7 @@ module.exports = {
         username: 'kmurti',
         tags: [
           {
-            label: 'Data Engineers',
+            label: 'Data Engineer',
             color: '#2C95D7',
           }
         ],
@@ -262,7 +262,7 @@ module.exports = {
         username: 'creeya',
         tags: [
           {
-            label: 'Data Engineers',
+            label: 'Data Engineer',
             color: '#2C95D7',
           }
         ],
@@ -271,7 +271,7 @@ module.exports = {
         username: 'uber',
         tags: [
           {
-            label: 'Data Engineers',
+            label: 'Data Engineer',
             color: '#2C95D7',
           }
         ],
@@ -280,7 +280,7 @@ module.exports = {
         username: 'codejam',
         tags: [
           {
-            label: 'Data Engineers',
+            label: 'Data Engineer',
             color: '#2C95D7',
           }
         ],

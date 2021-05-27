@@ -6,6 +6,11 @@ function calculate(formData) {
     salaries, costOfLivingIncreases, bonusRate, recruimentCosts, overheads, topcoderWeeklyCost,
   } = calculatorData;
 
+  var typeOfTalentsPlurals = formData.talentType;
+  if (formData.employeeNumber > 1){
+    typeOfTalentsPlurals = formData.talentType + 's';
+  }
+
   const salary = salaries[formData.talentType]; // per-year
   const costOfLivingIncrease = costOfLivingIncreases[formData.costOfLiving];
   const bonus = bonusRate;
@@ -27,6 +32,7 @@ function calculate(formData) {
     totalWeeklyCost: totalWeeklyCost * formData.employeeNumber,
     topcoderWeeklyCost,
     youSave: totalWeeklyCost - topcoderWeeklyCost,
+    typeOfTalentsPlural: typeOfTalentsPlurals,
   };
 }
 

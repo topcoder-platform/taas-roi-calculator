@@ -62,7 +62,7 @@ const Landing = ({
               const calculateRes = calculateROI(formData);
               const { form, result } = calculateRes.payload;
               addRow({
-                type_of_talent: form.talentType,
+                type_of_talent: result.typeOfTalentsPlural,
                 number_of_people_required: form.employeeNumber,
                 industry: form.industry,
                 company_size: form.companySize,
