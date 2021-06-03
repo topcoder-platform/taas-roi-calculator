@@ -46,7 +46,7 @@ const Landing = ({
           <Sticky top={160} enabled={!isMobileOrTablet} bottomBoundary={805}>
             <div styleName="left-section">
               <h3 styleName="heading-3 text-gradient" className="upper-case">Hello. Welcome to the Talent as a Service ROI calculator</h3>
-              <p styleName="text">With this handy tool you can easily compare hiring a direct FTE vs using our innovative staffing solution. Simply input some details below to see your customized report and how to rapidly increase your team’s output and productivity.</p>
+              <p styleName="text">With this handy tool you can easily compare hiring a direct FTE vs using our innovative staffing solution. Simply input some details to see your customized report and how to rapidly increase your team’s output and productivity.</p>
               <img src={hello} width={['100%','auto']}  alt="hello" />
             </div>
           </Sticky>
