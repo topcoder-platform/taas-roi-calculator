@@ -25,7 +25,7 @@ module.exports = {
         ],
       },
       {
-        username: 'chubbchubbs',
+        username: 'marioskranitsas',
         tags: [
           {
             label: 'Full Stack Developer',
@@ -43,7 +43,7 @@ module.exports = {
         ],
       },
       {
-        username: 'fxk',
+        username: 'genycopedison',
         tags: [
           {
             label: 'Full Stack Developer',
@@ -52,7 +52,7 @@ module.exports = {
         ],
       },
       {
-        username: 'superastrom',
+        username: 'nursoltan-s',
         tags: [
           {
             label: 'Full Stack Developer',
@@ -61,7 +61,7 @@ module.exports = {
         ],
       },
       {
-        username: 'ChanKamWo',
+        username: 'modi-kinjal',
         tags: [
           {
             label: 'Front End Developer',
@@ -88,7 +88,7 @@ module.exports = {
         ],
       },
       {
-        username: 'dan1104',
+        username: 'starlightjason2',
         tags: [
           {
             label: 'Front End Developer',
@@ -97,7 +97,7 @@ module.exports = {
         ],
       },
       {
-        username: 'soso0574',
+        username: 'mfrank37',
         tags: [
           {
             label: 'Front End Developer',
@@ -106,7 +106,7 @@ module.exports = {
         ],
       },
       {
-        username: 'cagdas001',
+        username: 'AlexeyProkopnev',
         tags: [
           {
             label: 'Back End Developer',
@@ -124,7 +124,7 @@ module.exports = {
         ],
       },
       {
-        username: 'edtrist',
+        username: 'mancoolgunda',
         tags: [
           {
             label: 'Back End Developer',
@@ -133,7 +133,7 @@ module.exports = {
         ],
       },
       {
-        username: 'eisbilir',
+        username: 'xxcxy',
         tags: [
           {
             label: 'Back End Developer',
@@ -169,7 +169,7 @@ module.exports = {
         ],
       },
       {
-        username: 'iaminfinite',
+        username: 'abedavera',
         tags: [
           {
             label: 'UI/UX Designer',
@@ -196,7 +196,7 @@ module.exports = {
         ],
       },
       {
-        username: 'tourist',
+        username: 'sourabh95',
         tags: [
           {
             label: 'Data Scientist',
@@ -205,7 +205,7 @@ module.exports = {
         ],
       },
       {
-        username: '_aid',
+        username: 'ch1n1t0',
         tags: [
           {
             label: 'Data Scientist',
@@ -214,7 +214,7 @@ module.exports = {
         ],
       },
       {
-        username: 'maroon_kuri',
+        username: 'gower',
         tags: [
           {
             label: 'Data Scientist',
@@ -223,7 +223,7 @@ module.exports = {
         ],
       },
       {
-        username: 'Petr',
+        username: 'sullyper',
         tags: [
           {
             label: 'Data Scientist',
@@ -232,7 +232,7 @@ module.exports = {
         ],
       },
       {
-        username: 'Egor',
+        username: 'waynn',
         tags: [
           {
             label: 'Data Scientist',
@@ -241,7 +241,25 @@ module.exports = {
         ],
       },
       {
-        username: 'SATKAN',
+        username: 'winterflame',
+        tags: [
+          {
+            label: 'Data Engineer',
+            color: '#2C95D7',
+          }
+        ],
+      },
+      {
+        username: 'swap12875',
+        tags: [
+          {
+            label: 'Data Engineer',
+            color: '#2C95D7',
+          }
+        ],
+      },
+      {
+        username: 'youDare',
         tags: [
           {
             label: 'Data Engineer',
@@ -251,24 +269,6 @@ module.exports = {
       },
       {
         username: 'kmurti',
-        tags: [
-          {
-            label: 'Data Engineer',
-            color: '#2C95D7',
-          }
-        ],
-      },
-      {
-        username: 'creeya',
-        tags: [
-          {
-            label: 'Data Engineer',
-            color: '#2C95D7',
-          }
-        ],
-      },
-      {
-        username: 'uber',
         tags: [
           {
             label: 'Data Engineer',
